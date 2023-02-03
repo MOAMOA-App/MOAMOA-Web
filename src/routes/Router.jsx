@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
 import Missing from "../pages/missing/Missing";
 import Mypage from "../pages/mypage/MyPage";
+import SellerManage from "../pages/sellermanage/SellerManage";
 
 export default function Router() {
     return (
@@ -15,10 +16,10 @@ export default function Router() {
                 <Route path="/" element={<Layout />}>
                     <Route path="login" element={<Login />} />
                     <Route path="/signup" element={<SignUp />} />
-
                     <Route element={<HeaderLayout />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mypage" element={<Mypage />} />
+                        <Route path="/seller" element={<SellerManage/>} />
                     </Route>
                     <Route path="*" element={<Missing />} />
                 </Route>
