@@ -3,7 +3,15 @@ import { Outlet } from 'react-router-dom'
 
 function Layout() {
   return (
-    <main>
+    <main
+      style={{
+        height: "100vh",
+        maxWidth: "1130px",
+        margin:"0 auto",
+        position: "relative",
+        backgroundColor: "#fff"
+      }}
+    >
       <Outlet />
     </main>
   )
