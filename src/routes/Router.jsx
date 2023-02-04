@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
 import Missing from "../pages/missing/Missing";
 import Mypage from "../pages/mypage/MyPage";
+import Upload from "../pages/upload/Upload";
 
 export default function Router() {
     return (
@@ -19,6 +20,7 @@ export default function Router() {
                     <Route element={<HeaderLayout />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mypage" element={<Mypage />} />
+                        <Route path="/upload" element={<Upload />} />
                     </Route>
                     <Route path="*" element={<Missing />} />
                 </Route>
