@@ -8,6 +8,12 @@ import SignUp from "../pages/signUp/SignUp";
 import Missing from "../pages/missing/Missing";
 import Mypage from "../pages/mypage/MyPage";
 import SellerManage from "../pages/sellermanage/SellerManage";
+import { MyPageProfile } from "../components/myPageMain/MyPageProfile";
+import { MyPageAlarm } from "../components/myPageMain/MyPageAlarm";
+import { MyPageSetting } from "../components/myPageMain/MyPageSetting";
+import { MyPageCreated } from "../components/myPageMain/MyPageCreated";
+import { MyPageParty } from "../components/myPageMain/MyPageParty";
+import { MyPageHeart } from "../components/myPageMain/MyPageHeart";
 
 export default function Router() {
     return (
@@ -18,7 +24,14 @@ export default function Router() {
                     <Route path="/signup" element={<SignUp />} />
                     <Route element={<HeaderLayout />}>
                         <Route path="/" element={<Home />} />
-                        <Route path="/mypage" element={<Mypage />} />
+                        <Route path="/mypage" element={<Mypage />} >
+                            <Route path="/mypage/" element={<MyPageProfile/>} />
+                            <Route path="/mypage/alarm" element={<MyPageAlarm/>} />
+                            <Route path="/mypage/setting" element={<MyPageSetting/>} />
+                            <Route path="/mypage/created" element={<MyPageCreated/>} />
+                            <Route path="/mypage/party" element={<MyPageParty/>} />
+                            <Route path="/mypage/heart" element={<MyPageHeart/>} />
+                        </Route>
                         <Route path="/seller" element={<SellerManage/>} />
                     </Route>
                     <Route path="*" element={<Missing />} />

@@ -1,8 +1,9 @@
 import React from 'react'
 import MyPageMenu from '../../components/myPageMenu/MyPageMenu'
 import MyPageProfileInfo from '../../components/myPageProfileInfo/MyPageProfileInfo'
-import MyPageProfileMain from '../../components/myPageProfileMain/MyPageProfileMain'
+import MyPageMain from '../../components/myPageMain/MyPageMain'
 import style from './myPage.module.css'
+import { Outlet } from 'react-router-dom'
 
 
 export default function Mypage() {
@@ -12,13 +13,12 @@ export default function Mypage() {
             <div
                 style={{
                     minHeight : "700px",
-                    display : "flex",
+                    display : "flex"
                 }}
             >
                 <MyPageMenu/>
-                <MyPageProfileMain/>
+                <MyPageMain/>
             </div>
-            <div className={style.cont}>sdfsf</div>
         </>
     )
 }
