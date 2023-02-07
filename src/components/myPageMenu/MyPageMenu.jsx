@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom';
-import style from './MyPageMenu.module.css'
+import style from './myPageMenu.module.css'
 export default function MyPageMenu() {
   return (
     <div 

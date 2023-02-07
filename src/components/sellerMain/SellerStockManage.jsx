@@ -1,6 +1,6 @@
 import React from 'react'
 import { SellerFormProfile } from '../sellerFormProfile/SellerFormProfile'
-import style from './SellerMain.module.css'
+import style from './sellerMain.module.css'
 export const SellerStockManage = (props) => {
     return (
         <div className={style.InnerDiv}>

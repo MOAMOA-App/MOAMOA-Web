@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './MyPageProInfo.module.css'
+import style from './myPageProInfo.module.css'
 export default function MyPageProfileInfo() {
   return (
       <div 

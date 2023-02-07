@@ -45,7 +45,6 @@ export default function Router() {
                             <Route path="/seller/notice" element={<SellerNoticeManage/>} />
                             <Route path="/seller/edit"   element={<SellerEditManage/>} />
                         </Route>
-                        <Route path="/mypage" element={<Mypage />} />
                         <Route path="/upload" element={<Upload />} />
                         <Route path="/signup" element={<SignUp />} />
                     </Route>
