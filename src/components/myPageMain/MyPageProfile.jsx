@@ -1,10 +1,10 @@
 import React from 'react'
-import style from './myPageMain.module.css'
+import style from './MyPageMain.module.css'
 export const MyPageProfile = (props) => {
   return (
-    <div className={style.myInnerDiv}>
+    <div className={style.InnerDiv}>
       <div style={{marginBottom : "30px"}}>
-        <p className={style.mySubject}>내 프로필</p>
+        <p className={style.Subject}>내 프로필</p>
         <table className={style.profileTable}>
           <tbody>
             <tr>

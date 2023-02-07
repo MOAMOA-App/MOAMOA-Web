@@ -2,27 +2,12 @@
     flex : 1 1 auto;
     padding : 15px;
     border : 1px solid lightgray;
-    min-width: 600px;
+    min-height: 600px;
 }
 .Subject{
     font-size: 16px;
     font-weight: bold;
     margin: 0 0 10px 0;
-}
-.searchDiv{
-    display : flex;
-    flex : 1 0 auto;
-    text-align : center;
-    font-weight : bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-.input{
-    height: 20px;
-    outline: none;
-    border-radius: 0;
-    border: 1px solid gray;
 }
 .properties{
     border: 2px solid #F1A94E;
@@ -39,7 +24,6 @@
 .formTable{
     width: 100%;
     border-collapse: collapse;
-    margin-right: 2px;
     font-size: 14px;
 }
 .formTable tbody tr{
@@ -48,15 +32,6 @@
 .formTable td{
     text-align: center;
     padding: 7px 11px 7px 10px;
-}
-
-.profileTable{
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    text-align: left;
-    border-spacing: 30px;
-}
-.profileTable td{
-    padding: 7px 11px 7px 10px;
+    text-overflow: ellipsis;
+    overflow : hidden;
 }

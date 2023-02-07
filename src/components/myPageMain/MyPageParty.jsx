@@ -1,9 +1,9 @@
 import React from 'react'
-import style from './myPageMain.module.css'
+import style from './MyPageMain.module.css'
 export const MyPageParty = (props) => {
   return (
-    <div className={style.myInnerDiv}>
-      <p className={style.mySubject }>참여한 공동구매</p>
+    <div className={style.InnerDiv}>
+      <p className={style.Subject }>참여한 공동구매</p>
       <div style={{ display : "flex", margin : "20px 0 15px 0"}}>
         <div className={style.searchDiv}>
           조회&nbsp;

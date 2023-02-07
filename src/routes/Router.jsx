@@ -14,6 +14,10 @@ import { MyPageSetting } from "../components/myPageMain/MyPageSetting";
 import { MyPageCreated } from "../components/myPageMain/MyPageCreated";
 import { MyPageParty } from "../components/myPageMain/MyPageParty";
 import { MyPageHeart } from "../components/myPageMain/MyPageHeart";
+import { SellerStockManage } from "../components/sellerMain/SellerStockManage";
+import { SellerPartyManage } from "../components/sellerMain/SellerPartyManage";
+import { SellerNoticeManage } from "../components/sellerMain/SellerNoticeManage";
+import { SellerEditManage } from "../components/sellerMain/SellerEditManage";
 
 export default function Router() {
     return (
@@ -25,14 +29,20 @@ export default function Router() {
                     <Route element={<HeaderLayout />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mypage" element={<Mypage />} >
-                            <Route path="/mypage/" element={<MyPageProfile/>} />
-                            <Route path="/mypage/alarm" element={<MyPageAlarm/>} />
+                            <Route path="/mypage/"        element={<MyPageProfile/>} />
+                            <Route path="/mypage/alarm"   element={<MyPageAlarm/>} />
                             <Route path="/mypage/setting" element={<MyPageSetting/>} />
                             <Route path="/mypage/created" element={<MyPageCreated/>} />
-                            <Route path="/mypage/party" element={<MyPageParty/>} />
-                            <Route path="/mypage/heart" element={<MyPageHeart/>} />
+                            <Route path="/mypage/party"   element={<MyPageParty/>} />
+                            <Route path="/mypage/heart"   element={<MyPageHeart/>} />
                         </Route>
-                        <Route path="/seller" element={<SellerManage/>} />
+                        <Route path="/seller" element={<SellerManage/>}>
+                            <Route path="/seller/"       element={<SellerStockManage/>} />
+                            <Route path="/seller/stock"  element={<SellerStockManage/>} />
+                            <Route path="/seller/party"  element={<SellerPartyManage/>} />
+                            <Route path="/seller/notice" element={<SellerNoticeManage/>} />
+                            <Route path="/seller/edit"   element={<SellerEditManage/>} />
+                        </Route>
                     </Route>
                     <Route path="*" element={<Missing />} />
                 </Route>
