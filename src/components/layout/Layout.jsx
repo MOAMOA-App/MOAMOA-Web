@@ -10,7 +10,6 @@ function Layout() {
         margin:"0 auto",
         position: "relative",
         backgroundColor: "#fff"
-
       }}
     >
       <Outlet />

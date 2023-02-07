@@ -18,6 +18,7 @@ import { SellerStockManage } from "../components/sellerMain/SellerStockManage";
 import { SellerPartyManage } from "../components/sellerMain/SellerPartyManage";
 import { SellerNoticeManage } from "../components/sellerMain/SellerNoticeManage";
 import { SellerEditManage } from "../components/sellerMain/SellerEditManage";
+import Upload from "../pages/upload/Upload";
 
 export default function Router() {
     return (
@@ -43,6 +44,7 @@ export default function Router() {
                             <Route path="/seller/notice" element={<SellerNoticeManage/>} />
                             <Route path="/seller/edit"   element={<SellerEditManage/>} />
                         </Route>
+                        <Route path="/upload" element={<Upload />} />
                     </Route>
                     <Route path="*" element={<Missing />} />
                 </Route>
