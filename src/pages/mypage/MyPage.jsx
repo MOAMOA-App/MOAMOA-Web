@@ -1,17 +1,24 @@
 import React from 'react'
 import MyPageMenu from '../../components/myPageMenu/MyPageMenu'
 import MyPageProfileInfo from '../../components/myPageProfileInfo/MyPageProfileInfo'
-import MyPageProfileSettiong from '../../components/myPageProfileSettiong/MyPageProfileSettiong'
+import MyPageMain from '../../components/myPageMain/MyPageMain'
 import style from './myPage.module.css'
+import { Outlet } from 'react-router-dom'
 
 
 export default function Mypage() {
     return (
         <>
-            <MyPageMenu/>
             <MyPageProfileInfo/>
-            <MyPageProfileSettiong/>
-            <div className={style.cont}>sdfsf</div>
+            <div
+                style={{
+                    minHeight : "700px",
+                    display : "flex"
+                }}
+            >
+                <MyPageMenu/>
+                <MyPageMain/>
+            </div>
         </>
     )
 }
