@@ -1,0 +1,37 @@
+.InnerDiv{
+    flex : 1 1 auto;
+    padding : 15px;
+    border : 1px solid lightgray;
+    min-height: 600px;
+}
+.Subject{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+.properties{
+    border: 2px solid #F1A94E;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.properties p{
+    color: #274E13;
+    padding : 0;
+    margin  : 10px;
+}
+.formTable{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.formTable tbody tr{
+    border-bottom: 1px solid lightgray;
+}
+.formTable td{
+    text-align: center;
+    padding: 7px 11px 7px 10px;
+    text-overflow: ellipsis;
+    overflow : hidden;
+}

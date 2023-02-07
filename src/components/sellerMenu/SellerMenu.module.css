@@ -1,0 +1,21 @@
+.sellerMenuH{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #274E13;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: default;
+}
+.sellerMenuP{
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    cursor: default;
+}
+.navmenu{
+    color: black;
+    text-decoration: none;
+}
+.selected{
+    font-weight: bold;
+}
