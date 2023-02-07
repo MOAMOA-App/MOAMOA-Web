@@ -5,7 +5,14 @@ import Navbar from "../navbar/Navbar";
 
 export default function HeaderLayout() {
     return (
-        <div>
+        <div 
+            style={{
+                height: "100vh",
+                maxWidth: "1130px",
+                margin:"0 auto",
+                position: "relative",
+                backgroundColor: "#fff"
+            }}>
             <Header />
             <Navbar />
             <Outlet />
