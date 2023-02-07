@@ -1,0 +1,42 @@
+/* @font-face {
+    font-family: 'BMHannaAir';
+    font-weight: normal; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/woowahan/BMHannaPro.woff2) format('woff2');
+    font-display: swap;
+} */
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot);
+    src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+         url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff2) format('woff2'),
+         url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff) format('woff'),
+         url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.ttf) format('truetype');
+  }
+
+    
+body {font-family: 'Nanum Gothic', 'serif';}
+html{
+    font-family: 'Nanum Gothic', 'serif';
+    /* font-family:'BMHannaAir'; */
+
+}
+
+*{font-family: 'Nanum Gothic', 'serif';
+    /* font-family:'BMHannaAir'; */
+
+}
+
+p{
+    /* font-weight: 700; */
+}
+
+
+:root {
+    --font: 'Nanum Gothic';
+    --font-green: rgb(74, 130, 45);
+    --main-green:rgb(39, 78, 19);
+    --main-orange:#FFAE00;
+}

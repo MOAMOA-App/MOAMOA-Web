@@ -66,3 +66,7 @@ button {
 button:hover {
     cursor: pointer;
 }
+
+*{
+	/* font-family:'Hanna', sans-serif; */
+}
