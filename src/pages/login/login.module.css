@@ -1,0 +1,98 @@
+.login{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.loginCont1{
+    display: flex;
+    flex-grow: 1;
+    height: 60vh;
+    justify-content: center;
+}
+
+.loginCont2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.loginEmailCont{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginEmailCont input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.loginEmailBtn {
+    width: 240px;
+    height: 40px;
+    background: rgb(39, 78, 19);
+    color: white;
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
+
+.loginSnsCont{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loginSnsKakao{
+    width: 240px;
+    height: 40px;
+    border-radius: 30px;
+    border-color: yellow;
+}
+.loginSnsNaver{
+    width: 240px;
+    height: 40px;
+    border-radius: 30px;
+}
+.loginSnsGoogle{
+    width: 240px;
+    height: 40px;
+    border-radius: 10px;    
+}
+
+.loginImageCont{
+    display: flex;
+    flex-grow: 1;
+    height: 60vh;
+
+    justify-content: center; 
+    align-items: center;
+    align-content: center;
+}
+
+/* height
+vh: 부모의 높이 상관없이 나는 아이템을 보이는 viewport height의 백퍼를 다 쓰겠다(80vh면 80만큼)
+%: 부모 높이의 부피 백퍼센트로 채움 */
+
+/* flex-wrap
+nowrap(기본값): 윈도우 창 아무리 작아져도 해당 줄에 위치
+wrap: 아이템들이 한줄에 꽉 차면 다음줄로 넘어감 */
+
+/* justify-content 아이템 어떻게 배치할 건지 결정
+flex-start(기본값): 왼->오. 수직축 중심축이라면 위->아래
+flex-end: 오른쪽 축으로 배치. 수직축 중심이면 아래->위. 순서 변경X 12345678910 이런식으로 나옴
+center: 중간으로
+space-around: 박스를 둘러싸는 space 넣어줌
+space-even: 똑같은 간격 넣어줌
+space-between: 왼쪽과 오른쪽에 item 배치하고 중간에 간격 맞춰서 item 넣어줌 */
+
+/* align-items 반대축에서 아이템을 배치하는 속성값
+baseline: text가 균등하게 보여지도록 함 */
+
+/* align-content 반대축에서 아이템 배치 (justify-content의 반대 축) */
