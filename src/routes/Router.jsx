@@ -26,7 +26,6 @@ export default function Router() {
             <Routes>
                 <Route element={<Layout />}>
                     <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
                 </Route>
 
                     <Route element={<HeaderLayout />}>
@@ -48,6 +47,7 @@ export default function Router() {
                         </Route>
                         <Route path="/mypage" element={<Mypage />} />
                         <Route path="/upload" element={<Upload />} />
+                        <Route path="/signup" element={<SignUp />} />
                     </Route>
                     <Route path="*" element={<Missing />} />
             </Routes>

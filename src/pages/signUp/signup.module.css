@@ -1,0 +1,32 @@
+.signUpCont{
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 390px;
+    padding-top: 20px;
+
+    align-items: center;
+    align-content: center;
+}
+
+.signUpInput{
+    display:flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+}
+
+.signUpInput input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.signUpBtn{
+    width: 240px;
+    height: 40px;
+    background: rgb(39, 78, 19);
+    color: white;
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
