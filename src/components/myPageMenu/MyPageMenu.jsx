@@ -5,8 +5,8 @@ export default function MyPageMenu() {
   return (
     <div 
       style={{
-        minWidth : "150px",
-        width : "150px",
+        minWidth : "170px",
+        width : "170px",
         paddingLeft  : "20px",
         paddingRight : "20px"
       }}

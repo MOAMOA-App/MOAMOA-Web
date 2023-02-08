@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './MyPageMain.module.css'
+import style from './myPageMain.module.css'
 export const MyPageCreated = (props) => {
   return (
     <div className={style.InnerDiv}>

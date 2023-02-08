@@ -24,13 +24,13 @@ export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route path="login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
+                <Route element={<Layout />}>
+                    <Route path="/login" element={<Login />} />
+                </Route>
                     <Route element={<HeaderLayout />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mypage" element={<Mypage />} >
-                            <Route path="/mypage/"        element={<MyPageProfile/>} />
+                            <Route path="/mypage"         element={<MyPageProfile/>} />
                             <Route path="/mypage/alarm"   element={<MyPageAlarm/>} />
                             <Route path="/mypage/setting" element={<MyPageSetting/>} />
                             <Route path="/mypage/created" element={<MyPageCreated/>} />
@@ -38,16 +38,16 @@ export default function Router() {
                             <Route path="/mypage/heart"   element={<MyPageHeart/>} />
                         </Route>
                         <Route path="/seller" element={<SellerManage/>}>
-                            <Route path="/seller/"       element={<SellerStockManage/>} />
+                            <Route path="/seller"       element={<SellerStockManage/>} />
                             <Route path="/seller/stock"  element={<SellerStockManage/>} />
                             <Route path="/seller/party"  element={<SellerPartyManage/>} />
                             <Route path="/seller/notice" element={<SellerNoticeManage/>} />
                             <Route path="/seller/edit"   element={<SellerEditManage/>} />
                         </Route>
                         <Route path="/upload" element={<Upload />} />
+                        <Route path="/signup" element={<SignUp />} />
                     </Route>
                     <Route path="*" element={<Missing />} />
-                </Route>
             </Routes>
         </BrowserRouter>
     );

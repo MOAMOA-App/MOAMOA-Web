@@ -1,4 +1,52 @@
 .wrap{
     display:flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: 390px;
+    padding-top: 20px;
+}
+
+.btn_upload{
+    width: 110px;
+    height: 40px;
+    margin-left: auto;
+    /* border: 2px solid rgb(39, 78, 19);; */
+    background: rgb(39, 78, 19);
+    color: white;
+    border-radius: 40px;
+}
+.btn_search{
+    width: 70px;
+    height: 30px;
+    margin-left: 20px;
+    /* border: 2px solid rgb(39, 78, 19);; */
+    background: rgb(39, 78, 19);
+    color: white;
+    border-radius: 40px;
+}
+.span_upload{
+    font-size: 18px;
+
+    display: block;
+    margin :10px 0;
+}
+
+input, textarea{
+    border: 1px solid ;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 18px;}
+
+.address{
+    margin-bottom: 10px;
+}
+.inp_people{
+    width: 30px;
+}
+.inp_people:after{
+    content: "명dfdf";
+    border: 100px solid;
+    color: black;
+    float: right;
+    margin-right: 10px;
 }
