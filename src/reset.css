@@ -47,6 +47,10 @@ table {
 	border-spacing: 0;
 }
 
+a{
+	text-decoration: none;
+	color: rgb(39, 78, 19);
+}
 html {
     box-sizing: border-box;
   }
@@ -54,19 +58,35 @@ html {
     box-sizing: inherit;
 }
 
+input,textarea,select{
+	border-radius: 0;
+	border: 1px solid lightgray;
+	outline: none;
+	font-size: 14px;
+	padding-top: 5px;
+}
 button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-color: transparent;
 	
-	border: 0;
 	outline: 0;
+	
+	color: rgb(39, 78, 19);
+	font-weight: bold;
+	border: 2px solid rgb(39, 78, 19);
+	border-radius: 10px;
+	padding : 3px 10px;
+
+
 }
 button:hover {
     cursor: pointer;
+	background-color: #FFAE00;
 }
 
 *{
+	font-size: 14px;
 	/* font-family:'Hanna', sans-serif; */
 }

@@ -4,7 +4,7 @@ import { SellerFormProfile } from '../sellerFormProfile/SellerFormProfile'
 export const SellerNoticeManage = (props) => {
     return (
         <div className={style.InnerDiv}>
-            <p className={style.Subject}>공지사항 관리</p>
+            <h2 className={style.Subject}>공지사항 관리</h2>
             <div className={style.InnerDiv}>
                 <SellerFormProfile/>
                 <div>

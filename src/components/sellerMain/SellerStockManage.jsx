@@ -4,7 +4,7 @@ import style from './sellerMain.module.css'
 export const SellerStockManage = (props) => {
     return (
         <div className={style.InnerDiv}>
-            <p className={style.Subject}>판매 재고 현황</p>
+            <h2 className={style.Subject}>판매 재고 현황</h2>
             <div className={style.InnerDiv}>
                 <SellerFormProfile/>
                 <div>

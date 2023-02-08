@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 export const SellerMain = (props) => {
     return (
-        <div
+        <main
             style={{
                 flex : "auto",
                 marginBottom : "15px",
@@ -12,6 +12,6 @@ export const SellerMain = (props) => {
             }}
         >
             <Outlet/>
-        </div>
+        </main>
     )   
 }

@@ -25,7 +25,7 @@ export const MyPageProfile = (props) => {
         </table>
       </div>
       <div>
-        <p className={style.mySubject}>계정 정보</p>
+        <p className={style.Subject}>계정 정보</p>
       </div>
       <table  className={style.profileTable}>
         <tbody>

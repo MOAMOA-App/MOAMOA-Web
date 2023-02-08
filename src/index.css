@@ -5,6 +5,8 @@
     src: url(https://cdn.jsdelivr.net/gh/webfontworld/woowahan/BMHannaPro.woff2) format('woff2');
     font-display: swap;
 } */
+
+
 @font-face {
     font-family: 'Nanum Gothic';
     font-style: normal;
@@ -24,7 +26,8 @@ html{
 
 }
 
-*{font-family: 'Nanum Gothic', 'serif';
+*{
+    font-family: 'Nanum Gothic', 'serif';
     /* font-family:'BMHannaAir'; */
 
 }
