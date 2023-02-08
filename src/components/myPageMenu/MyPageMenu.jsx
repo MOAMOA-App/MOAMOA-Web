@@ -11,30 +11,30 @@ export default function MyPageMenu() {
         paddingRight : "20px"
       }}
     >
-      <div>
-        <p className={style.myMenuH}>내 활동</p>
+      <nav>
+        <h2 className={style.myMenuH}>내 활동</h2>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/created">
-          <p className={style.myMenuP}>생성한 공동구매</p>
+          <li className={style.myMenuP}>생성한 공동구매</li>
         </NavLink>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/party">
-          <p className={style.myMenuP}>참여한 공동구매</p>
+          <li className={style.myMenuP}>참여한 공동구매</li>
         </NavLink>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/heart">
-          <p className={style.myMenuP}>관심 공동구매</p>
+          <li className={style.myMenuP}>관심 공동구매</li>
         </NavLink>
-      </div>
-      <div>
-        <p className={style.myMenuH}>내 정보</p>
+      </nav>
+      <nav>
+        <h2 className={style.myMenuH}>내 정보</h2>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/">
-          <p className={style.myMenuP}>내 프로필</p>
+          <li className={style.myMenuP}>내 프로필</li>
         </NavLink>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/alarm">
-          <p className={style.myMenuP}>알림 설정</p>
+          <li className={style.myMenuP}>알림 설정</li>
         </NavLink>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/setting">
-          <p className={style.myMenuP}>환경 설정</p>
+          <li className={style.myMenuP}>환경 설정</li>
         </NavLink>
-      </div>
+      </nav>
     </div>
   )
 }

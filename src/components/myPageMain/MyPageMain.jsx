@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 export default function MyPageMain() {
   return (
-      <div
+      <main
         style={{
           display : "flex",
           flex : "auto",
@@ -13,6 +13,6 @@ export default function MyPageMain() {
         }}
       >
         <Outlet/>
-      </div>
+      </main>
   )
 }

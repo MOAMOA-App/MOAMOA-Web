@@ -11,21 +11,21 @@ export const SellerMenu = (props) => {
             paddingRight : "20px"
             }}
         >
-            <div>
-                <p className={style.sellerMenuH}>공동구매 관리</p>
+            <nav>
+                <h1 className={style.sellerMenuH}>공동구매 관리</h1>
                 <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/seller/">
-                    <p className={style.sellerMenuP}>판매 재고 현황</p>
+                    <li className={style.sellerMenuP}>판매 재고 현황</li>
                 </NavLink>
                 <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/seller/party">
-                    <p className={style.sellerMenuP}>참여자 관리</p>
+                    <li className={style.sellerMenuP}>참여자 관리</li>
                 </NavLink>
                 <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/seller/notice">
-                    <p className={style.sellerMenuP}>공지사항 관리</p>
+                    <li className={style.sellerMenuP}>공지사항 관리</li>
                 </NavLink>
                 <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/seller/edit">
-                    <p className={style.sellerMenuP}>게시글 수정</p>
+                    <li className={style.sellerMenuP}>게시글 수정</li>
                 </NavLink>
-            </div>
+            </nav>
             
         </div>
     )
