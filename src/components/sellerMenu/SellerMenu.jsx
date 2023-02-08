@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom';
-import style from './SellerMenu.module.css'
+import style from './sellerMenu.module.css'
 export const SellerMenu = (props) => {
     return(
         <div 

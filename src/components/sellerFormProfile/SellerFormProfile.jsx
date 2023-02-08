@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './SellerFormProfile.module.css'
+import style from './sellerFormProfile.module.css'
 export const SellerFormProfile = (props) => {
     return (
         <div 

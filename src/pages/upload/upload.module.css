@@ -20,7 +20,7 @@
     height: 30px;
     margin-left: 20px;
     /* border: 2px solid rgb(39, 78, 19);; */
-    background: rgb(39, 78, 19);
+    background: var(--main-green);
     color: white;
     border-radius: 40px;
 }

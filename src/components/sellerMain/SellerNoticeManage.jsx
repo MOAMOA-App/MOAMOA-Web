@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './SellerMain.module.css'
+import style from './sellerMain.module.css'
 import { SellerFormProfile } from '../sellerFormProfile/SellerFormProfile'
 export const SellerNoticeManage = (props) => {
     return (

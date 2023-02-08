@@ -1,5 +1,5 @@
 import React from 'react'
-import style from "./HomeCategory.module.css";
+import style from "./homeCategory.module.css";
 
 export default function homeCategory() {
     return (
