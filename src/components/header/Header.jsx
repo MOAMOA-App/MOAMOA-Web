@@ -13,10 +13,10 @@ export default function Header() {
         </div>
         <div className={style.headerRight}>
           <a className={style.headerToWebChat} href="">
-            <span>채팅</span>
+            <img className={style.headerToWebFuncImg} src="./headericon/chatbubble.png" alt="채팅" />
           </a>
           <a className={style.headerToWebAlarm} href="">
-            <span>알림</span>
+            <img className={style.headerToWebFuncImg} src="./headericon/notification.png" alt="알림" />
           </a>
           
           <a className={style.headerToWebMyPage} href="/mypage">
@@ -25,6 +25,7 @@ export default function Header() {
           
           <button className={style.headerUploadBtn}>
             <a className={style.headerToWebUpload} href="/upload">
+              <img className={style.headerToWebUploadImg} src="./headericon/writing.png" alt="" />
               <span>공동구매 모집</span>
             </a>
           </button>
@@ -49,8 +50,9 @@ export default function Header() {
         </div>
         
         <div className={style.headerNavRight}>
-          <input id="headerSearchKeyword" type="text"></input>
+          <input id={style.headerSearchKeyword} type="text"></input>
         </div>
+        
       </nav>
       <hr></hr>
     </>

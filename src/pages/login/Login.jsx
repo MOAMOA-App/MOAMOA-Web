@@ -11,15 +11,24 @@ export default function Login() {
             <input id="loginInputEmail" type="text"></input>
 
             <label for="loginInputPw">비밀번호</label>
-            <input id="loginInputPw" type="text"></input>
+            <input id="loginInputPw" type="password"></input>
 
             <button className={style.loginEmailBtn}>로그인</button>
           </div>
 
           <div className={style.loginSnsCont}>
-            <button className={style.loginSnsKakao}>카카오톡 계정으로 로그인</button>
-            <button className={style.loginSnsNaver}>네이버 계정으로 로그인</button>
-            <button className={style.loginSnsGoogle}>구글 계정으로 로그인</button>
+            <button className={style.loginSnsKakao}>
+              <img className={style.loginSnsKakaoImg} src="../loginsnsimage/kakaoIcon.png" alt="" />
+              카카오톡 계정으로 로그인
+              </button>
+            <button className={style.loginSnsGoogle}>
+              <img className={style.loginSnsGoogleImg} src="../loginsnsimage/googleIcon.png" alt="" />
+              구글 계정으로 로그인
+              </button>
+            <button className={style.loginSnsNaver}>
+              <img className={style.loginSnsNaverImg} src="../loginsnsimage/NaverIcon.png" alt="" />
+              네이버 계정으로 로그인
+              </button>
           </div>
           
           <div className={style.loginEtc}>
@@ -37,8 +46,9 @@ export default function Login() {
         </div>
       </div>
 
+      
       <div className={style.loginImageCont}>
-        <img class="loginImage" src="./icon.png" alt="머리 위에 귤이 있는 고양이"></img>
+        <img className={style.loginImage} src="./icon.png" alt="머리 위에 귤이 있는 고양이"></img>
       </div>
     </div>
   )

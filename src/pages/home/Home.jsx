@@ -3,9 +3,9 @@ import Header from "../../components/header/Header";
 import style from "./home.module.css";
 
 import HomeCategory from "../../components/homeCategory/HomeCategory"
-import HomeListPopular from "../../components/homeListPopular/HomeListPopular"
-import HomeListDeadLine from "../../components/homeListDeadline/HomeListDeadline";
-import HomeListLatest from "../../components/homeListLatest/HomeListLatest";
+import HomeListPopular from "../../components/homeList/HomeListPopular"
+import HomeListDeadLine from "../../components/homeList/HomeListDeadline";
+import HomeListLatest from "../../components/homeList/HomeListLatest";
 
 export default function Home() {
     return (
