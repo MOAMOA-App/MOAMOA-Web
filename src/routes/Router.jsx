@@ -7,7 +7,7 @@ import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
 import Missing from "../pages/missing/Missing";
 import Mypage from "../pages/mypage/MyPage";
-import SellerManage from "../pages/sellermanage/SellerManage";
+import SellerManage from "../pages/sellermanage/Sellermanage";
 import { MyPageProfile } from "../components/myPageMain/MyPageProfile";
 import { MyPageAlarm } from "../components/myPageMain/MyPageAlarm";
 import { MyPageSetting } from "../components/myPageMain/MyPageSetting";

@@ -1,4 +1,4 @@
-.homeWebLatestCont{
+.homeWebListCont{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -6,9 +6,11 @@
     margin-right: 50px;
 }
 
-.homeWebLatestInfo{
+.homeWebInfo{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
+    align-items: center;
 }

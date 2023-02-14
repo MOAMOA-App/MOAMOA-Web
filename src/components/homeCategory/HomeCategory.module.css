@@ -3,6 +3,7 @@
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
+    margin-top: 30px
 }
 
 .homeWebCatInfo{
@@ -10,6 +11,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
+    align-items: center;
 }
 
 .homeWebCatCont1{
@@ -17,6 +20,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .homeWebCatCont1 button{
@@ -29,5 +33,7 @@
 }
 .homeWebCatCont1 button img {
     height: 50px;
+
+    margin-bottom: 10px;
     
 }
