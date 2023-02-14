@@ -50,7 +50,10 @@ export default function Header() {
         </div>
         
         <div className={style.headerNavRight}>
-          <input id={style.headerSearchKeyword} type="text"></input>
+          <input id={style.headerSearchKeyword} type="text" placeholder="검색어를 입력해주세요."></input>
+          <button>
+            <img src="./headericon/search.png" alt="" />
+          </button>
         </div>
         
       </nav>

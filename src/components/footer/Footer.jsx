@@ -41,13 +41,13 @@ export default function Footer() {
         </div>
 
         <div className={style.footerBottomIcons}>
-          <a className='toMOAGithub' href="/">
+          <a className='toMOAGithub' href="https://github.com/MOAMOA-App/MOAMOA-Web">
             <img className={style.headerLogo} src="./footericon/githubIcon.png" alt="깃허브" />
           </a>
-          <a className='toMOAGithub' href="/">
+          <a className='toMOANotion' href="https://well-starflower-587.notion.site/164074c152f84edbb38267928e3b5060">
             <img className={style.headerLogo} src="./footericon/notionIcon.png" alt="노션" />
           </a>
-          <a className='toMOAGithub' href="/">
+          <a className='toMOAEmail' href="">
             <img className={style.headerLogo} src="./footericon/emailIcon.png" alt="이메일" />
           </a>
           
