@@ -5,7 +5,6 @@
     justify-content: space-between;
 
     margin-top: 25px;
-    margin-bottom: 10px;
 
     margin-left: 10px;
 }
@@ -75,15 +74,37 @@
     margin-right: 20px;
 }
 
-#headerSearchKeyword{
-    border: solid 2px #D2691E;
-    border-radius: 8px;
-    background: black;
+.headerNav span{
+    font-weight: 800;
+}
 
-    width: 30vh;
+.headerNavRight{
+    border: 0px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+
+    width: 35vh;
     height: 6vh;
-    background: black;
-    border-color: rgb(242, 201, 76);
+    background: rgb(238, 238, 238);
     border-radius: 30px;
     padding: 0px 18px;
+}
+#headerSearchKeyword{
+    background-color:transparent;
+    border: 0px;
+}
+
+.headerNavRight button{
+    border: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+.headerNavRight img{
+    height: 20px;
+
 }
