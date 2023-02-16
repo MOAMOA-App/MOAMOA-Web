@@ -14,3 +14,39 @@
     align-items: center;
     align-items: center;
 }
+
+.homeWebInfoTitleCont span{
+    font-size: 14px;
+}
+
+.homeWebInfoTitleCont h2{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(39, 78, 19);
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.homeWebInfo button{
+    width: fit-content;
+    height: 5vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+
+    padding-left: 15px;
+
+    color: rgb(250, 143, 57);
+    border-color: rgb(250, 143, 57);
+    border-radius: 40px;
+}
+
+.homeWebInfo img{
+    height: 10px;
+    margin-left: 5px;
+    filter: invert(74%) sepia(24%) saturate(4173%) hue-rotate(331deg) brightness(97%) contrast(101%);
+}
