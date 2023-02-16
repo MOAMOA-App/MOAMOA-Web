@@ -6,8 +6,14 @@ export default function homeListDeadLine() {
         <>
         <div className={style.homeWebListCont}>
             <div className={style.homeWebInfo}>
-                <h2>마감임박</h2>
-                <button>전체보기</button>
+                <div className={style.homeWebInfoTitleCont}>
+                    <span>마감이 가까워요</span>
+                    <h2>마감임박</h2>
+                </div>
+                <button>
+                    전체보기
+                    <img src="./homeicon/next.png" alt="더보기" />
+                </button>
             </div>
             <div className={style.homeWebDLCont}>
                     
