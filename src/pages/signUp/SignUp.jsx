@@ -19,7 +19,7 @@ export default function SignUp() {
           <label for="signUpInputPwCheck">비밀번호 확인</label>
           <input id="signUpInputPwCheck" type="text"></input>
 
-          <div className={style.signUp}>
+          <div className={style.signUpAgreeCont}>
             <input id="signUpInputCB" type="checkbox"></input>
             <span>개인정보 수집 동의</span>
           </div>

@@ -1,32 +1,56 @@
 .signUpCont{
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 390px;
+    width: 358px;
     padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
 
     align-items: center;
     align-content: center;
 }
 
 .signUpInput{
+    width: 100%;
+
     display:flex;
     flex-direction: column;
 
     margin-top: 20px;
 }
 
+.signUpCont h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .signUpInput input{
+    height: 35px;
+
+    border-radius: 4px;
+
     margin-top: 10px;
     margin-bottom: 10px;
+
+    border-color: rgb(255, 174, 0);
+}
+
+.signUpAgreeCont{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    align-content: center;
 }
 
 .signUpBtn{
-    width: 240px;
+    width: 100%;
     height: 40px;
-    background: rgb(39, 78, 19);
-    color: white;
+    color: rgb(39, 78, 19);
     border-radius: 10px;
 
     margin-top: 10px;
+
+    border-color: rgb(39, 78, 19);
 }
