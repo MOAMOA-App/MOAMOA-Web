@@ -10,7 +10,8 @@
 }
 
 .headerLogo{
-    width: 23%;
+    width: 150px;
+    object-fit: cover;
 }
 
 .headerRight {
@@ -44,6 +45,8 @@
     flex-wrap: nowrap;
     align-items: center;
     align-content: center;
+
+    white-space : nowrap;
 }
 
 .headerToWebUploadImg{
@@ -66,6 +69,7 @@
     align-content: center;
 
     margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 15px;
 }
 
@@ -80,15 +84,15 @@
 
 .headerNavRight{
     border: 0px;
-    border-radius: 8px;
     display: flex;
     flex-direction: row;
+    align-items : center;
 
     width: 35vh;
     height: 6vh;
     background: rgb(238, 238, 238);
     border-radius: 30px;
-    padding: 0px 18px;
+    padding: 0px 10px;
 }
 #headerSearchKeyword{
     background-color:transparent;
