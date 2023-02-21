@@ -1,0 +1,114 @@
+.headerWhole {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    margin-left: 10px;
+}
+
+.headerLogo{
+    width: 150px;
+    object-fit: cover;
+}
+
+.headerRight {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+
+.headerRight a{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.headerToWebFuncImg{
+    height: 30px;
+    margin: 15px 15px;
+}
+
+.headerUploadBtn{
+    width: fit-content;
+    height: fit-content;
+    margin: 15px;
+}
+
+.headerToWebUpload{
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+
+    white-space : nowrap;
+}
+
+.headerToWebUploadImg{
+    height: 30px;
+    margin: 0px 5px;
+}
+
+.headerToWebMyPageImg {
+    height: 35px;
+    border-radius: 70%;
+    margin: 15px 15px;
+}
+
+.headerNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.headerNav a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.headerNav span{
+    font-weight: 800;
+}
+
+.headerNavRight{
+    border: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+
+    width: 35vh;
+    height: 6vh;
+    background: rgb(238, 238, 238);
+    border-radius: 30px;
+    padding: 0px 10px;
+}
+#headerSearchKeyword{
+    background-color:transparent;
+    border: 0px;
+}
+
+.headerNavRight button{
+    border: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+.headerNavRight img{
+    height: 20px;
+
+}

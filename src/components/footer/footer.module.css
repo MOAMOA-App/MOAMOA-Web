@@ -1,0 +1,101 @@
+*{
+    white-space : nowrap;
+}
+
+.footerWhole {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.footerNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: end;
+
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+
+    font-size: 14px;
+
+}
+
+.footerWhole hr{
+    border: 0.1 solid#A0A0A0;
+    display: block !important;
+    width: 100% !important;
+}
+
+.footerBottom{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    margin-top: 15px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.footerBotGuideCont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.footerBottomGuide{
+    margin-right: 20px;
+}
+
+.footerNav a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footerBottomTitle {
+    margin-bottom: 15px;
+    
+    font-size: 18px;
+    font-weight: 800;
+    color: rgb(102, 116, 121);
+}
+
+.footerBottom li{
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgb(102, 116, 121);
+}
+.footerBottomIconCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    align-content: end;
+}
+.footerBottomIconCont img{
+    height: 25px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.footerLogoCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.footerLogoCont img{
+    height: 40px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
