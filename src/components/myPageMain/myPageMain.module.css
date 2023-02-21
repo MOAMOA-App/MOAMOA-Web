@@ -60,3 +60,23 @@
 .profileTable td{
     padding: 7px 11px 7px 10px;
 }
+
+.alarmSubject{
+    font-weight: bold;
+}
+.alarmText{
+    height : 25px;
+    border : none;
+    padding: 0;
+}
+.alarmDate{
+    font-size: 12px;
+    font-weight: bold;
+}
+.alarmButton{
+    border: none;
+    text-decoration-line:underline;
+}
+.alarmButton:hover{
+    background: none;
+}

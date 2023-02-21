@@ -29,7 +29,7 @@ export default function MyPageMenu() {
           <li className={style.myMenuP}>내 프로필</li>
         </NavLink>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/alarm">
-          <li className={style.myMenuP}>알림 설정</li>
+          <li className={style.myMenuP}>알림</li>
         </NavLink>
         <NavLink className={({isActive}) => (isActive? style.selected : "")+` ${style.navmenu}`} to="/mypage/setting">
           <li className={style.myMenuP}>환경 설정</li>
