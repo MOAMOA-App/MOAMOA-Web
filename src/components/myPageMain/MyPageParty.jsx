@@ -7,7 +7,7 @@ export const MyPageParty = (props) => {
       <div style={{ display : "flex", margin : "20px 0 15px 0"}}>
         <div className={style.searchDiv}>
           조회&nbsp;
-          <input className={style.input} type="text"/>
+          <input type="text"/>
         </div>
       </div>
       <div>
