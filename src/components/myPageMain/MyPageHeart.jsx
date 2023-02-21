@@ -7,7 +7,7 @@ export const MyPageHeart = (props) => {
       <div style={{ display : "flex", margin : "20px 0 15px 0"}}>
         <div className={style.searchDiv}>
           조회&nbsp;
-          <input className={style.input} type="text"/>
+          <input type="text"/>
         </div>
       </div>
       <div>
@@ -21,11 +21,11 @@ export const MyPageHeart = (props) => {
         <table className={style.formTable}>
           <thead>
             <tr>
-              <td style={{width:"60px" }}></td>
+              <td style={{width:"84px" }}></td>
               <td ></td>
-              <td style={{width:"170px"}}></td>
-              <td style={{width:"100px"}}></td>
-              <td style={{width:"60px" }}></td>
+              <td style={{width:"198px"}}></td>
+              <td style={{width:"110px"}}></td>
+              <td style={{width:"84px" }}></td>
             </tr>
           </thead>
           <tbody>
