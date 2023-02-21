@@ -1,3 +1,7 @@
+*{
+    white-space : nowrap;
+}
+
 .footerWhole {
     display: flex;
     flex-direction: column;
@@ -32,10 +36,22 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: space-between;
 
     margin-top: 15px;
     margin-left: 35px;
     margin-right: 35px;
+}
+
+.footerBotGuideCont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.footerBottomGuide{
+    margin-right: 20px;
 }
 
 .footerNav a{
@@ -51,29 +67,19 @@
     color: rgb(102, 116, 121);
 }
 
-.footerBottomNotice{
-    flex-grow: 1;
-}
-.footerBottomGuide{
-    flex-grow: 1;
-}
-.footerBottomPolicy{
-    flex-grow: 1;
-}
 .footerBottom li{
     margin-bottom: 10px;
     font-size: 14px;
     color: rgb(102, 116, 121);
 }
-.footerBottomIcons{
+.footerBottomIconCont{
     display: flex;
     flex-direction: row;
     justify-content: end;
     align-items: end;
     align-content: end;
-    flex-grow: 7;
 }
-.footerBottomIcons img{
+.footerBottomIconCont img{
     height: 25px;
     margin-left: 18px;
     margin-right: 18px;
