@@ -24,11 +24,11 @@ export const MyPageCreated = (props) => {
         <table className={style.formTable}>
           <thead>
             <tr>
-              <td style={{width:"60px" }}></td>
+              <td style={{width:"84px" }}></td>
               <td ></td>
-              <td style={{width:"170px"}}></td>
-              <td style={{width:"100px"}}></td>
-              <td style={{width:"60px" }}></td>
+              <td style={{width:"198px"}}></td>
+              <td style={{width:"110px"}}></td>
+              <td style={{width:"84px" }}></td>
             </tr>
           </thead>
           <tbody>

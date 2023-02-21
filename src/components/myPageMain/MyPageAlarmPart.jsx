@@ -5,24 +5,26 @@ export const MyPageAlarmPart = (props) => {
         <div
             style={{
                 display : "flex",
-                height  : "74px",
+                height  : "84px",
                 borderBottom : "1px solid lightgray",
-                padding : "10px 0 "
+                padding : "10px 0 ",
             }}
         >
             <img 
                 style={{
-                width : "72px",
-                height : "54px",
-                marginRight : "15px",
-                background : "lightgray",
-                border : "1px solid lightgray",
-                borderRadius : "15px"
+                    width : "72px",
+                    height : "54px",
+                    background : "lightgray",
+                    border : "1px solid lightgray",
+                    borderRadius : "15px",
+                    margin :"auto"
                 }}
             />
             <div
                 style={{
-                    flex : "1 0 auto"
+                    flex : "1 0 auto",
+                    marginLeft : "10px",
+                    padding : "5px 0"
                 }}
             >
                 <h3 className={style.alarmSubject}>사과 공동구매 합니다</h3>
