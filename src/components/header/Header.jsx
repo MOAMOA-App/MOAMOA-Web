@@ -12,10 +12,10 @@ export default function Header() {
           </a>
         </div>
         <div className={style.headerRight}>
-          <a className={style.headerToWebChat} href="">
+          <a className={style.headerToWebChat} href="/">
             <img className={style.headerToWebFuncImg} src="./headericon/chatbubble.png" alt="채팅" />
           </a>
-          <a className={style.headerToWebAlarm} href="">
+          <a className={style.headerToWebAlarm} href="/">
             <img className={style.headerToWebFuncImg} src="./headericon/notification.png" alt="알림" />
           </a>
           

@@ -3,7 +3,7 @@
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 30px
+    margin-top: 25px
 }
 
 .homeWebCatInfo{
@@ -42,7 +42,12 @@
     filter: invert(74%) sepia(24%) saturate(4173%) hue-rotate(331deg) brightness(97%) contrast(101%);
 }
 
-.homeWebCatCont1{
+.homeWebCatContWL{
+    display: flex;
+    flex-direction: column;
+}
+
+.homeWebCatContC{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -50,7 +55,7 @@
     margin-top: 10px;
 }
 
-.homeWebCatCont1 button{
+.homeWebCatContC button{
     border: 0;
     background-color: white;
     margin-top: 10px;
@@ -58,7 +63,7 @@
     margin-left: 25px;
     margin-right: 25px;
 }
-.homeWebCatCont1 button img {
+.homeWebCatContC button img {
     height: 50px;
 
     margin-bottom: 10px;

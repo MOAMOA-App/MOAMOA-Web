@@ -1,62 +1,28 @@
 import React from 'react'
 import style from './footer.module.css'
 
+import FooterGuideWeb from './FooterGuideWeb'
+import FooterGuideMob from './FooterGuideMob'
+
 export default function Footer() {
   return (
     <div className={style.footerWhole}>
-      <nav className={style.footerNav}>
-        <a className='toMOAWebHome' href="/">
-          <span>홈</span>
-        </a>
-        <a className='toMOAWebListPopular' href="/">
-          <span>인기순</span>
-        </a>
-        <a className='toMOAWebHomeListDeadLine' href="/">
-          <span>마감순</span>
-        </a>
-        <a className='toMOAWebHomeListLatest' href="/">
-          <span>최신순</span>
-        </a>
-        
-      </nav>
-
+      
       <hr/>
 
-      <div className={style.footerBottom}>
-        <div className={style.footerBotGuideCont}>
-          
-          <div className={style.footerBottomGuide}>
-            <div className={style.footerBottomTitle}>공지사항</div>
-          </div>
-          
-          <div className={style.footerBottomGuide}>
-            <div className={style.footerBottomTitle}>이용안내</div>
-            <ul>
-              <li>창작자 가이드</li>
-            </ul>
-          </div>
-          
-          <div className={style.footerBottomGuide}>
-            <div className={style.footerBottomTitle}>정책</div>
-              <ul>
-                <li>이용약관</li>
-                <li>개인정보 처리방침</li>
-              </ul>
-            </div>
-        </div>
+        <div className={style.footerChild}>
 
-        <div className={style.footerBottomIconCont}>
-          <a className='toMOAGithub' href="https://github.com/MOAMOA-App/MOAMOA-Web">
-            <img className={style.headerLogo} src="./footericon/githubIcon.png" alt="깃허브" />
-          </a>
-          <a className='toMOANotion' href="https://well-starflower-587.notion.site/164074c152f84edbb38267928e3b5060">
-            <img className={style.headerLogo} src="./footericon/notionIcon.png" alt="노션" />
-          </a>
-          <a className='toMOAEmail' href="">
-            <img className={style.headerLogo} src="./footericon/emailIcon.png" alt="이메일" />
-          </a>
+          <FooterGuideWeb />
+
+          <div className={style.footerMOAGuide}>
+            <span>
+              모아모아는 플랫폼 제공자로서 공동구매의 당사자가 아니며, 공동구매를 직접 진행하지 않습니다. 
+              각 공동구매의 완수 및 상품 전달의 책임은 해당 공동구매 진행자에게 있으며,
+              공동구매와 관련하여 참여자와 발생하는 법적 분쟁에 대한 책임은 진행자가 부담합니다.
+            </span>
+          </div>
+
         </div>
-      </div>
 
       <div className={style.footerLogoCont}>
         <img src="./iconLogo.png" alt="로고" />
