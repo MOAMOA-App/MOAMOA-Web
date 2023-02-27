@@ -1,7 +1,16 @@
 import React from 'react'
 import style from './header.module.css'
+import { useState } from 'react';
+import Search from '../search/Search.jsx';
 
 export default function Header() {
+  // 모달창 노출 여부 state
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // 모달창 노출
+  const showModal = () => {
+    setModalOpen(true);
+  };
 
   return (
     <>
@@ -53,9 +62,10 @@ export default function Header() {
         
         <div className={style.headerNavRight}>
           <input id={style.headerSearchKeyword} type="text" placeholder="검색어를 입력해주세요."></input>
-          <button>
+          <button onClick={showModal}>
             <img src="./headericon/search.png" alt="" />
           </button>
+          {modalOpen && <Search setModalOpen={setModalOpen} />}
         </div>
         
       </nav>
