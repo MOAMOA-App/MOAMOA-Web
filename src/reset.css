@@ -75,17 +75,10 @@ button {
 	
 	color: rgb(39, 78, 19);
 	font-weight: bold;
-	border: 2px solid rgb(39, 78, 19);
-	border-radius: 10px;
+	border: 0;
 	padding : 3px 10px;
 
-
 }
-button:hover {
-    cursor: pointer;
-	background-color: #FFAE00;
-}
-
 *{
 	font-size: 14px;
 	/* font-family:'Hanna', sans-serif; */
