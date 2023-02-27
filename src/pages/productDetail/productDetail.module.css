@@ -1,0 +1,767 @@
+.main{
+    /* 메인 */
+    /* position: static; */
+    width: 1130px;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 50px 0px;
+}
+
+.productDetail{
+    /* 메인화면 */
+    /* position: static; */
+    width: 945.5px;
+    /* height: 707px; */
+    box-sizing: border-box;
+
+
+    /* Neutral Color/00 */
+    background: rgb(253, 253, 253);
+    /* Neutral Color/10 */
+    border: 1px solid rgb(235, 238, 239);
+    /* border: 1px solid rgb(49, 196, 44); */
+    border-radius: 20px;
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 20px 22px 20px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
+
+.name{
+    /* 제목 */
+    /* position: static; */
+    width: 900px;
+    /* height: 60px; */
+
+    /* border: 1px solid rgb(49, 196, 44); */
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px 0px 0px;
+}
+
+.nameText{
+    /* 개구리인형 같이 사실 분 */
+    /* position: static; */
+    width: 900px;
+    /* height: 36px; */
+
+    /* border: 1px solid rgb(49, 196, 44); */
+
+    color: rgb(0, 23, 31);
+    font-family: NanumGothic;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* overflow: hidden;                영역 감추기 */
+    white-space: pre-line;         
+    word-wrap: break-word;   
+    word-break: break-all;
+
+    /* 자동 레이아웃 */
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+
+.inMain{
+    /* 메인화면 */
+    /* position: static; */
+    width: 945.5px;
+    /* height: 707px; */
+    box-sizing: border-box;
+
+    /* border: 1px solid rgb(49, 196, 44); */
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    /* margin: 10px 0px; */
+}
+
+.productImg{
+    /* 등록한 사진 */
+    /* position: static; */
+    width: 438px;
+    /* height: 550px; */
+    /* border: 1px solid rgb(253, 54, 4); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.mainImg{
+    /* 큰사진 */
+    /* position: static; */
+    width: 425px;
+    height: 318.75px;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 15px 0px;
+}
+
+.smallImgFrame{
+    /* 작은사진 */
+    /* position: static; */
+    width: 425px;
+    /* height: 94px; */
+    /* border: 1px solid rgb(4, 191, 253); */
+    
+    overflow: hidden;                /*영역 감추기*/
+    white-space: nowrap;             /*아래줄로 내려가지 않게*/
+    word-break: break-all;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 17px 0px;
+}
+
+.smallImgList{
+    /* Frame 136 */
+    /* position: static; */
+    /* width: 627px; */
+    /* height: 94px; */
+    left: 0;
+    right: -68px;
+    top: 0;
+    bottom: 0;
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.smallImg{
+    /* image 26 */
+    /* position: static; */
+    width: 97px;
+    height: 72.75px;
+
+    /* background: url(image); */
+    /* border: 1px solid rgb(4, 191, 253); */
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 5px;
+}
+
+.info{
+    /* Frame 115 */
+    /* position: static; */
+    width: 438px;
+    /* height: 550px; */
+    /* border: 1px solid rgb(20, 50, 59); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    /* margin: 0px 28px; */
+}
+
+.cateFrame{
+    /* 카테고리 */
+    /* position: static; */
+    /* width: 197px; */
+    height: 22px;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 20px 0px 0px 0px;
+}
+
+.cate{
+    /* 생활 */
+    /* position: static; */
+    width: 90px;
+    height: 22px;
+    box-sizing: border-box;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 169, 78);
+    border-radius: 57px;
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 7px;
+}
+
+.cateText{
+    /* 생활 */
+    position: static;
+    width: 80px;
+    height: 24px;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+    color: rgb(0, 0, 0);
+    font-family: Arimo;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+
+/* 상세정보 */
+.detailInfo{
+    /* 세부 */
+    position: static;
+    width: 430px;
+    height: 479px;
+    /* border: 1px solid rgb(59, 107, 122); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 5px 0px;
+}
+
+.stateFrame{
+    /* Frame 96 */
+    position: static;
+    width: 438px;
+    height: 42px;
+    box-sizing: border-box;
+    /* border: 1px solid rgb(4, 253, 58); */
+
+    /* Neutral Color/10 */
+    border-bottom: 1px solid rgb(235, 238, 239);
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.state{
+    /* Frame 94 */
+    position: static;
+    width: 110px;
+    height: 26px;
+    /* border: 1px solid rgb(211, 4, 253); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 0px 0px 0px 11px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.stateText{
+    /* 상태 */
+    position: static;
+    /* width: 26px; */
+    height: 20px;
+    /* border: 1px solid rgb(41, 179, 98); */
+
+    color: rgb(102, 116, 121);
+    font-family: Arimo;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 4px 11px 2px 11px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+
+.detailFrame{
+    /* 상태 */
+    position: static;
+    /* width: 26px; */
+    height: 26px;
+    /* border: 1px solid rgb(22, 58, 70); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 4px 11px 2px 11px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+
+.detailText{
+    /* : 참여 모집 중 */
+    position: static;
+    /* width: 81px; */
+    height: 20px;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+    color: rgb(102, 116, 121);
+    font-family: Arimo;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 4px 11px 2px 11px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    /* margin: 0px 10px; */
+}
+
+.mapFrame{
+    /* Frame 146 */
+    position: static;
+    width: 438px;
+    height: 200px;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 15px 0px 15px 0px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.map{
+    /* Frame 146 */
+    position: static;
+    width: 426px;
+    height: 170px;
+
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* padding: 15px 0px 15px 0px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.buttons{
+    /* 버튼모음 */
+    position: static;
+    width: 438px;
+    height: 45px;
+    /* border: 1px solid rgb(247, 25, 25); */
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* padding: 10px 0px 10px 0px; */
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    margin: 5px 0px;
+}
+
+.btn{
+    /* 찜하기 */
+    position: static;
+    width: 75px;
+    height: 45px;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(39, 78, 19);
+    border-radius: 5px;
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px 0px 10px 0px; */
+
+}
+
+.heartFrame{
+    /* favorite_border */
+    position: static;
+    width: 34px;
+    height: 33.65px;
+    left: 34.38%;
+    right: 35.63%;
+    top: 30%;
+    bottom: 30.58%;
+    /* border: 1px solid rgb(4, 191, 253); */
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 2px 3px 2px;
+}
+
+.heart{
+    /* 矢量 117 */
+    position: static;
+    width: 24px;
+    height: 22.35px;
+    /* border: 1px solid rgb(4, 191, 253); */
+}
+
+.mainBtn{
+    /* 참여하기 */
+    position: static;
+    width: 267px;
+    height: 45px;
+    left: -0.5px;
+    right: 0.5px;
+    top: 0;
+    bottom: 0;
+    /* border: 1px solid rgb(4, 191, 253); */
+    background: rgb(39, 78, 19);
+    border-radius: 5px;
+
+     /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mainBtnText{
+    /* 참여하기 */
+    position: static;
+    /* width: 267px; */
+    height: 45px;
+
+    /* border: 1px solid rgb(4, 191, 253); */
+    color: rgb(255, 255, 255);
+    font-family: Arimo;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+/* 글 내용 */
+.contents{
+    /* 내용 */
+    /* position: static; */
+    width: 925.5px;
+    /* height: 164px; */
+
+    /* Neutral Color/00 */
+    /* background: rgb(253, 253, 253); */
+    border-bottom: 1px solid rgb(193, 185, 185);
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px 50px 0px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
+
+.contentsText{
+    /* Frame 131 */
+    position: static;
+    /* width: 925.5px; */
+    /* height: 113px; */
+
+    overflow: hidden;
+    white-space: pre-line;         
+    word-wrap: break-word;   
+    word-break: break-all;
+
+    color: rgb(0, 23, 31);
+    font-family: Arimo;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* 자동 레이아웃 */
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 0px 0px 16px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
+
+.seeMore{
+    /* 공동구매 더보기 */
+    /* position: static; */
+    width: 945.5px;
+    /* height: 588px; */
+    /* border: 1px solid rgb(32, 59, 38); */
+
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* padding: 0px 0px 0px 0px; */
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
+
+.seeMoreText{
+    /* 공동구매 더보기 */
+    /* position: static; */
+    /* width: 165px; */
+    /* height: 36px; */
+    /* border: 1px solid rgb(4, 253, 58); */
+
+    color: rgb(0, 52, 89);
+    font-family: Arimo;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: capitalize;
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 20px 0px 30px 20px;
+}
+
+.productList{
+    position: static;
+    width: 945.5px;
+    /* border: 1px solid rgb(4, 253, 58); */
+
+    /* 자동 레이아웃 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}

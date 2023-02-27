@@ -19,6 +19,10 @@ import { SellerPartyManage } from "../components/sellerMain/SellerPartyManage";
 import { SellerNoticeManage } from "../components/sellerMain/SellerNoticeManage";
 import { SellerEditManage } from "../components/sellerMain/SellerEditManage";
 import Upload from "../pages/upload/Upload";
+import ProductList from "../pages/productList/ProductList";
+import ProductDetail from "../pages/productDetail/ProductDetail"
+import Chatting from "../pages/chat/Chatting";
+
 
 export default function Router() {
     return (
@@ -44,8 +48,11 @@ export default function Router() {
                             <Route path="/seller/notice" element={<SellerNoticeManage/>} />
                             <Route path="/seller/edit"   element={<SellerEditManage/>} />
                         </Route>
+                        <Route path="/chatting" element={<Chatting />} />
                         <Route path="/upload" element={<Upload />} />
                         <Route path="/signup" element={<SignUp />} />
+                        <Route path="/productlist" element={<ProductList />} />
+                        <Route path="/product" element={<ProductDetail />} />
                     </Route>
                     <Route path="*" element={<Missing />} />
             </Routes>
