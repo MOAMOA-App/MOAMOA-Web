@@ -23,6 +23,16 @@
     align-items: center;
 }
 
+.headertoWebAlarmPopoverBtn{
+    border: 0px;
+    width: 60px;
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
 .headerRight a{
     margin-left: 3px;
     margin-right: 3px;
@@ -114,3 +124,4 @@
 .headerNavRight img{
     height: 16px;
 }
+

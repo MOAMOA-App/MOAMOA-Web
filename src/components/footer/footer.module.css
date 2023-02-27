@@ -47,14 +47,14 @@
 .footerBottomTitle {
     margin-bottom: 15px;
     
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     color: rgb(102, 116, 121);
 }
 
 .footerBottom li{
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 13px;
     color: rgb(102, 116, 121);
 }
 .footerBottomIconCont{
@@ -73,7 +73,7 @@
 .footerMOAGuide span{
     display: block;
     white-space : wrap;
-    font-size: 12px;
+    font-size: 11px;
     color: rgb(102, 116, 121);
     background-color: #F0F0F0;
     line-height: 20px;

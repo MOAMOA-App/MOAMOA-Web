@@ -7,9 +7,13 @@ export default function homeCategory() {
         <div className={style.homeWebCatCont}>
             <div className={style.homeWebCatInfo}>
                 <h2>카테고리</h2>
-                <button>전체보기
-                    <img src="./homeicon/next.png" alt="더보기" />
-                </button>
+                <a href="/productlist">
+                    <button>
+                        전체보기
+                        <img src="./homeicon/next.png" alt="더보기" />
+                    </button>
+                </a>
+                
             </div>
 
             <div className={style.homeWebCatContWL}>
