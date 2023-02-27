@@ -4,7 +4,7 @@ export default function MyPageProfileInfo() {
   return (
       <div 
         style={{
-          height : "190px",
+          height : "150px",
           display : "flex",
           alignItems : "center",
           padding : "10px 30px",
