@@ -15,14 +15,16 @@ export default function Header() {
           <a className={style.headerToWebChat} href="/">
             <img className={style.headerToWebFuncImg} src="./headericon/chatbubble.png" alt="채팅" />
           </a>
-          <a className={style.headerToWebAlarm} href="/">
+        
+          <button type="button" className={style.headertoWebAlarmPopoverBtn} title="Popover title"
+            data-container="body" data-toggle="popover" data-placement="bottom" data-content="content">
             <img className={style.headerToWebFuncImg} src="./headericon/notification.png" alt="알림" />
-          </a>
+          </button>
           
           <a className={style.headerToWebMyPage} href="/mypage">
               <img className={style.headerToWebMyPageImg} src="./icon.png" alt="마이페이지" />
           </a>
-          
+
           <button className={style.headerUploadBtn}>
             <a className={style.headerToWebUpload} href="/upload">
               <img className={style.headerToWebUploadImg} src="./headericon/writing.png" alt="" />
