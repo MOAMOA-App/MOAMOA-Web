@@ -1,10 +1,13 @@
 import React from 'react'
-import ProductBundle from '../../components/product/ProductBundle'
+import ProductCard from '../../components/product/ProductCard'
 import style from "./productlist.module.css";
 
 
 //게시글 목록 화면
 export default function ProductList() {
+
+    const arr=[1,2,3,4,5,6,7,8,9]
+
     return (
         <>
         
@@ -70,10 +73,10 @@ export default function ProductList() {
                         </div>
                     </div>
                     <div className={style.lists}>
-                        <ProductBundle/>
-                        <ProductBundle/>
-                        <ProductBundle/>
-                        <ProductBundle/>
+                        {arr.map(a=>
+                            <ProductCard/>
+                        )
+                        }
                     </div>
                 </div>
             </div>

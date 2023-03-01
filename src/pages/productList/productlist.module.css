@@ -286,20 +286,11 @@
 
 .lists{
    /* content */
-    position: static;
     width: 867px;
 
     /* 자동 레이아웃 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0px;
+    display: grid;
+    gap: 10px;
+grid-template-columns: repeat(auto-fill, minmax(206px, 4fr));
 
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
-}
+    }
