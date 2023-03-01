@@ -63,7 +63,7 @@ input,textarea,select{
 	border: 1px solid lightgray;
 	outline: none;
 	font-size: 14px;
-	padding-top: 5px;
+	padding-top: 0px;
 }
 button {
     -webkit-appearance: none;
@@ -72,7 +72,7 @@ button {
     background-color: transparent;
 	
 	outline: 0;
-	
+	cursor: pointer;
 	color: rgb(39, 78, 19);
 	font-weight: bold;
 	border: 0;

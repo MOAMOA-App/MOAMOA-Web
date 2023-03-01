@@ -21,7 +21,7 @@ export default function Header() {
           </a>
         </div>
         <div className={style.headerRight}>
-          <a className={style.headerToWebChat} href="/">
+          <a className={style.headerToWebChat} href="/chatting">
             <img className={style.headerToWebFuncImg} src="./headericon/chatbubble.png" alt="채팅" />
           </a>
         
@@ -61,7 +61,7 @@ export default function Header() {
         </div>
         
         <div className={style.headerNavRight}>
-          <input id={style.headerSearchKeyword} type="text" placeholder="검색어를 입력해주세요."></input>
+          <input className={style.headerSearchKeyword} type="text" placeholder="검색어를 입력해주세요."></input>
           <button onClick={showModal}>
             <img src="./headericon/search.png" alt="" />
           </button>
