@@ -2,41 +2,58 @@ import React from 'react'
 import style from './header.module.css'
 import { useState } from 'react';
 import Search from '../search/Search.jsx';
+import Notification from '../notification/Notification';
+
+import iconLogo from '../../assets/images/iconLogo.png'
+
+import search from '../../assets/images/headericon/search.png'
+import writing from '../../assets/images/headericon/writing.png'
+
 
 export default function Header() {
   // 모달창 노출 여부 state
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);   // 검색모달
+  const [modalNoteOpen, setModalNoteOpen] = useState(false);  // 알림모달
 
   // 모달창 노출
   const showModal = () => {
     setModalOpen(true);
-  };
+  };  // 알림모달
+
+  const showNoteModal = () => {
+    setModalNoteOpen(true);
+  };  // 검색모달
 
   return (
     <>
       <div className={style.headerWhole}>
         <div className={style.headerLeft}>
           <a href="/">
-            <img className={style.headerLogo} src="./iconLogo.png" alt="로고" />
+            <img className={style.headerLogo} src={iconLogo} alt="로고" />
           </a>
         </div>
         <div className={style.headerRight}>
-          <a className={style.headerToWebChat} href="/">
-            <img className={style.headerToWebFuncImg} src="./headericon/chatbubble.png" alt="채팅" />
+          <a className={style.headerToWebChat} href="/chatting">
+            <img className={style.headerToWebFuncImg} src="https://www.noticons.com/icon/6Yy/000000/FFFEFE" alt="채팅" />
           </a>
         
-          <button type="button" className={style.headertoWebAlarmPopoverBtn} title="Popover title"
-            data-container="body" data-toggle="popover" data-placement="bottom" data-content="content">
-            <img className={style.headerToWebFuncImg} src="./headericon/notification.png" alt="알림" />
+          <button type="button"
+            className={style.headertoWebAlarmPopoverBtn}
+            onClick={showNoteModal}>
+            <img className={style.headerToWebFuncImg} src="https://www.noticons.com/icon/2zbd/000000/FFFEFE" alt="알림" />
           </button>
+          {modalNoteOpen && <Notification setModalOpen={setModalNoteOpen} />}
+          
           
           <a className={style.headerToWebMyPage} href="/mypage">
               <img className={style.headerToWebMyPageImg} src="./icon.png" alt="마이페이지" />
           </a>
 
-          <button className={style.headerUploadBtn}>
+          <button 
+            id={style.headerUploadBtn}
+            className={style.headerUploadBtn}>
             <a className={style.headerToWebUpload} href="/upload">
-              <img className={style.headerToWebUploadImg} src="./headericon/writing.png" alt="" />
+              <img className={style.headerToWebUploadImg} src={writing} alt="" />
               <span>공동구매 모집</span>
             </a>
           </button>
@@ -63,7 +80,7 @@ export default function Header() {
         <div className={style.headerNavRight}>
           <input id={style.headerSearchKeyword} type="text" placeholder="검색어를 입력해주세요."></input>
           <button onClick={showModal}>
-            <img src="./headericon/search.png" alt="" />
+            <img src={search} alt="" />
           </button>
           {modalOpen && <Search setModalOpen={setModalOpen} />}
         </div>

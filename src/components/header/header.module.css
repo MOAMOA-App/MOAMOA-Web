@@ -43,10 +43,13 @@
     margin: 15px 15px;
 }
 
-.headerUploadBtn{
+#headerUploadBtn{
     width: fit-content;
     height: fit-content;
     margin: 15px;
+
+    border: 2px solid rgb(39, 78, 19);
+	border-radius: 10px;
 }
 
 .headerToWebUpload{
@@ -98,22 +101,33 @@
     border: 0px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items : center;
+    align-content: center;
+    text-align: center;
 
-    width: 35vh;
-    height: 6vh;
+    width: 250px;
+    height: 40px;
     background: rgb(238, 238, 238);
     border-radius: 30px;
     padding: 0px 10px;
 }
 #headerSearchKeyword{
+    width: max-content;
+
     background-color:transparent;
     border: 0px;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+
+    flex: 1;
 }
 
 .headerNavRight button{
     border: 0px;
-    height: 6vh;
+    height: fit-content;
 
     display: flex;
     flex-direction: row;

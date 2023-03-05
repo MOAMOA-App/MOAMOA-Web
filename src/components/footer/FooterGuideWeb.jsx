@@ -1,6 +1,10 @@
 import React from 'react'
 import style from './footer.module.css'
 
+import emailIcon from '../../assets/images/footericon/emailIcon.png'
+import githubIcon from '../../assets/images/footericon/githubIcon.png'
+import notionIcon from '../../assets/images/footericon/notionIcon.png'
+
 export default function FooterGuideWeb() {
     return (
         <div className={style.footerBottom}>
@@ -27,13 +31,13 @@ export default function FooterGuideWeb() {
 
             <div className={style.footerBottomIconCont}>
                 <a className='toMOAGithub' href="https://github.com/MOAMOA-App/MOAMOA-Web">
-                    <img className={style.headerLogo} src="./footericon/githubIcon.png" alt="깃허브" />
+                    <img className={style.headerLogo} src={githubIcon} alt="깃허브" />
                 </a>
                 <a className='toMOANotion' href="https://well-starflower-587.notion.site/164074c152f84edbb38267928e3b5060">
-                    <img className={style.headerLogo} src="./footericon/notionIcon.png" alt="노션" />
+                    <img className={style.headerLogo} src={notionIcon} alt="노션" />
                 </a>
                 <a className='toMOAEmail' href="">
-                    <img className={style.headerLogo} src="./footericon/emailIcon.png" alt="이메일" />
+                    <img className={style.headerLogo} src={emailIcon} alt="이메일" />
                 </a>
             </div>
         </div>

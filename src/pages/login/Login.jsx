@@ -2,6 +2,10 @@ import React from 'react'
 import style from "./login.module.css";
 import { useMediaQuery } from 'react-responsive'
 
+import googleIcon from '../../assets/images/loginsnsimage/googleIcon.png'
+import kakaoIcon from '../../assets/images/loginsnsimage/kakaoIcon.png'
+import naverIcon from '../../assets/images/loginsnsimage/naverIcon.png'
+
 const Tablet = ({ children }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
   return isTablet ? children : null
@@ -32,15 +36,15 @@ export default function Login() {
 
           <div className={style.loginSnsCont}>
             <button className={style.loginSnsKakao}>
-              <img className={style.loginSnsKakaoImg} src="../loginsnsimage/kakaoIcon.png" alt="" />
+              <img className={style.loginSnsKakaoImg} src={kakaoIcon} alt="" />
               카카오톡 계정으로 로그인
               </button>
             <button className={style.loginSnsGoogle}>
-              <img className={style.loginSnsGoogleImg} src="../loginsnsimage/googleIcon.png" alt="" />
+              <img className={style.loginSnsGoogleImg} src={googleIcon} alt="" />
               구글 계정으로 로그인
               </button>
             <button className={style.loginSnsNaver}>
-              <img className={style.loginSnsNaverImg} src="../loginsnsimage/NaverIcon.png" alt="" />
+              <img className={style.loginSnsNaverImg} src={naverIcon} alt="" />
               네이버 계정으로 로그인
               </button>
           </div>

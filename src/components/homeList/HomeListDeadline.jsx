@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "./homeList.module.css";
-import ProductBundle from '../product/ProductBundle.jsx'
+import ProductCard from '../product/ProductCard';
+import HomeListCardBundle from './HomeListCardBundle';
 
 export default function homeListDeadLine() {
     return (
@@ -14,13 +15,13 @@ export default function homeListDeadLine() {
                 <a href="/productlist">
                     <button>
                         전체보기
-                        <img src="./homeicon/next.png" alt="더보기" />
+                        <img src="https://www.noticons.com/icon/bn8R/FA8F39/FFFEFE" alt="더보기" />
                     </button>
                 </a>
             </div>
-            <div className={style.homeWebDLCont}>
-                <ProductBundle/>
-            </div>
+
+            <HomeListCardBundle />
+
         </div>
         </>
     )
