@@ -4,6 +4,8 @@ import style from './footer.module.css'
 import FooterGuideWeb from './FooterGuideWeb'
 import FooterGuideMob from './FooterGuideMob'
 
+import iconLogo from '../../assets/images/iconLogo.png'
+
 export default function Footer() {
   return (
     <div className={style.footerWhole}>
@@ -25,7 +27,7 @@ export default function Footer() {
         </div>
 
       <div className={style.footerLogoCont}>
-        <img src="./iconLogo.png" alt="로고" />
+        <img src={iconLogo} alt="로고" />
       </div>
       
     </div>

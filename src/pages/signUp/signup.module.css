@@ -52,5 +52,6 @@
 
     margin-top: 10px;
 
-    border-color: rgb(39, 78, 19);
+
+    border: 2px solid rgb(39, 78, 19);
 }

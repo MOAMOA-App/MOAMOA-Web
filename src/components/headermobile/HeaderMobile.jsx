@@ -1,19 +1,24 @@
 import React from 'react'
 import style from './headerMobile.module.css'
 
+import iconLogo from '../../assets/images/iconLogo.png'
+
+import menuMobile from '../../assets/images/headericon/menuMobile.png'
+import search from '../../assets/images/headericon/search.png'
+
 export default function HeaderMobile() {
   return (
     <div className={style.headerMobileWhole}>
         <div className={style.HeaderMobIconCont}>
-          <img src="./headericon/menuMobile.png" alt="" />
+          <img src={menuMobile} alt="모바일메뉴" />
         </div>
 
         <div className={style.HeaderMobLogoCont}>
-          <img src="./iconLogo.png" alt="" />
+          <img src={iconLogo} alt="로고" />
         </div>
 
         <div className={style.HeaderMobIconCont}>
-          <img src="./headericon/search.png" alt="" />
+          <img src={search} alt="검색" />
         </div>
     </div>
   )

@@ -93,13 +93,13 @@
 
 
 .loginSnsKakao{
-    border-color: rgb(242, 201, 76);
+    border: 2px solid rgb(242, 201, 76);
 }
 .loginSnsNaver{
-    border-color: rgb(72,200, 12);
+    border: 2px solid rgb(72,200, 12);
 }
 .loginSnsGoogle{
-    border-color: black;
+    border: 2px solid black;
 }
 
 .loginImageCont{
