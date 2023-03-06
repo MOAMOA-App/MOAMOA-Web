@@ -7,21 +7,16 @@ const Dropdown = props => {
 
     React.useEffect(() => {
         if (props.visibility) {
-            clearTimeout(repeat);
-            setRepeat(null);
             setVisibilityAnimation(true);
         } else {
-            setRepeat(setTimeout(() => {
-                setVisibilityAnimation(false);
-            }, 400));
+            setVisibilityAnimation(false);
         }
     }, [props.visibility]);
 
     return (
-        <article className={`components-dropdown ${props.visibility ? 'slide-fade-in-dropdown' : 'slide-fade-out-dropdown'}`}>
+        <article className={`style.components-dropdown ${props.visibility ? 'slide-fade-in-dropdown' : 'slide-fade-out-dropdown'}`}>
             { visibilityAnimation && props.children }
         </article>
     )
 };
-
 export default Dropdown;
