@@ -59,13 +59,18 @@
     flex-direction: row;
     flex-wrap: nowrap;
 
-    justify-content: space-evenly;
+    justify-content: baseline;
 
     overflow-x: scroll;
     overflow-y: hidden;
 }
 
+/* scroll bar 제거 ( chrome 환경) */
+/* .homeWebPopCont::-webkit-scrollbar {
+    display: none;
+} */
+
 .homeWebPopCont *{
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
