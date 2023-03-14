@@ -6,7 +6,6 @@ import HomeListCardBundle from './HomeListCardBundle';
 export default function homeListLatest() {
     return (
         <>
-        <div className={style.homeWebListCont}>
             <div className={style.homeWebInfo}>
                 <div className={style.homeWebInfoTitleCont}>
                     <span>마감이 가까워요</span>
@@ -19,10 +18,6 @@ export default function homeListLatest() {
                     </button>
                 </a>
             </div>
-
-            <HomeListCardBundle />
-
-        </div>
         </>
     )
 }

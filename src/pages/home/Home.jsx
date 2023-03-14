@@ -1,19 +1,45 @@
 import React from "react";
-import Header from "../../components/header/Header";
-import style from "./home.module.css";
+import { useMediaQuery } from 'react-responsive'
 
 import HomeCategory from "../../components/homeCategory/HomeCategory"
-import HomeListPopular from "../../components/homeList/HomeListPopular"
-import HomeListDeadLine from "../../components/homeList/HomeListDeadline";
-import HomeListLatest from "../../components/homeList/HomeListLatest";
+import HomeCategoryTab from "../../components/homeCategory/HomeCategoryTab";
+import HomeCategoryMob from "../../components/homeCategory/HomeCategoryMob";
+
+import HomeList from "../../components/homeList/HomeList";
+import HomeListMob from "../../components/homeList/HomeListMob";
+
+const Desktop = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 520 })
+    return isDesktop ? children : null
+}
+const Tablet = ({ children }) => {
+    const isMobile = useMediaQuery({ minWidth: 346, maxWidth: 520 })
+    return isMobile ? children : null
+}
+const Mobile = ({ children }) => {
+    const isNotMobile = useMediaQuery({ 
+        // minWidth: 280, 
+        maxWidth: 346 })
+    return isNotMobile ? children : null
+}
 
 export default function Home() {
     return (
-        <>           
-            <HomeCategory/>
-            <HomeListDeadLine/>
-            <HomeListPopular/>
-            <HomeListLatest/>
+        <> 
+            <Desktop>
+                <HomeCategory/>
+                <HomeList />
+            </Desktop>
+
+            <Tablet>
+                <HomeCategoryTab />
+                <HomeListMob />
+            </Tablet>
+
+            <Mobile>
+                <HomeCategoryMob/>
+                <HomeListMob />
+            </Mobile>
         </>
     );
 }

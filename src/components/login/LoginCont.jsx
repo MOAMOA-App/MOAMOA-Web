@@ -1,5 +1,5 @@
 import React from 'react'
-import style from "../../pages/login/login.module.css";
+import style from "./loginCont.module.css";
 
 import googleIcon from '../../assets/images/loginsnsimage/googleIcon.png'
 import kakaoIcon from '../../assets/images/loginsnsimage/kakaoIcon.png'

@@ -4,7 +4,6 @@
     flex-wrap: nowrap;
 
     margin-top: 60px;
-    margin-left: 10px;
 }
 
 .footerWhole hr{
@@ -89,7 +88,7 @@
     flex-direction: row;
     justify-content: center;
 
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 25px;
 }
 .footerLogoCont img{
@@ -97,4 +96,36 @@
 
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.footerBottomMob{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerBottomIconContMob{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.footerBottomIconContMob img{
+    height: 25px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.footerBotGuideContMob {
+    margin-bottom: 10px;
+}
+
+.footerBotGuideContMob ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.footerBotGuideContMob li {
+    margin: 5px 5px 5px 5px;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
 }
