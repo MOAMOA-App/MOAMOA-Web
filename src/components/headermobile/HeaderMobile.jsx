@@ -14,7 +14,9 @@ export default function HeaderMobile() {
         </div>
 
         <div className={style.HeaderMobLogoCont}>
-          <img src={iconLogo} alt="로고" />
+          <a href="/">
+            <img src={iconLogo} alt="로고" />
+          </a>
         </div>
 
         <div className={style.HeaderMobIconCont}>

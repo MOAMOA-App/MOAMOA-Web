@@ -6,9 +6,8 @@ import HomeListCardBundle from './HomeListCardBundle';
 export default function homeListPopular() {
     return (
         <>
-        <div className={style.homeWebListCont}>
             <div className={style.homeWebInfo}>
-            <div className={style.homeWebInfoTitleCont}>
+                <div className={style.homeWebInfoTitleCont}>
                     <span>마감이 가까워요</span>
                     <h2>인기순</h2>
                 </div>
@@ -19,10 +18,6 @@ export default function homeListPopular() {
                     </button>
                 </a>
             </div>
-
-            <HomeListCardBundle />
-
-        </div>
         </>
     )
 }

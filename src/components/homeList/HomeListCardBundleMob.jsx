@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import style from "./homeList.module.css";
 import ProductCard from '../product/ProductCard';
 
-export default function HomeListCardBundle() {
+export default function HomeListCardBundleMob() {
 
     // 반복문 돌려줌
     const productList = (num) => {
@@ -16,8 +16,8 @@ export default function HomeListCardBundle() {
     };
 
     return (
-        <div className={style.homeWebPopCont}>
-            {productList(5)}
+        <div className={style.homeMobPopCont}>
+            {productList(6)}
         </div>
         
     )

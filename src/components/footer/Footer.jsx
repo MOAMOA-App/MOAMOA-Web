@@ -1,20 +1,36 @@
 import React from 'react'
 import style from './footer.module.css'
+import { useMediaQuery } from 'react-responsive'
 
 import FooterGuideWeb from './FooterGuideWeb'
 import FooterGuideMob from './FooterGuideMob'
 
 import iconLogo from '../../assets/images/iconLogo.png'
 
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 768 })
+  return isDesktop ? children : null
+}
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile ? children : null
+}
+
 export default function Footer() {
   return (
     <div className={style.footerWhole}>
       
       <hr/>
-
+      
         <div className={style.footerChild}>
 
-          <FooterGuideWeb />
+          <Desktop>
+            <FooterGuideWeb />
+          </Desktop>
+
+          <Mobile>
+            <FooterGuideMob />
+          </Mobile>
 
           <div className={style.footerMOAGuide}>
             <span>
