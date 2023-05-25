@@ -1,16 +1,18 @@
 import Router from "./routes/Router";
-import './App.css';
+// import  GlobalStyle  from './GlobalStyle.ㅅㄴ';
 
 type AppProps = {
-  name: string;
+	name: string;
 }; 
 
 function App (props: AppProps) :JSX.Element {
-  return (
-    <Router />
-  )
+    return (
+		<>
+			{/* <GlobalStyle />  */}
+			<Router />
+		</>
+    )
 }
 
 export default App;
-
 
