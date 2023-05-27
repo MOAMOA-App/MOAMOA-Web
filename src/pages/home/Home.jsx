@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from "../../components/Card";
+import Compo from "../../components/Compo";
 import styled from 'styled-components';
 
 export default function Home() {
@@ -7,23 +8,28 @@ export default function Home() {
     return (
         <>
             <Search placeholder="검색어를 입력해주세요."></Search>
-            <Div>
+            <Compo></Compo>
+        <Div>
+            <>
                 {arr.map((arr)=> <Card/>)}
-            </Div>
+            </>
+
+        </Div>
         </>
     )
 }
 
 export const Div = styled.div`
     display: flex;
-    width: 1100px;
-    flex-wrap: wrap;
+    margin:0 auto;
+    overflow-x: scroll;
+
 `;
 
 export const Search = styled.input`
     align-items: center;
     text-align: center;
-    width: 1220px;
+    width: 80%;
     height: 40px;
     border: 1px solid #FF952C;
     border-radius: 30px;
