@@ -7,13 +7,20 @@ export default function Compo() {
         <p class="ment">마감이 가까워요</p>
         <Cont>
             <p class="tit">마감 임박</p>
-            <p>전체보기</p>
+            <p>전체보기 ></p>
         </Cont>
     </Wrap>
   )
 }
 
 export const Wrap = styled.div`
+    display:flex;
+    flex-direction: column;
+    padding:0 7px;
+    line-height: 22px;
+
+    margin:11px;
+    border-left: #2C9B36 solid 10px;
     ${".ment"}{
         font-weight: 500;
         font-size: 14px;
@@ -24,11 +31,6 @@ export const Wrap = styled.div`
         font-size: 24px;
         color: #2C9B36;
     }
-    display:flex;
-    flex-direction: column;
-    padding: 9px;
-    margin:11px;
-    border-left: #2C9B36 solid 10px;
 `;
 
 export const Cont = styled.div`
@@ -37,4 +39,5 @@ export const Cont = styled.div`
     color: #2C9B36;
     font-weight: 700;
     font-size: 14px;
+    
 `;

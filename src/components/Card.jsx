@@ -62,7 +62,7 @@ export const Div = styled.div`
     width:223px;
     height:305px;
     padding:8px;
-    margin-right: 15px;
+    margin-right: 26px;
 `;
 
 
