@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default function Home() {
     const arr=[1,2,3,4,5,6]
     return (
-        <>
+        <Wrap>
             <Search placeholder="검색어를 입력해주세요."></Search>
             <Compo></Compo>
         <Div>
@@ -15,21 +15,25 @@ export default function Home() {
             </>
 
         </Div>
-        </>
+        </Wrap>
     )
 }
-
+export const Wrap = styled.div`
+    padding: 26px 110px ;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+`;
 export const Div = styled.div`
     display: flex;
     margin:0 auto;
     overflow-x: scroll;
+    padding: 10px;
 
 `;
 
 export const Search = styled.input`
     align-items: center;
     text-align: center;
-    width: 80%;
+    width: 100%;
     height: 40px;
     border: 1px solid #FF952C;
     border-radius: 30px;
