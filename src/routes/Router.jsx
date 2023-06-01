@@ -16,13 +16,13 @@ export default function Router() {
             <Routes>
         <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signUp" element={<SignUp />} />
             <Route path="/write" element={<Write />} />
             <Route path="/alarm" element={<Alarm />} />
             <Route path="/chat" element={<ChatRoom />} />
             <Route path="/profile" element={<Profile />} />
         </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signUp" element={<SignUp />} />
             </Routes>
         </BrowserRouter>
         )

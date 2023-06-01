@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import  logo  from '../assets/images/logo.png';
 import  title  from '../assets/images/title.png';
-import  chat  from '../assets/images/chat.svg';
+// import  chat  from '../assets/images/chat.svg';
 // import  alarm  from '../assets/images/alarm.svg';
 import  mozip  from '../assets/images/mozip.svg';
-import styled from 'styled-components';
+import styled,{ css } from 'styled-components';
 
 export default function Header() {
     return (
@@ -18,20 +18,39 @@ export default function Header() {
                 <Write to="/write">
                 <img src={mozip} alt="" />
                     공동구매 모집</Write>
-                <Chat to="/chat"/>
-                <Alarm to="/alarm">알림</Alarm>
-                <Link to="/profile">프로필</Link>
+                <Icon to="/chat"/>
+                <Icon to="/alarm"/>
+                <Profile to="/profile"/>
             </Wrap>
         </Div>
     )
 }
+
+  const setAttr = (attr) => {
+        switch (attr) {
+        case '/chat':
+            return css`
+                background: url('/chat.svg') no-repeat ; 
+                margin: 6px 20px 0 25px;
+            `
+        case '/alarm':
+            return css`
+                background: url('/alarm.svg') no-repeat ; 
+                margin-top: 4px ;
+            `
+        case '/profile':
+            return css`
+                background: url('/profile.svg') no-repeat ; 
+            `
+        }
+    };
 
 export const Div = styled.div`
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    padding:0 110px 16px;
+    padding:0 110px 10px;
     margin-top: 93px;
     
     
@@ -60,19 +79,20 @@ export const Write = styled(Link)`
     }
 `;
 
-export const Chat = styled(Link)`
-    width: 40px;
-    height: 30px;
-    margin: 5px 5px;
-    /* /* background-image: url('/css_sprites.png');  */
-/* background-image: url('/alarm.svg'); */
-background: url('/alarm.svg') no-repeat ;
+export const Icon = styled(Link)`
+    /* background: url('/chat.svg') no-repeat ; */
+    width: 35px;
+    height: 40px;
+    /* margin: 3px 0 0 20px ; */
+    ${({ to }) => setAttr(to)}
+  
 
-
-`;
-
-export const Alarm = styled(Link)`
 `;
 
 export const Profile = styled(Link)`
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 50%;
+    background-color: black;
 `;

@@ -38,7 +38,7 @@ export default function Login() {
 
 export const Logo = styled.img`
 
-    margin: 13px; 
+    margin: 93px 0 13px; 
     width: 56px;
     height: 57px;
 `;
@@ -95,6 +95,9 @@ export const Btn= styled.button`
     height: 40px;
     background: #2C9B36;
     border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
     margin: 10px 0;
     color: white;
 `;

@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from "../../components/Card";
 import Compo from "../../components/Compo";
+import Category from "../../components/Category";
 import styled from 'styled-components';
 
 export default function Home() {
@@ -8,7 +9,25 @@ export default function Home() {
     return (
         <Wrap>
             <Search placeholder="검색어를 입력해주세요."></Search>
+            <Category></Category>
+            <Event></Event>
             <Compo></Compo>
+        <Div>
+            <>
+                {arr.map((arr)=> <Card/>)}
+            </>
+
+        </Div>
+
+        <Compo></Compo>
+        <Div>
+            <>
+                {arr.map((arr)=> <Card/>)}
+            </>
+
+        </Div>
+
+        <Compo></Compo>
         <Div>
             <>
                 {arr.map((arr)=> <Card/>)}
@@ -24,12 +43,17 @@ export const Wrap = styled.div`
 `;
 export const Div = styled.div`
     display: flex;
-    margin:0 auto;
+    margin:0 auto 40px;
     overflow-x: scroll;
     padding: 10px;
 
 `;
+export const Event = styled.div`
+    height: 228px;
+    background: #F5F5F5;
+    margin: 28px 0 21px ;
 
+`;
 export const Search = styled.input`
     align-items: center;
     text-align: center;

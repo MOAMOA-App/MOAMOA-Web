@@ -66,6 +66,7 @@ export default function SignUp() {
 
 
 export const Label = styled.label`
+
     font-size: 14px;
     line-height: 22px;
     display: flex;
@@ -77,7 +78,7 @@ export const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 60px 0 ;
+    margin: 93px 0 ;
     ${"h1"}{
         font-weight: 700;
         font-size: 24px;
@@ -120,6 +121,8 @@ export const WrapInp = styled.div`
     ${"input"}{
         border-bottom: 1px solid #F79331;
         width: 356px;
+        padding: 0 5px;
+
         font-weight: 500;
         font-size: 14px;
         line-height: 22px;
@@ -154,6 +157,9 @@ export const Inp= styled.input`
 export const Btn= styled.button`
     width: 356px;
     height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
     background: #2C9B36;
     border-radius: 50px;
     margin: 10px 0;
