@@ -32,8 +32,7 @@ export const Category = styled.div`
     margin-bottom: 6px;
     ${"div"}{
         display: flex;
-    align-items: center;
-
+        align-items: center;
     }
     ${".category"}{
         background: #F79331;
@@ -41,7 +40,6 @@ export const Category = styled.div`
         color: #FFFFFF;
         padding: 6px 9px;
         margin-right:8px ;
-
     }
     ${".count"}{
         
@@ -58,13 +56,13 @@ export const Title = styled.div`
 `;
 
 export const Div = styled.div`
-background: #FFFFFF;
-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-border-radius: 5px;
-width:223px;
-height:305px;
-padding:8px;
-
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width:223px;
+    height:305px;
+    padding:8px;
+    margin-right: 26px;
 `;
 
 
@@ -80,9 +78,8 @@ export const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-line-height: 22px;
-
-color: #8F8F8F;
+    line-height: 22px;
+    color: #8F8F8F;
 `;
 
 export const Button = styled.div`
