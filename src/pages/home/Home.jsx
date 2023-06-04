@@ -38,7 +38,7 @@ export default function Home() {
     )
 }
 export const Wrap = styled.div`
-    padding: 26px 110px ;
+    padding: 26px 10% ;
     border-top: 0.5px solid rgba(0, 0, 0, 0.1);
 `;
 export const Div = styled.div`
