@@ -1,7 +1,7 @@
 import React from 'react'
-import Card from "../../components/Card";
-import Compo from "../../components/Compo";
-import Category from "../../components/Category";
+import Card from "../../components/Card.tsx";
+import Compo from "../../components/Compo.tsx";
+import Category from "../../components/Category.tsx";
 import styled from 'styled-components';
 
 export default function Home() {
