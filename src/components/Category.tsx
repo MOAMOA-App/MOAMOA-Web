@@ -3,7 +3,7 @@ import styled,{ css } from 'styled-components';
 
 export default function Category() {
 
-    const arr=["/전체.svg","/관심.svg","/생활.svg","/의류.svg","/식품.svg","/가전.svg","/취미.svg","/운동.svg","/굿즈.svg","/동물.svg","/해외.svg","/기타.svg"];
+    const arr=["/전체.png","/관심.png","/생활.png","/의류.png","/식품.png","/가전.png","/취미.png","/운동.png","/굿즈.png","/동물.png","/해외.png","/기타.png"];
   return (
 
     <Wrap>
@@ -23,13 +23,12 @@ export const Div = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 55px;
     margin-top: 32px; 
     cursor: pointer;
     ${"img"}{
         margin-bottom: 10px;
-        width:40px;
-        height: 40px;
+        width:46px;
+        height: 46px;
     }
 
 `

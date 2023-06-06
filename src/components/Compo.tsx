@@ -7,7 +7,7 @@ export default function Compo() {
         <p class="ment">마감이 가까워요</p>
         <Cont>
             <p class="tit">마감 임박</p>
-            <p>전체보기 ></p>
+            <p>전체보기 </p>
         </Cont>
     </Wrap>
   )
