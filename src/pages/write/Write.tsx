@@ -1,30 +1,29 @@
 import React from 'react'
 
-
-type WhiteProps = {
+type WriteProps = {
     name: string;
     mark: string;
-
+    optional?: string;
+    onClick : (name : string) => void; //함수타입을 가져오고 싶을때
   };
   
-
-  function White({ name, mark }: WhiteProps) {
-
-
-
-
+  function Write({ name, mark, optional, onClick }: WriteProps) {
+    const handleClick = () => {
+        console.log('버튼이 클릭되었습니다.');
+      };
     return (
       <div>
-
-        <img src="" alt="" />
-        
         Hello, {name} {mark}
+        {optional && <p>{optional}</p>}
+        <div>
+            <button onClick={handleClick}>버튼이지롱</button>
+        </div>
       </div>
     );
   }
   
-  White.defaultProps = {
+  Write.defaultProps = {
     mark: '!'
   };
   
-  export default White;
+  export default Write;
