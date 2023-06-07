@@ -49,6 +49,8 @@ table {
 
 html {
     box-sizing: border-box;
+	font-weight: 500;
+	font-size: 14px;
   }
   *, *::before, *::after {
     box-sizing: inherit;
@@ -66,4 +68,5 @@ button {
 input,a{
 	border: none;
 	text-decoration: none;
+	padding: 0 0.7vw;
 }

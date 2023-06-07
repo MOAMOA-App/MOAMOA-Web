@@ -30,13 +30,13 @@ export default function Header() {
         switch (attr) {
         case '/chat':
             return css`
-                background: url('/chat.svg') no-repeat ; 
-                margin: 6px 20px 0 25px;
+                background: url('/chat.png') no-repeat ; 
+                background-size: 100%;
             `
         case '/alarm':
             return css`
-                background: url('/alarm.svg') no-repeat ; 
-                margin-top: 4px ;
+                background: url('/alert.png') no-repeat ; 
+                background-size: 100%;
             `
         case '/profile':
             return css`
@@ -81,7 +81,7 @@ export const Write = styled(Link)`
 
 export const Icon = styled(Link)`
     /* background: url('/chat.svg') no-repeat ; */
-    width: 35px;
+    width: 40px;
     height: 40px;
     /* margin: 3px 0 0 20px ; */
     ${({ to }) => setAttr(to)}
