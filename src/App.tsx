@@ -1,4 +1,4 @@
-import Router from "./routes/Router";
+import Router from "./routes/Router.tsx";
 // import  GlobalStyle  from './GlobalStyle.ㅅㄴ';
 
 type AppProps = {

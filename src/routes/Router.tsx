@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Login from "../pages/loginPage/Login";
-import  Login  from "../pages/login/Login";
-import  Home  from "../pages/home/Home";
+import  Login  from "../pages/login/Login.tsx";
+import  Home  from "../pages/home/Home.tsx";
 import Layout from "../layout/Layout.tsx";
-import SignUp from "../pages/signUp/SignUp";
+import SignUp from "../pages/signUp/SignUp.tsx";
 import Write from "../pages/write/Write.tsx";
-import Alarm from "../pages/alarm/Alarm";
-import ChatRoom from "../pages/chatRoom/ChatRoom";
-import Profile from "../pages/profile/Profile";
+import Alarm from "../pages/alarm/Alarm.tsx";
+import ChatRoom from "../pages/chatRoom/ChatRoom.tsx";
+import Profile from "../pages/profile/Profile.tsx";
 
 export default function Router() {
     return (
