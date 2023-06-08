@@ -8,7 +8,7 @@ import styled from 'styled-components';
 export default function Layout({children}) {
     return (
         <Wrap>
-            <Header/>
+            {/* <Header/> */}
                 <Outlet />
             <Footer/>
         </Wrap>

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
+import udi from "../../assets/images/udi.png";
+import Card from "../../components/Card.tsx";
 
 type GoodsProps = {
     name: string;
@@ -11,67 +13,234 @@ type GoodsProps = {
   
   function Goods({ name, mark, optional, onClick }: GoodsProps) {
     
-    const arr=["전체","관심","생활","의류","식품","가전","취미","운동","굿즈","동물","해외","기타"];
-
-    const handleClick = () => {
-        console.log('버튼이 클릭되었습니다.');
-      };
+    const arr=[1,2,3,4]
     return (
       <Div>
-        <img src="" alt="" />
-        <Wrap>
-            <label for="scales">제목</label><input type="name" id="scales" placeholder="제목을 입력하세요"/>
-            <p>카테고리</p> 
-        <div>
-            {arr.map((arr)=> 
-            <Btn>{arr}</Btn>)
-        }
-        </div>
-        
-            <label for="scales">상품가격</label><Inp type="name" id="scales" />
-        
-            <label for="scales">모집개수</label><Inp type="name" id="scales" />
-        
-        </Wrap>
-        <div>
-            <label for="scales">상세정보 및 내용</label><input type="name" id="scales" />
-        </div>
-        <div>
-            <label for="scales">주소입력</label><input type="name" id="scales" />
+        <Flex>
+            <Img src={udi} alt="" />
+            <div>
+                
+                    <p>해외  충무로역</p>
+                    <h1>우디 인형 같이 사실 분 구합니다.</h1>   
+                    <span class="money">20,000원</span>         
 
-            <label for="scales">주소찾기</label><Inp type="name" id="scales" />
-            <label for="scales"></label><Inp type="name" id="scales" placeholder="상세주소를 입력해주세요"/>
-        </div>
+                <Wrap>
+            <h3>모집여부</h3> 
+            <span>모집중</span> 
+            <h3>모집개수</h3> 
+            <span>10개 (현재 5개 모집)</span> 
+            <h3>주최자</h3> 
+            <span>김씨</span> 
+            <h3>참여기간</h3> 
+            <span>23년 9월 30일-23년 10월 12일</span> 
+            <h3>위치</h3> 
+            <span>충무로역 2번출구</span> 
+                </Wrap>
+                <Map>지도</Map>
+        <BtnWrap>
+            <button class="heart">하트</button>
+            <button class="chat">채팅</button>
+            <button class="party">참여하기</button>
+        </BtnWrap>
 
-        Hello, {name} {mark}
-        {optional && <p>{optional}</p>}
-        <div>
-            <button onClick={handleClick}>버튼이지롱</button>
-        </div>
+            </div>
+
+        </Flex>
+
+        <Wrap2>
+       <span>상세정보 및 내용</span> 
+        <p>우디 인형 같이 사실분
+            10명 모이면 시작하고 해외배송이라 1차금 2만원 받고 2차금 해배비 받아요
+            날짜 정해서 직거래 예정이고 안되시는 분들은 준동기비 1800원 추가로 받을게요</p> 
+       <span>공지 및 업데이트</span>
+       <div>
+        <p>
+                23.10.01 환율 인상으로 18000원 - 20000원 가격 변경했습니다.
+            </p> 
+            <p>
+                23.10.05 마감일 변경 23.10.07 - 23.10.12
+            </p>
+
+       </div>
+        </Wrap2>
+        <Span>공동구매 더보기</Span>
+        <CardWrap>
+                {arr.map((arr)=> <Card/>)}
+            </CardWrap>
+
       </Div>
     );
   }
   
-  Write.defaultProps = {
+  Goods.defaultProps = {
     mark: '!'
   };
+
+  export const CardWrap = styled.div`
+    display: flex;
+  `;
+
+  export const Span = styled.span`
+    font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height */
+
+margin: 27px 0 16px;
+color: #5C5C5C;
+
+`;
+
+  export const Flex = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    ${"h1"}{
+        font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height */
+
+
+color: #000000;
+    }
+${".money"}{
+    font-weight: 700;
+font-size: 24px;
+line-height: 37px;
+/* identical to box height */
+
+
+color: #2C9B36;
+
+}
+
+  ${"h3"}{
+    font-weight: 500;
+font-size: 14px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #5C5C5C;
+  }
+
+  ${"span"}{
+    font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #5C5C5C;
+
+  }
+`;
+
+export const Map = styled.div`
+    width: 439px;
+    height: 230px;
+    background: red;
+`;
 
   export const Div = styled.div`
     display: flex;
     flex-direction: column;
-    padding:0 110px 10px;
-    
-
+    padding:0 10% 10px;
+    margin-top: 40px;
     ${"input"}{
-        width: 827px;
-
+        width: 216px;
         border-bottom: 1px solid #D9D9D9;
+        margin-right: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    ${"label"}{
+        font-weight: 700;
+        font-size: 16px;
     }
 `
+
+export const BtnWrap = styled.div`
+    display: flex;
+    /* width: 349px; */
+    height: 40px;
+    margin: 14px 0 27px;
+    ${".heart"}{
+        border: 1px solid #D9D9D9;
+border-radius: 3px;
+width: 46px;
+    }
+    ${".chat"}{
+        border: 1px solid #D9D9D9;
+border-radius: 3px;
+margin: 0 9px;
+width: 46px;
+    }
+
+    ${".party"}{
+        background: #2C9B36;
+border-radius: 3px;
+width: 328px;
+font-weight: 700;
+font-size: 20px;
+line-height: 31px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+    }
+
+`;
+export const Img = styled.img`
+    width: 438px;
+    height: 438px;
+    margin-right: 40px;
+`;
+
 export const Wrap = styled.div`
     display: grid;
-    grid-template-columns: 100px 600px; 
+    align-items: center;
+    grid-template-columns: 90px 349px; 
+    gap: 6px; 
 `;
+
+export const Wrap2 = styled.div`
+       display: grid;
+
+    grid-template-columns: 150px 600px; 
+    gap: 15px; 
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    padding:16px 0;
+    ${"span"}{
+        font-weight: 700;
+font-size: 14px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F79331;
+
+    }
+    ${"p"}{
+        font-weight: 500;
+font-size: 14px;
+line-height: 22px;
+
+color: #5C5C5C;
+    }
+`;
+
+export const TextArea = styled.textarea`
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    margin: 10px 0 20px;
+`;
+
 export const Btn = styled.button`
     width: 55px;
     height: 29px;
@@ -79,7 +248,7 @@ export const Btn = styled.button`
     border-radius: 15px;
     font-weight: 500;
     font-size: 14px;
-    margin: 0 14px;
+    margin: 0 7px;
  `;
 
 export const Inp = styled.input`
@@ -89,4 +258,4 @@ export const Inp = styled.input`
     border-radius: 1550px;
 `;
 
-  export default Write;
+  export default Goods;

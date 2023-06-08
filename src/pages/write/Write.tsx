@@ -27,30 +27,41 @@ type WriteProps = {
                     <Btn>{arr}</Btn>)
             }
             </div>
-            <label for="scales">상품가격</label><Inp type="name" id="scales" required/>
-            <label for="scales">모집개수</label><Inp type="name" id="scales" required/>
+            <label for="scales">상품가격</label><div><Inp type="name" id="scales" required/>원</div>
+            <label for="scales">모집개수</label><div><Inp type="name" id="scales" required/>개 
+                <Checklabel for="scales"> <Check type="checkbox" id="scales" name="scales" />개수 제한 없음</Checklabel>
+            
+            </div>
+            
         </Wrap>
-        <Wrap2>
 
-        <div>
             <label for="scales">상세정보 및 내용</label>
-            <textarea
+            <TextArea
                         type="text"
                         placeholder="게시글 입력하기"
                         required
-                    />
-        </div>
-        <div>
-            <label for="scales">주소입력</label><input type="name" id="scales" required/>
-            <label for="scales">주소찾기</label><Inp type="name" id="scales" required/>
-            <label for="scales"></label><Inp type="name" id="scales" placeholder="상세주소를 입력해주세요"/>
-        </div>
-        Hello, {name} {mark}
+                        />
+
+        <Wrap2>
+            <div class="second1">
+                <label for="scales">주소입력</label>
+                <div class="radio">
+                    <label for="scales"> <Check type="checkbox" id="scales" name="scales" />직거래</label>
+                    <label for="scales"> <Check type="checkbox" id="scales" name="scales" />온라인</label>
+
+                </div>
+                <Checklabel for="scales">주소찾기</Checklabel><Inp2 type="name" id="scales" required/>
+                <Checklabel for="scales"></Checklabel><Inp2 type="name" id="scales" placeholder="상세주소를 입력해주세요"/>
+            </div>
+            <div class="second2">
+                Hello, {name} {mark}
+            </div>
+
         {optional && <p>{optional}</p>}
         </Wrap2>
 
         <div>
-            <button onClick={handleClick}>버튼이지롱</button>
+            <BtnSave onClick={handleClick}>등록하기</BtnSave>
         </div>
       </Div>
     );
@@ -64,35 +75,93 @@ type WriteProps = {
     display: flex;
     flex-direction: column;
     padding:0 10% 10px;
-
+    margin-top: 40px;
     ${"input"}{
-        width: 827px;
+        /* width: 216px; */
         border-bottom: 1px solid #D9D9D9;
+        margin-right: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
     }
 
     ${"label"}{
         font-weight: 700;
         font-size: 16px;
     }
-`
+`;
+
+export const Checklabel = styled.label`
+
+`;
+
+export const Check = styled.input`
+
+`;
+
+
 export const Wrap = styled.div`
     display: grid;
-    grid-template-columns: 100px 600px; 
-    gap: 30px; 
+    align-items: center;
+    grid-template-columns: 100px 900px; 
+    gap: 20px; 
+`;
+
+export const Inp = styled.input`
+    width: 216px;
+    height: 35px;
+    border: 1px solid #D9D9D9;
+    border-radius: 1550px;
+`;
+
+export const Inp2 = styled.input`
+    width: 340px;
+    height: 35px;
+    border: 1px solid #D9D9D9;
+    border-radius: 1550px;
 `;
 
 export const Wrap2 = styled.div`
-    display: grid;
- 
-      grid-template-columns: 2fr 1fr 2fr; 
-      /*반응형으로 조작되는 fr단위(박스요소만-글자는 px단위이기때문에 반응형X)*/
-      grid-template-rows: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    ${".second1"}{
 
+    width: 418px;
+    }
 
+    ${".second2"}{
+        width: 439px;
+height: 230px;
+background: red;
+margin-left: 60px;
+margin-bottom: 30px;
+    }
     ${"div"}{
         display: flex;
         flex-direction: column; 
     }
+    ${"input"}{
+        /* width: 316px; */
+        border-bottom: 1px solid #D9D9D9;
+        margin-right: 5px;
+        margin: 6px 0;
+    }
+
+    ${"label"}{
+        font-weight: 700;
+        font-size: 16px;
+    }
+    ${".radio"}{
+        display: flex;
+        flex-direction: row; 
+    }
+`;
+
+export const TextArea = styled.textarea`
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    margin: 10px 0 20px;
 `;
 
 export const Btn = styled.button`
@@ -102,14 +171,22 @@ export const Btn = styled.button`
     border-radius: 15px;
     font-weight: 500;
     font-size: 14px;
-    margin: 0 14px;
+    margin: 0 7px;
  `;
+export const BtnSave = styled.button`
+width: 916px;
+height: 40px;
+background: #D9D9D9;
+border-radius: 3px;
 
-export const Inp = styled.input`
-    width: 216px;
-    height: 35px;
-    border: 1px solid #D9D9D9;
-    border-radius: 1550px;
+font-weight: 700;
+font-size: 20px;
+line-height: 31px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
 `;
 
   export default Write;

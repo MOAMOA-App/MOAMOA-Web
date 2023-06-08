@@ -27,15 +27,18 @@ export const Div = styled.div`
     cursor: pointer;
     ${"img"}{
         margin-bottom: 10px;
-        width:46px;
-        height: 46px;
+        width:35px;
+        height: 35px;
+        margin-right: 10px;
     }
 
 `
 
 export const Wrap = styled.div`
     display: flex;
-    overflow-x: scroll;
+    flex-wrap: wrap;
+
+    /* overflow-x: scroll; */
     height: 120px;
     padding: 0 10px;
 `

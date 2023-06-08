@@ -52,7 +52,7 @@ export const Div = styled.div`
     justify-content: space-between;
     padding:0 110px 10px;
     margin-top: 93px;
-    
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     
     
 `;
