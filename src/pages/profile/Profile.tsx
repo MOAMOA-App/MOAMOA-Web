@@ -1,7 +1,10 @@
 import React from 'react'
+import  ProfileMenu  from '../../components/ProfileMenu.tsx';
 
 export default function Profile() {
     return (
-        <div>Profile</div>
+        <div>
+            <ProfileMenu></ProfileMenu>
+        </div>
     )
 }

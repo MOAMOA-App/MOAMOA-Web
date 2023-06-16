@@ -11,12 +11,28 @@ export default function SignUp() {
         <Form >
             <WrapInp>
                 <label htmlFor='emailInput'>이메일</label>
-                <input 
-                type="email" 
-                id="emailInput"
-                name="email"
-                placeholder="이메일 주소를 적어주세요.">
-                </input>
+                <div>
+                    <input 
+                    type="email" 
+                    id="emailInput"
+                    name="email"
+                    placeholder="이메일 주소를 적어주세요.">
+                    </input>
+                    <button>인증요청</button>
+                </div>
+                {/* <p >ㅇ</p> */}
+            </WrapInp>
+            <WrapInp>
+                <label htmlFor='emailInput'>인증번호 입력</label>
+                <div>
+                    <input 
+                    type="email" 
+                    id="emailInput"
+                    name="email"
+                    placeholder="이메일 주소를 적어주세요.">
+                    </input>
+                    <button>확인</button>
+                </div>
                 {/* <p >ㅇ</p> */}
             </WrapInp>
             <WrapInp>
@@ -54,7 +70,7 @@ export default function SignUp() {
         </Form>
         </Div>
         <WrapMent>
-            <Label for="scales"> <input type="checkbox" id="scales" name="scales" checked/>로그인 상태 유지</Label>
+            <Label for="scales"> <input type="checkbox" id="scales" name="scales" checked/>개인정보 수집 동의</Label>
             <p>자세히 보기</p>
         </WrapMent>
 
@@ -120,12 +136,21 @@ export const WrapInp = styled.div`
     }
     ${"input"}{
         border-bottom: 1px solid #F79331;
-        width: 356px;
+        width: 254px;
+        margin-right: 12px;
         padding: 0 5px;
 
         font-weight: 500;
         font-size: 14px;
         line-height: 22px;
+    }
+    ${"button"}{
+        color: white;
+        width: 91px;
+        height: 28px;
+        background: #F79331;
+        border: 1px solid #F79331;
+        border-radius: 15px;
     }
 `;
 
