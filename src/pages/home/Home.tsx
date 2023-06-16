@@ -5,7 +5,7 @@ import Category from "../../components/Category.tsx";
 import styled from 'styled-components';
 
 export default function Home() {
-    const arr=[1,2,3,4,5,6]
+    const arr=[1,2,3,4,5]
     return (
         <Wrap>
             <Search placeholder="검색어를 입력해주세요."></Search>
@@ -38,20 +38,31 @@ export default function Home() {
     )
 }
 export const Wrap = styled.div`
-    padding: 26px 10% ;
+    padding: 26px 17% ;
     /* border-top: 0.5px solid rgba(0, 0, 0, 0.1); */
+    @media (max-width: 768px) {
+        padding: 26px 10% ;
+
+  }
 `;
 export const Div = styled.div`
     display: flex;
-    margin:0 auto 40px;
-    overflow-x: scroll;
-    padding: 10px;
+    /* width:100vw; */
+    margin:0 auto 20px;
 
+    overflow-x: scroll;
+    padding: 10px ;
+    @media (max-width: 768px) {
+        padding: 26px 10% ;
+        margin:0 -40px 40px;
+        padding: 10px 40px;
+
+  }
 `;
 export const Event = styled.div`
     height: 228px;
     background: #F5F5F5;
-    margin: 28px 0 21px ;
+    margin: 100px 0 21px ;
 
 `;
 export const Search = styled.input`
@@ -61,4 +72,5 @@ export const Search = styled.input`
     height: 40px;
     border: 1px solid #FF952C;
     border-radius: 30px;
+    margin-bottom: 15px;
 `

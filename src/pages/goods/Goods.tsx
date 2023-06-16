@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import udi from "../../assets/images/udi.png";
+import money from "../../assets/images/money.png";
 import Card from "../../components/Card.tsx";
 
 type GoodsProps = {
@@ -21,8 +22,9 @@ type GoodsProps = {
             <div>
                 
                     <p>해외  충무로역</p>
-                    <h1>우디 인형 같이 사실 분 구합니다.</h1>   
-                    <span class="money">20,000원</span>         
+                    <h1>우디 인형 같이 사실 분 구합니다.</h1>
+                        <img src={money} alt="" />
+                        <span class="money"> 20,000원</span>         
 
                 <Wrap>
             <h3>모집여부</h3> 
@@ -107,6 +109,7 @@ ${".money"}{
     font-weight: 700;
 font-size: 24px;
 line-height: 37px;
+padding-bottom: 5px;
 /* identical to box height */
 
 

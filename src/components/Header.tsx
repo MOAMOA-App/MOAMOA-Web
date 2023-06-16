@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import  logo  from '../assets/images/logo.png';
-import  title  from '../assets/images/title.png';
 // import  chat  from '../assets/images/chat.svg';
 // import  alarm  from '../assets/images/alarm.svg';
 import  mozip  from '../assets/images/mozip.svg';
@@ -10,10 +9,9 @@ import styled,{ css } from 'styled-components';
 export default function Header() {
     return (
         <Div>
-            <div>
-                <img src={logo} alt="" />
-                <img src={title} alt="" />
-            </div>
+            <a href="http://localhost:3000/">
+                <Logo src={logo} alt="" />
+            </a>                            
             <Wrap>
                 <Write to="/write">
                 <img src={mozip} alt="" />
@@ -55,6 +53,12 @@ export const Div = styled.div`
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     
     
+`;
+
+export const Logo = styled.img`
+    width: 170px;
+    cursor: pointer;
+
 `;
 
 export const Wrap = styled.div`
