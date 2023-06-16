@@ -21,22 +21,50 @@ export default function Category() {
 
 export const Div = styled.div`
     display: flex;
+    width: 80px;
+    height: 85px;
     flex-direction: column;
     align-items: center;
-    margin-top: 32px; 
+    /* margin-top: 15px;  */
     cursor: pointer;
+    margin:7px  20px;
     ${"img"}{
-        margin-bottom: 10px;
-        width:46px;
-        height: 46px;
+        margin-bottom: 3px;
+        width:60px;
+        height: 60px;
+
+        @media (max-width: 768px) {
+    width:35px;
+    height:35px;
+
+
+  }
     }
+    @media (max-width: 768px) {
+        margin:0px 13px;
+        padding-bottom: 20px;
+
+
+  }
 
 `
 
 export const Wrap = styled.div`
-    display: flex;
-    overflow-x: scroll;
+    display: grid;
+    justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  /* grid-gap: 20px; */
+
+    /* overflow-x: scroll; */
     height: 120px;
-    padding: 0 10px;
+    /* padding: 0 10px; */
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+
+
+  }
+
+
 `
 

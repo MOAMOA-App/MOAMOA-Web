@@ -9,6 +9,7 @@ import Write from "../pages/write/Write.tsx";
 import Alarm from "../pages/alarm/Alarm.tsx";
 import ChatRoom from "../pages/chatRoom/ChatRoom.tsx";
 import Profile from "../pages/profile/Profile.tsx";
+import Goods from "../pages/goods/Goods.tsx";
 
 export default function Router() {
     return (
@@ -17,6 +18,7 @@ export default function Router() {
         <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/write" element={<Write />} />
+            <Route path="/goods" element={<Goods />} />
             <Route path="/alarm" element={<Alarm />} />
             <Route path="/chat" element={<ChatRoom />} />
             <Route path="/profile" element={<Profile />} />

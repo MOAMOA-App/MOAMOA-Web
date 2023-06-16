@@ -30,6 +30,11 @@ export const Category = styled.div`
     text-align: center;
     justify-content: space-between;
     margin-bottom: 6px;
+    /* @media ${({ theme }) => theme.device.tablet } {
+        
+  flex-direction: column;
+  font-size: ${({ theme }) => theme.device.tablet};
+} */
     ${"div"}{
         display: flex;
         align-items: center;
@@ -44,7 +49,10 @@ export const Category = styled.div`
     ${".count"}{
         
     }
-
+@media (max-width: 768px) {
+    /* flex-direction: column; */
+    /* font-size: 12px; */
+  }
 `;
 
 export const Title = styled.div`
@@ -63,6 +71,12 @@ export const Div = styled.div`
     height:305px;
     padding:8px;
     margin-right: 26px;
+      @media (max-width: 768px) {
+    width:180px;
+    height:260px;
+    margin-right: 14px;
+
+  }
 `;
 
 
@@ -72,6 +86,12 @@ export const Img = styled.image`
     background: #F79331;
     margin: 0 auto;
     display: block;
+          @media (max-width: 768px) {
+    width:160px;
+    height:160px;
+    margin-right: 5px;
+
+  }
 `;
 
 export const Bottom = styled.div`
