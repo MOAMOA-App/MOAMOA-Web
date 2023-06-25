@@ -14,19 +14,19 @@ export default function ProfileMenu() {
     
     <ListProfile>
   <dt>내 활동</dt>
-  <dd>생성한 공동구매</dd>
-  <dd>참여한 공동구매</dd>
-  <dd>관심 공동구매</dd>
+  <dd><button>생성한 공동구매</button></dd>
+  <dd><button>참여한 공동구매</button></dd>
+  <dd><button>관심 공동구매</button></dd>
 </ListProfile>
 <ListProfile>
   
   <dt>내 정보</dt>
-  <dd>내 프로필</dd>
-  <dd>알림설정</dd>
-  <dd>환경설정</dd>
+  <dd><button>내 프로필</button></dd>
+  <dd><button>알림설정</button></dd>
+  <dd><button>환경설정</button></dd>
+<button>로그아웃</button>
 </ListProfile>
     </WrapProfile>
-<button>로그아웃</button>
     
     
     </Wrap>
@@ -36,9 +36,10 @@ export default function ProfileMenu() {
 export const Wrap = styled.div`
   margin: 0 110px;
   ${"img"}{
-    width:60px;
+    width:160px;
+    height: 160px;
     background-color:black;
-    
+border-radius: 50%;
   }
 `;
 
@@ -48,14 +49,15 @@ export const Name = styled.span`
 font-weight: 700;
 font-size: 24px;
 line-height: 37px;
+margin-top: 11px;
+
 `
 export const WrapProfile = styled.div`
     /* padding: 0 110px; */
     width: 265px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
+    align-items: center;
 `;
 
 export const ContProfile = styled.div`
@@ -64,6 +66,7 @@ export const ContProfile = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 24px 0 64px;
 
 `;
 
@@ -79,9 +82,13 @@ ${"dt"}{
 }
 
 ${"dd"}{
-  font-weight: 500;
   font-size: 14px;
   line-height: 22px;
+  margin:6px 0;
+  &:hover{
+    font-size: 33px;
+
+  }
 }
 `;
 
