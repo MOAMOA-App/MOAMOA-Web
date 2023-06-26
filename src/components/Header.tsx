@@ -89,7 +89,7 @@ export const Icon = styled(Link)`
     height: 40px;
     /* margin: 3px 0 0 20px ; */
     ${({ to }) => setAttr(to)}
-  
+    margin: 0 8px;
 
 `;
 

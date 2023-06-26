@@ -26,6 +26,13 @@ export const Wrap = styled.div`
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     padding: 28px 32px;
+margin-top:25px;
+${"h2"}{
+    font-size: 18px;
+font-family: KoPubWorldDotum_Pro;
+font-weight: 700;
+margin-bottom:27px;
+}
 `;
 export const Div = styled.div`
     display: grid;
