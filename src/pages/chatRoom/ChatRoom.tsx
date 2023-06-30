@@ -1,25 +1,24 @@
 import React from 'react'
 import styled,{ css } from 'styled-components';
+import search from  "../../assets/images/search.svg";
+import ChattingRoom from "../../components/ChattingRoom.tsx";
+import ChatPage from "../../components/ChatPage.tsx";
 
 export default function ChatRoom() {
+
+    const arr=[1,2,3,4,5]
+
     return (
-        <Room>
-            <span>메세지 목록</span>
-            <input type="text" placeholder="검색하기"/>
-            
-        </Room>
+        <Wrap>
+            <ChattingRoom></ChattingRoom>
+            <ChatPage></ChatPage>
+
+        </Wrap>
     )
 }
 
-
-
-export const Room = styled.div`
+export const Wrap = styled.div`
+    margin: 20px 100px;
     display: flex;
-    flex-direction: column;
-width: 310px;
-height: 598px;
-
-
-border: 1px solid #D9D9D9;
-border-radius: 15px;
+    
 `;

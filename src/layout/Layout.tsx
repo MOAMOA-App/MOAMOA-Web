@@ -17,5 +17,4 @@ export default function Layout({children}) {
 
 export const Wrap = styled.div`
     /* padding: 0 110px; */
-
 `;
