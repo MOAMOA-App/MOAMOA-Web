@@ -81,12 +81,15 @@ ${"dt"}{
   line-height: 28px;
 }
 
-${"dd"}{
+${"button"}{
   font-size: 14px;
   line-height: 22px;
+  font-weight: 400;
+
   margin:6px 0;
   &:hover{
-    font-size: 33px;
+  font-weight: 700;
+    
 
   }
 }

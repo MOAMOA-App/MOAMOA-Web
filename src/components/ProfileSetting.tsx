@@ -6,33 +6,40 @@ export default function ProfileSetting() {
     <Wrap>
         <Cont>
             <h2>내 프로필</h2>
-            <div>
-                <span>닉네임</span>
+            <Box>
+                <Title>닉네임</Title>
                 <span>초로개구리</span>
-            </div>
-            <div>
-                <span>이메일</span>
+            </Box>
+            <Box>
+                <Title>이메일</Title>
                 <span>lgrin02@naver.com</span>
-            </div>
-            <div>
-                <span>지역</span>
+            </Box>
+            <Box>
+                <Title>지역</Title>
                 <span>서울특별시 종로구</span>
-                <button>변경</button>
-            </div>
+                <Btn>변경</Btn>
+            </Box>
         </Cont>
         <Cont>
             <h2>계정 정보 변경</h2>
-            <div>
+            <Box>
+            <Label>현재 비밀번호</Label>
+            <Inp type="text" name="" id="" placeholder="현재 비밀번호를 입력하세요." />
+            </Box>
+            <Box>
 
-            </div>
-            <div>
+            <Label>새 비밀번호</Label>
+            <Inp type="text" name="" id="" placeholder="새 비밀번호를 입력하세요."/>
 
-            </div>
-            <div>
-                <span>새 비밀번호 확인</span>
+            </Box>
+            <Box>
+
+                <Label>새 비밀번호 확인</Label>
+            <Inp type="text" name="" id="" />
+
                 
-                <button>수정</button>
-            </div>
+                <Btn>수정</Btn>
+            </Box>
         </Cont>
 
     </Wrap>
@@ -62,6 +69,13 @@ margin-bottom: 67px;
 `;
 
 
+export const Box = styled.div`
+
+    display: flex;
+    margin: 16px 0;
+    align-items: center;
+`;
+
 export const Label = styled.label`
     font-size: 14px;
     line-height: 22px;
@@ -69,13 +83,43 @@ export const Label = styled.label`
     align-items: center;
     text-align: right;
     color: #8F8F8F;
-`;
-export const Inp= styled.input`
-    border: 1px solid #F79331;
-    border-radius: 1550px;
-    margin: 0 0 10px;
-    padding: 0 18px;
-    width: 356px;
-    height: 40px;
+    width: 137px;
+
+
 `;
 
+export const Title = styled.p`
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #8F8F8F;
+    width: 137px;
+
+`;
+
+export const Inp= styled.input`
+width: 248px;
+height: 28px;
+flex-shrink: 0;
+border-radius: 25px;
+border: 1px solid #D9D9D9;
+padding: 0 15px;
+`;
+
+
+
+export const Btn= styled.button`
+width: 56px;
+height: 28px;
+flex-shrink: 0;
+border-radius: 15px;
+background: #2C9B36;
+color: #FFF;
+text-align: center;
+font-size: 14px;
+font-family: KoPubWorldDotum_Pro;
+font-weight: 700;
+margin: 0 16px;
+`
