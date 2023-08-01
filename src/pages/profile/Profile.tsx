@@ -12,7 +12,7 @@ export default function Profile() {
 
     return (
         <Wrap>
-            <ProfileMenu setType={setType}></ProfileMenu>
+            <ProfileMenu type={type} setType={setType}></ProfileMenu>
 
         {   {
             setting : (
@@ -26,7 +26,7 @@ export default function Profile() {
             ),
             create : (
                 <>
-                    <CreateGoods></CreateGoods>                 
+                    <CreateGoods type={type} setType={setType}></CreateGoods>                 
                 </>
             ),
             }[type]
@@ -44,5 +44,6 @@ export default function Profile() {
 
 export const Wrap = styled.div`
     display: flex;
+    padding-top:170px;
 `;
 

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import udi from "../../assets/images/udi.png";
 import money from "../../assets/images/money.png";
-import Card from "../../components/Card.tsx";
+import Card from "../../components/Card";
 
 type GoodsProps = {
     name: string;
@@ -24,7 +24,7 @@ type GoodsProps = {
                     <p>해외  충무로역</p>
                     <h1>우디 인형 같이 사실 분 구합니다.</h1>
                         <img src={money} alt="" />
-                        <span class="money"> 20,000원</span>         
+                        <span className="money"> 20,000원</span>         
 
                 <Wrap>
             <h3>모집여부</h3> 
@@ -40,9 +40,9 @@ type GoodsProps = {
                 </Wrap>
                 <Map>지도</Map>
         <BtnWrap>
-            <button class="heart">하트</button>
-            <button class="chat">채팅</button>
-            <button class="party">참여하기</button>
+            <button className="heart">하트</button>
+            <button className="chat">채팅</button>
+            <button className="party">참여하기</button>
         </BtnWrap>
 
             </div>
@@ -149,8 +149,8 @@ export const Map = styled.div`
   export const Div = styled.div`
     display: flex;
     flex-direction: column;
-    padding:0 10% 10px;
-    margin-top: 40px;
+    align-items: center;
+    padding:180px 10% 10px;
     ${"input"}{
         width: 216px;
         border-bottom: 1px solid #D9D9D9;
@@ -164,6 +164,7 @@ export const Map = styled.div`
         font-weight: 700;
         font-size: 16px;
     }
+    
 `
 
 export const BtnWrap = styled.div`
@@ -214,7 +215,7 @@ export const Wrap = styled.div`
 export const Wrap2 = styled.div`
        display: grid;
 
-    grid-template-columns: 150px 600px; 
+    grid-template-columns: 150px 800px; 
     gap: 15px; 
     border-top: 1px solid #D9D9D9;
     border-bottom: 1px solid #D9D9D9;

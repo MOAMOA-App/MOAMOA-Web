@@ -18,7 +18,8 @@ export default function ChatRoom() {
 }
 
 export const Wrap = styled.div`
-    margin: 20px 100px;
+    margin: 0 100px;
     display: flex;
+    padding-top:170px;
     
 `;

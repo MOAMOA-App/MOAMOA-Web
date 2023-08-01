@@ -4,9 +4,9 @@ import styled from 'styled-components';
 export default function Compo() {
   return (
     <Wrap>
-        <p class="ment">마감이 가까워요</p>
+        <p className="ment">마감이 가까워요</p>
         <Cont>
-            <p class="tit">마감 임박</p>
+            <p className="tit">마감 임박</p>
             <p>전체보기 </p>
         </Cont>
     </Wrap>

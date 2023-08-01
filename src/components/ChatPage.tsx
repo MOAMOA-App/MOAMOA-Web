@@ -11,10 +11,10 @@ export default function ChatPage() {
                 <img src={profile} alt="" />
                 <NameBox>
                     <div>
-                        <span class="nick">닉네임</span>
-                        <span class="block">차단/신고하기</span>
+                        <span className="nick">닉네임</span>
+                        <span className="block">차단/신고하기</span>
                     </div>
-                    <span class="address">거주지역 미정</span>
+                    <span className="address">거주지역 미정</span>
                 </NameBox>
             </Profile>
             <StopBtn>대화종료</StopBtn>
