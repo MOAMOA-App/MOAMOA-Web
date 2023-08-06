@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import Card from "./Card.tsx";
+import Card from "./Card";
 
-export default function CreateGoods() {
+export default function CreateGoods({type, setType}) {
   const arr=[1,2,3,4,5,6]
     return (
     <Wrap>
@@ -12,7 +12,7 @@ export default function CreateGoods() {
         </label>
         <Div>
             <>
-                {arr.map((arr)=> <Card/>)}
+                {arr.map((arr)=> <Card type={type} setType={setType}/>)}
             </>
 
         </Div>
@@ -53,5 +53,6 @@ export const Search = styled.input`
     width: 420px;
     height: 33px;
     border: 1px solid #D9D9D9;
+    margin-left:7px;
     border-radius: 25px;
 `;

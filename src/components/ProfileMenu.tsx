@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-export default function ProfileMenu() {
+export default function ProfileMenu({type ,setType}) {
   return (
     <Wrap>
     <WrapProfile>
@@ -14,17 +14,17 @@ export default function ProfileMenu() {
     
     <ListProfile>
   <dt>내 활동</dt>
-  <dd><button>생성한 공동구매</button></dd>
-  <dd><button>참여한 공동구매</button></dd>
-  <dd><button>관심 공동구매</button></dd>
+  <dd><ListBtn type={type} onClick={() => { setType("create"); }}>생성한 공동구매</ListBtn></dd>
+  <dd><ListBtn type={type} onClick={() => { setType("create"); }} >참여한 공동구매</ListBtn></dd>
+  <dd><ListBtn type={type} onClick={() => { setType("create"); }} >관심 공동구매</ListBtn></dd>
 </ListProfile>
 <ListProfile>
   
   <dt>내 정보</dt>
-  <dd><button>내 프로필</button></dd>
-  <dd><button>알림설정</button></dd>
-  <dd><button>환경설정</button></dd>
-<button>로그아웃</button>
+  <dd><ListBtn type={type} onClick={() => { setType("setting"); }}>내 프로필</ListBtn></dd>
+  <dd><ListBtn type={type} onClick={() => { setType("create"); }}>알림설정</ListBtn></dd>
+  <dd><ListBtn type={type} onClick={() => { setType("create"); }}>환경설정</ListBtn></dd>
+<ListBtn>로그아웃</ListBtn>
 </ListProfile>
     </WrapProfile>
     
@@ -33,8 +33,20 @@ export default function ProfileMenu() {
   )
 }
 
+
+
+const setHiright = (type) => {
+    switch (type) {
+    case 'create':
+        return stylesAnswer
+    case 'false':
+        return stylesFalse
+};
+}
+
+
 export const Wrap = styled.div`
-  margin: 0 110px;
+  margin: 0 2rem;
   ${"img"}{
     width:160px;
     height: 160px;
@@ -81,7 +93,12 @@ ${"dt"}{
   line-height: 28px;
 }
 
-${"button"}{
+
+`;
+
+
+export const ListBtn = styled.button`
+
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -89,9 +106,5 @@ ${"button"}{
   margin:6px 0;
   &:hover{
   font-weight: 700;
-    
-
   }
-}
-`;
-
+`

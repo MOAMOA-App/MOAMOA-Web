@@ -42,14 +42,19 @@ export default function Header() {
             `
         }
     };
+    
 
 export const Div = styled.div`
     display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100vw;
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    padding:0 110px 10px;
-    margin-top: 93px;
+    padding:0 110px;
+    height: 70px;
+    /* margin-top: ; */
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     
     
@@ -78,6 +83,8 @@ export const Write = styled(Link)`
     font-weight: 700;
     padding: 14px;
     align-items: flex-start;
+    margin-right: 10px;
+
     ${"img"}{
         margin-right: 4px;
     }
@@ -100,3 +107,4 @@ export const Profile = styled(Link)`
     border-radius: 50%;
     background-color: black;
 `;
+

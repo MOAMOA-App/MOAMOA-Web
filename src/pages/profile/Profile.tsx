@@ -44,6 +44,6 @@ export default function Profile() {
 
 export const Wrap = styled.div`
     display: flex;
-    padding-top:170px;
+    padding-top:120px;
 `;
 

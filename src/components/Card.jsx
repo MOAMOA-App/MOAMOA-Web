@@ -2,15 +2,15 @@ import React from 'react'
 // import { Div } from '../style/Card';
 import styled from 'styled-components';
 
-export default function Card() {
+export default function Card({type, setType}) {
     return (
-        <Div>
+        <Div  onClick={() => { setType("detail") }}>
             <Category>
                 <div>
-                    <p class="category">식품</p>
-                    <p class="place">사당역</p>
+                    <p className="category">식품</p>
+                    <p className="place">사당역</p>
                 </div>
-                <p class="count">0/13명 참여</p>
+                <p className="count">0/13명 참여</p>
             </Category>
             <Img>d</Img>
             <Title>밀양 얼음골 사과</Title>
@@ -74,9 +74,12 @@ export const Div = styled.div`
       @media (max-width: 768px) {
     width:180px;
     height:260px;
-    margin-right: 14px;
+    /* margin-right: 14px;
+    margin-bottom: 14px; */
 
   }
+
+  cursor: pointer;
 `;
 
 
