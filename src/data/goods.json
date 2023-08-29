@@ -1,0 +1,65 @@
+{
+    "goods": [
+        {
+            "user": "",
+            "categoryId": 1,
+            "sellingArea": "천안",
+            "detailArea": "청당2길",
+            "title": "사과",
+            "status": "판매중",
+            "sellPrice": 3,
+            "description": "설명 왜 인티저",
+            "finishedAt": "2022-02-22",
+            "maxCount": 5,
+            "choiceSend": "비대면"
+        },        {
+            "user": "",
+            "categoryId": 1,
+            "sellingArea": "천안",
+            "detailArea": "청당2길",
+            "title": "사과",
+            "status": "판매중",
+            "sellPrice": 3,
+            "description": "설명 왜 인티저",
+            "finishedAt": "2022-02-22",
+            "maxCount": 5,
+            "choiceSend": "비대면"
+        },        {
+            "user": "",
+            "categoryId": 1,
+            "sellingArea": "천안",
+            "detailArea": "청당2길",
+            "title": "사과",
+            "status": "판매중",
+            "sellPrice": 3,
+            "description": "설명 왜 인티저",
+            "finishedAt": "2022-02-22",
+            "maxCount": 5,
+            "choiceSend": "비대면"
+        },        {
+            "user": "",
+            "categoryId": 1,
+            "sellingArea": "천안",
+            "detailArea": "청당2길",
+            "title": "사과",
+            "status": "판매중",
+            "sellPrice": 3,
+            "description": "설명 왜 인티저",
+            "finishedAt": "2022-02-22",
+            "maxCount": 5,
+            "choiceSend": "비대면"
+        },        {
+            "user": "",
+            "categoryId": 1,
+            "sellingArea": "천안",
+            "detailArea": "청당2길",
+            "title": "사과",
+            "status": "판매중",
+            "sellPrice": 3,
+            "description": "설명 왜 인티저",
+            "finishedAt": "2022-02-22",
+            "maxCount": 5,
+            "choiceSend": "비대면"
+        }
+    ]
+}
