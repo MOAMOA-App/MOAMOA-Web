@@ -57,4 +57,10 @@ export const ContCard = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 26px;
+    @media (max-width: 768px) {
+        overflow-x: scroll;
+        padding: 26px 10%;
+        margin: 0 -40px 40px;
+        padding: 10px 40px;
+    }
 `;
