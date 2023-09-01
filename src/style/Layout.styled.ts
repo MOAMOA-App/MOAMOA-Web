@@ -9,20 +9,38 @@ export const Header = styled.div`
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    padding: 0 110px;
+    padding: 0 8%;
     height: 70px;
     /* margin-top: ; */
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
 `;
 
+export const MobileHeader = styled.div`
+    display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100vw;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    height: 70px;
+    @media screen and (min-width: 500px) {
+        display: none;
+    }
+`;
+
 export const LogoCont = styled(Link)`
-${"img"}{
-    max-width: 166px;
-}    
+    ${"img"} {
+        max-width: 166px;
+    }
 `;
 
 export const Wrap = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content min-content min-content min-content;
+    gap: 24px;
+    align-items: center;
 `;
 
 export const Write = styled(Link)`
@@ -45,20 +63,11 @@ export const Write = styled(Link)`
     }
 `;
 
-export const Icon = styled(Link)`
-    background: #f79331;
-
-    background: url('/chat.svg') no-repeat ;
-    width: 40px;
-    height: 40px;
-    /* margin: 3px 0 0 20px ; */
-    margin: 0 8px;
-`;
+export const Icon = styled.img``;
 
 export const Profile = styled.button`
     width: 40px;
     height: 40px;
-    margin-left: 20px;
     border-radius: 50%;
     background-color: black;
 `;
