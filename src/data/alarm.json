@@ -1,0 +1,48 @@
+{
+    "list": [
+        {
+            "reminder_id": 1,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "글제목",
+            "message": "메세지",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        },
+        {
+            "reminder_id": 2,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "주제",
+            "message": "메세지",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        },
+        {
+            "reminder_id": 3,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "주제",
+            "message": "메세지",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        },
+        {
+            "reminder_id": 4,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "주제",
+            "message": "메세지",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        }
+    ]
+}
