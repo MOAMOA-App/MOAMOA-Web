@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "./../Card";
+import Card from "../Card";
+import goods from "../../data/goods.json";
 
 export default function CreateGoods() {
     const arr = [1, 2, 3, 4, 5, 6];
@@ -8,15 +9,14 @@ export default function CreateGoods() {
         <Wrap>
             <h2>생성한 공동구매</h2>
             <label htmlFor="search">
-                {" "}
                 조회
                 <Search id="search" type="text" />
             </label>
             <Div>
                 <>
-                    {/* {arr.map((arr) => (
-                        <Card />
-                    ))} */}
+                    {goods.goods.map((good) => (
+                        <Card good={good} />
+                    ))}
                 </>
             </Div>
         </Wrap>
