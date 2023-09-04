@@ -46,7 +46,7 @@ export default function Profile() {
 
 export const Wrap = styled.div`
     display: flex;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
         display: none;
     }
 `;

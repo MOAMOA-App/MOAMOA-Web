@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const Wrap = styled.div`
 position: relative;
     display: flex;
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 768px) {
         display: none;
     }
 `;
