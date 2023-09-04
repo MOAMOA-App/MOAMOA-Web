@@ -15,7 +15,7 @@ export default function Home() {
 
     return (
         <S.Wrap>
-            <S.HomeSearchBar>
+            {/* <S.HomeSearchBar>
                 <input
                     type="text"
                     name=""
@@ -23,7 +23,7 @@ export default function Home() {
                     placeholder="검색어를 입력해주세요."
                 />
                 <img src={search} alt="" />
-            </S.HomeSearchBar>
+            </S.HomeSearchBar> */}
             <Category />
 
             {titleArr.map((title) => (

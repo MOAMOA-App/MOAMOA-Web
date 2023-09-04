@@ -3,7 +3,9 @@ import style from "./modal.module.css";
 import { Link } from "react-router-dom";
 import chat from "../../assets/images/chat.svg";
 import alarm from "../../assets/images/alarm.svg";
+import cancel from "../../assets/images/cancel.svg";
 import mozip from "../../assets/images/mozip.svg";
+import * as S from "../../style/MenuModal.styled";
 
 export default function MenuModal({
     type,
@@ -50,23 +52,39 @@ export default function MenuModal({
     });
 
     return (
-        <div className={style.back_modal}>
-            <div
-                className={
-                    `${style.wrap_modal}`
-                }
-                ref={modalRef}
-            >
-                <Link to="/write" onClick={closeModal}>
+        <S.Back>
+            <S.Wrap ref={modalRef}>
+                <button onClick={closeModal}>
+                    <S.Cancle src={cancel} alt="" />
+                </button>
+                <S.MenuCont>
+                    <S.ProfileCont>
+                        <Link to="/profile" onClick={closeModal}>
+                            <S.Profile />
+                        </Link>
+                        <span>알라뷰</span>
+                    </S.ProfileCont>
+                    <div>
+                        <Link to="/chat" onClick={closeModal}>
+                            <S.Icon src={chat} alt="" />
+                        </Link>
+                        <button>
+                            <img src={alarm} alt="" onClick={closeModal}></img>
+                        </button>
+                    </div>
+                </S.MenuCont>
+
+                <S.Write to="/write" onClick={closeModal}>
                     <img src={mozip} alt="" />
                     공동구매 모집
-                </Link>
-                <Link to="/chat" onClick={closeModal}>
-                    <img src={chat} alt="" />
-                </Link>
-                <img src={alarm} alt=""></img>
-                <Link to="/profile"></Link>
-            </div>
-        </div>
+                </S.Write>
+                <S.ListCont>
+                    <button>채팅하기</button>
+                    <button>알림보기</button>
+                    <button>마이페이지</button>
+                    <button>설정</button>
+                </S.ListCont>
+            </S.Wrap>
+        </S.Back>
     );
 }

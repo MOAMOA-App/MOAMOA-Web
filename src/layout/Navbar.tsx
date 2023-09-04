@@ -61,7 +61,7 @@ function Navbar() {
                     <Link to="/chat">
                         <S.Icon src={chat} alt="" />
                     </Link>
-                    <div>
+                    <button>
                         <S.Icon src={alarm} alt="" onClick={showModal}></S.Icon>
                         {modalOpen && (
                             <ModalPortal>
@@ -74,7 +74,7 @@ function Navbar() {
                                 />
                             </ModalPortal>
                         )}
-                    </div>
+                    </button>
                     <Link to="/profile">
                         <S.Profile />
                     </Link>
@@ -82,7 +82,9 @@ function Navbar() {
             </S.Header>
 
             <S.MobileHeader>
-                <img src={hamburger} alt="" onClick={showModal2} />
+                <button>
+                    <img src={hamburger} alt="" onClick={showModal2} />
+                </button>
                 <Link to="/">
                     <img src={logo} alt="" style={{ width: "100px" }} />
                 </Link>

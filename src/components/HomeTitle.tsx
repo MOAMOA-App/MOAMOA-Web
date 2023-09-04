@@ -23,7 +23,7 @@ export const Wrap = styled.div`
     padding: 0 7px;
     line-height: 22px;
     width: 100vw;
-    margin: 11px;
+    margin: 19px 11px;
     border-left: #2c9b36 solid 10px;
     ${".ment"} {
         font-weight: 500;

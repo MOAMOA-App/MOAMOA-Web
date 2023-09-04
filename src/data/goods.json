@@ -2,7 +2,7 @@
     "goods": [
         {
             "user": "",
-            "categoryId": 1,
+            "categoryId": "식품",
             "sellingArea": "천안",
             "detailArea": "청당2길",
             "title": "사과",
@@ -12,9 +12,10 @@
             "finishedAt": "2022-02-22",
             "maxCount": 5,
             "choiceSend": "비대면"
-        },        {
+        },
+        {
             "user": "",
-            "categoryId": 1,
+            "categoryId": "식품",
             "sellingArea": "천안",
             "detailArea": "청당2길",
             "title": "사과",
@@ -24,9 +25,10 @@
             "finishedAt": "2022-02-22",
             "maxCount": 5,
             "choiceSend": "비대면"
-        },        {
+        },
+        {
             "user": "",
-            "categoryId": 1,
+            "categoryId": "식품",
             "sellingArea": "천안",
             "detailArea": "청당2길",
             "title": "사과",
@@ -36,9 +38,10 @@
             "finishedAt": "2022-02-22",
             "maxCount": 5,
             "choiceSend": "비대면"
-        },        {
+        },
+        {
             "user": "",
-            "categoryId": 1,
+            "categoryId": "식품",
             "sellingArea": "천안",
             "detailArea": "청당2길",
             "title": "사과",
@@ -48,9 +51,10 @@
             "finishedAt": "2022-02-22",
             "maxCount": 5,
             "choiceSend": "비대면"
-        },        {
+        },
+        {
             "user": "",
-            "categoryId": 1,
+            "categoryId": "식품",
             "sellingArea": "천안",
             "detailArea": "청당2길",
             "title": "사과",

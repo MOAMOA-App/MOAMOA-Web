@@ -47,7 +47,6 @@ export default function Modal({ type, modalOpen, setModalOpen, handleModal }) {
     return (
         <S.Back>
             <S.Wrap ref={modalRef}>
-                <button onClick={closeModal}>닫기</button>
                 <S.List>
                     {list.list.map((a) => (
                         <S.ListItem>

@@ -25,7 +25,7 @@ export const MobileHeader = styled.div`
     justify-content: space-between;
     padding: 0 25px;
     height: 70px;
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 768px) {
         display: none;
     }
 `;
