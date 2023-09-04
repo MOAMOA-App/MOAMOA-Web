@@ -1,6 +1,6 @@
 export interface Goods {
     user: string;
-    categoryId: number;
+    categoryId: string;
     sellingArea: string;
     detailArea: string;
     title: string;
