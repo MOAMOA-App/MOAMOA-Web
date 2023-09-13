@@ -16,6 +16,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import AuthContext from "../context/AuthProvider";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as S from "./../style/Login.styled";
+import { usePostLogin } from "../mutations/postLogin";
+
 interface FormValue {
     email: string;
     password: string;
@@ -31,6 +33,13 @@ const Login: React.FC = () => {
         formState: { isSubmitting, errors },
     } = useForm<FormValue>();
 
+    const {
+        mutateAsync: postLogin,
+        isLoading = false,
+        isError = false,
+        error,
+    } = usePostLogin();
+
     const authContext = useContext(AuthContext);
     const [showPswd, setShowPswd] = useState<boolean>(false);
 
@@ -45,19 +54,18 @@ const Login: React.FC = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
 
     const from = location.state?.from?.pathname || "/";
 
     const emailValue = watch("email");
     const passwordValue = watch("password");
 
-    const onSubmit: SubmitHandler<FormValue> = (data) => {
-        console.log("실행안해", data);
-
+    const onSubmit: SubmitHandler<FormValue> = async (data) => {
+        let res = postLogin(data);
+        console.log(postLogin(data));
         if (typeof setAuth === "function") {
-            setAuth(data.email);
-            localStorage.setItem("name", JSON.stringify(data.email));
+            setAuth((await res).accessToken);
+            // localStorage.setItem("name", JSON.stringify(data.email));
             navigate(from);
         }
     };
