@@ -1,9 +1,9 @@
-import Card from "../components/Card";
-import goods from "../data/goods.json";
+import Card from "../../components/Card";
+import goods from "../../data/goods.json";
 import search from "../assets/images/search_orange.svg";
-import Category from "../components/Category";
-import HomeTitle from "../components/HomeTitle";
-import * as S from "../style/Home.styled";
+import Category from "../../components/Category";
+import HomeTitle from "../../components/HomeTitle";
+import * as S from "../../styles/Home.styled";
 
 export default function Home() {
     console.log(goods.goods);
@@ -27,14 +27,14 @@ export default function Home() {
             <Category />
 
             {titleArr.map((title) => (
-                <>
-                    <HomeTitle title={title}/>
+                <S.RowCont>
+                    <HomeTitle title={title} />
                     <S.ContCard>
                         {goods.goods.map((good) => (
                             <Card good={good}></Card>
                         ))}
                     </S.ContCard>
-                </>
+                </S.RowCont>
             ))}
         </S.Wrap>
     );

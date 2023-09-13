@@ -9,7 +9,7 @@ import chat from "../assets/images/chat.svg";
 import alarm from "../assets/images/alarm.svg";
 import mozip from "../assets/images/mozip.svg";
 import hamburger from "../assets/images/menu.svg";
-import * as S from "../style/Layout.styled";
+import * as S from "../styles/Layout.styled";
 import ModalPortal from "../components/modal/ModalPortal";
 import Modal from "../components/modal/Modal";
 import MenuModal from "../components/modal/MenuModal";
