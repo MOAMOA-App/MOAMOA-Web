@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import arrow from "../assets/images/arrow_right.svg";
 
 type TitleProps = {
     title: string[];
@@ -11,7 +12,10 @@ export default function HomeTitle({ title }: TitleProps) {
             <p className="ment">{title[1]}</p>
             <Cont>
                 <p className="tit">{title[0]}</p>
-                <p>전체보기 </p>
+                <button type="button">
+                    <p>전체보기 </p>
+                    <img src={arrow} alt="" />
+                </button>
             </Cont>
         </Wrap>
     );
@@ -22,8 +26,7 @@ export const Wrap = styled.div`
     flex-direction: column;
     padding: 0 7px;
     line-height: 22px;
-    width: 100vw;
-    margin: 19px 11px;
+    margin: 19px 0px 19px 11px;
     border-left: #2c9b36 solid 10px;
     ${".ment"} {
         font-weight: 500;
@@ -40,7 +43,12 @@ export const Wrap = styled.div`
 export const Cont = styled.div`
     display: flex;
     justify-content: space-between;
-    color: #2c9b36;
-    font-weight: 700;
-    font-size: 14px;
+
+    ${"button"} {
+        color: #2c9b36;
+        font-weight: 700;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
 `;
