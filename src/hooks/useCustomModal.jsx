@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 export default function useCustomModal(type) {
     // 모달 관리 변수
@@ -10,14 +10,14 @@ export default function useCustomModal(type) {
         setModalOpen(true);
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         //스크롤 금지 a
-        if(modalOpen){
-            document.body.style.overflow ="hidden";
-        }else{
-            document.body.style.overflow ="";
+        if (modalOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
         }
-    }, [modalOpen])
+    }, [modalOpen]);
 
     // 커스텀 훅에서
     //조건문으로 배열 return
@@ -27,7 +27,13 @@ export default function useCustomModal(type) {
     // }else{
     //     return [modalOpen, modalSecondOpen, setModalOpen, setModalSecondOpen, showModal]
     // }
-    
+
     // 객체로 return
-    return {modalOpen, modalSecondOpen, setModalOpen, setModalSecondOpen, showModal}
+    return {
+        modalOpen,
+        modalSecondOpen,
+        setModalOpen,
+        setModalSecondOpen,
+        showModal,
+    };
 }
