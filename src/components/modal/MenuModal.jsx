@@ -5,7 +5,7 @@ import chat from "../../assets/images/chat.svg";
 import alarm from "../../assets/images/alarm.svg";
 import cancel from "../../assets/images/cancel.svg";
 import mozip from "../../assets/images/mozip.svg";
-import * as S from "../../style/MenuModal.styled";
+import * as S from "../../styles/MenuModal.styled";
 
 export default function MenuModal({
     type,
