@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
-const fadeInUp = keyframes` 
+const fadeInLeft = keyframes`
     0% {
         opacity: 0;
-        transform: translate3d(0, -100%, 0);
+        transform: translate3d(-100%, 0 , 0);
     }
     100% {
         opacity: 1;
@@ -17,25 +18,37 @@ export const Back = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 100;
     box-sizing: border-box;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: flex-end; */
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end; 
 `;
 export const Wrap = styled.div`
-    position: absolute;
-    top: 70px;
-    right: 12vw;
+    position: relative;
+
     width: 305px;
-    /* height: 370px; */
-    border-radius: 5px;
-    box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.25);
+    height: 100vh;
     background-color: white;
-    animation: ${fadeInUp} 0.5s;
+    animation: ${fadeInLeft} 0.5s;
+    padding: 77px 32px;
 `;
+
+export const MapWrap = styled.div`
+    position: relative;
+    margin: auto;
+    animation: ${fadeInLeft} 0.5s;
+    padding: 77px 32px;
+`;
+
+export const Cancle = styled.img`
+    position: absolute;
+    top: 43px;
+    right: 22px;
+`;
+
 export const List = styled.div`
     display: grid;
     gap: 1px 0;
@@ -113,3 +126,58 @@ export const CancelBtn = styled.button`
 //     background-color: #0f0b19;
 //     transition: 0.5s;
 // }
+
+export const Write = styled(Link)`
+    /* width: 132px; */
+    height: 40px;
+    display: flex;
+    background: #f79331;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 14px;
+    align-items: flex-start;
+    justify-content: center;
+
+    ${"img"} {
+        margin-right: 4px;
+    }
+`;
+
+export const Icon = styled.img`
+    margin-right: 15px;
+`;
+
+export const Profile = styled.button`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 13px;
+`;
+
+export const MenuCont = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+`;
+
+export const ProfileCont = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const ListCont = styled.div`
+    margin: 15px -32px;
+    border: 1px solid #d9d9d9;
+    padding: 23px 32px;
+    ${"button"} {
+        display: block;
+        margin-bottom: 18px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+`;

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import DatePicker from "react-datepicker";
+
 interface CategoryBtnProps {
     selectedCategory: string;
     children: string;
@@ -58,12 +60,28 @@ export const Inp = styled.input`
     border-radius: 1550px;
 `;
 
-export const Inp2 = styled.input`
+export const InpCont = styled.div`
+    display: flex;
     width: 340px;
     height: 35px;
     margin: 5px 0;
     border: 1px solid #d9d9d9;
     border-radius: 1550px;
+
+    ${"button"} {
+        color: #2c9b36;
+        font-size: 14px;
+        font-weight: 700;
+        ${"img"} {
+            vertical-align: middle;
+        }
+    }
+`;
+
+export const Inp2 = styled.input`
+    width: 250px;
+    border-radius: 1550px;
+    padding: 0 5px;
 `;
 
 export const Wrap2 = styled.div`
@@ -127,6 +145,32 @@ export const CategoryCont = styled.div`
     display: flex;
     flex-wrap: wrap;
 `;
+
+export const DateCont = styled.div`
+    display: flex;
+    align-items: center;
+    position: relative;
+`;
+
+export const InpDateCont = styled.div`
+    position: relative;
+    ${".datePicker"} {
+        width: 216px;
+        height: 35px;
+        margin: 5px 0;
+        border: 1px solid #d9d9d9;
+        border-radius: 1550px;
+    }
+    ${"calenderWrapper"} {
+        position: absolute;
+    }
+    ${"img"} {
+        position: absolute;
+        top: 7px;
+        right: 22px;
+    }
+`;
+export const DateInput = styled(DatePicker)``;
 
 export const CategoryBtn = styled.div<CategoryBtnProps>`
     width: 55px;

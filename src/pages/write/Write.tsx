@@ -1,15 +1,22 @@
-/*global kakao*/
-import React, { useRef, useState } from "react";
-import imgBtn from "../assets/images/imgBtn.png";
-import hright from "../assets/images/hright.svg";
-import hleft from "../assets/images/hleft.svg";
+import React, { useRef, useState, useEffect } from "react";
+import imgBtn from "../../assets/images/imgBtn.png";
+import hright from "../../assets/images/hright.svg";
+import hleft from "../../assets/images/hleft.svg";
+import searchGreen from "../../assets/images/search_green.svg";
+import calendar from "../../assets/images/calendar.svg";
+
 import checked from "../assets/images/checked.svg";
 import defaultChecked from "../assets/images/defaultChecked.svg";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
-// import DaumPostcode from "react-daum-postcode";
-import * as S from "./../style/Write.styled";
+import ModalPortal from "../../components/modal/ModalPortal";
+import MapModal from "../../components/modal/MapModal";
+import useCustomModal from "../../hooks/useCustomModal";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import * as S from "../../styles/Write.styled";
 import { SubmitHandler, useForm } from "react-hook-form";
+import KakaoMapScript from "../../hooks/KakaoMapScript";
+import MapContainer from "../../hooks/KakaoMapScript";
 
 interface FormValue {
     title: string;
@@ -35,8 +42,8 @@ type WriteProps = {
 function Write() {
     const [startDate, setStartDate] = useState(new Date());
     const [modalState, setModalState] = useState(false);
-    const [inputAddressValue, setInputAddressValue] = useState();
-    const [inputZipCodeValue, setInputZipCodeValue] = useState();
+    const [inputAddressValue, setInputAddressValue] = useState<string>("");
+    const [inputZipCodeValue, setInputZipCodeValue] = useState<string>("");
     const [imgFile, setImgFile] = useState<any>(null);
     const arr = [
         "생활",
@@ -51,46 +58,45 @@ function Write() {
         "기타",
     ];
     const [selectedCategory, setSelectedCategory] = useState<string>("");
+    const { modalOpen, setModalOpen } = useCustomModal();
 
     const handleCategoryClick = (category: string) => {
         setSelectedCategory(category);
     };
+    // 모달창 노출
+    const showModal = (e: any) => {
+        setModalOpen(true);
+    };
+    const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
-    // useEffect(() => {
-    //   var container = document.getElementById("map");
-    //   var options = {
-    //     center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
-    //     level: 3,
-    //   };
+    useEffect(() => {
+        // KakaoMapScript()
+        // var container = document.getElementById("map");
+        // var options = {
+        //     center: new kakao.maps.LatLng(
+        //         37.365264512305174,
+        //         127.10676860117488
+        //     ),
+        //     level: 3,
+        // };
+        // var map = new kakao.maps.Map(container, options);
+        // var markerPosition = new kakao.maps.LatLng(
+        //     37.365264512305174,
+        //     127.10676860117488
+        // );
+        // var marker = new kakao.maps.Marker({
+        //     position: markerPosition,
+        // });
+        // marker.setMap(map);
+    }, []);
 
-    //   var map = new kakao.maps.Map(container, options);
-    //   var markerPosition = new kakao.maps.LatLng(
-    //     37.365264512305174,
-    //     127.10676860117488
-    //   );
-    //   var marker = new kakao.maps.Marker({
-    //     position: markerPosition,
-    //   });
-    //   marker.setMap(map);
-    // }, []);
+    useEffect(() => {
+        setModalOpen(false);
+    }, [inputAddressValue, setModalOpen]);
 
     const handleClick = () => {
         console.log("버튼이 클릭되었습니다.");
     };
-
-    const postCodeStyle = {
-        width: "400px",
-        height: "400px",
-        display: modalState ? "block" : "none",
-    }; // 스타일 정의 code
-    const onCompletePost = (data: {
-        address: React.SetStateAction<undefined>;
-        zonecode: React.SetStateAction<undefined>;
-    }) => {
-        setModalState(false);
-        setInputAddressValue(data.address);
-        setInputZipCodeValue(data.zonecode);
-    }; // onCompletePost 함수
 
     const { register, handleSubmit, watch, reset, setValue } =
         useForm<FormValue>();
@@ -113,13 +119,6 @@ function Write() {
             console.log(reader.result);
         };
     };
-
-
-
-
-
-
-    
 
     const onSubmit: SubmitHandler<FormValue> = (data) => {
         console.log("Submitting", data);
@@ -171,6 +170,33 @@ function Write() {
                         </S.CategoryBtn>
                     ))}
                 </S.CategoryCont>
+                <label htmlFor="">모집기간</label>
+                <S.DateCont>
+                    <S.InpDateCont>
+                        <DatePicker
+                            className="datePicker"
+                            dateFormat="yyyy.MM.dd" // 날짜 형태
+                            shouldCloseOnSelect // 날짜를 선택하면 datepicker가 자동으로 닫힘
+                            minDate={new Date("2000-01-01")} // minDate 이전 날짜 선택 불가
+                            maxDate={new Date()} // maxDate 이후 날짜 선택 불가
+                            selected={selectedDate}
+                            onChange={(date) => setSelectedDate(date)}
+                        />
+                        <img src={calendar} alt="" />
+                    </S.InpDateCont>
+                    <span>~</span>
+                    <DatePicker
+                        className="datePicker"
+                        calendarClassName="calenderWrapper"
+                        dateFormat="yyyy.MM.dd" // 날짜 형태
+                        shouldCloseOnSelect // 날짜를 선택하면 datepicker가 자동으로 닫힘
+                        minDate={new Date("2000-01-01")} // minDate 이전 날짜 선택 불가
+                        maxDate={new Date()} // maxDate 이후 날짜 선택 불가
+                        selected={selectedDate}
+                        onChange={(date) => setSelectedDate(date)}
+                    />
+                    <img src={calendar} alt="" />
+                </S.DateCont>
                 <label htmlFor="scales">상품가격</label>
                 <div>
                     <S.Inp
@@ -182,10 +208,7 @@ function Write() {
                     원
                 </div>
                 <label htmlFor="scales">모집개수</label>
-                {/* <DatePicker
-            selected={startDate}
-            onChange={(date: React.SetStateAction<Date>) => setStartDate(date)}
-          /> */}
+
                 <S.CountBox>
                     <S.Inp
                         type="name"
@@ -229,40 +252,54 @@ function Write() {
                     </div>
 
                     <label htmlFor="scales">주소찾기</label>
-                    <S.Inp2
-                        type="name"
-                        id="scales"
-                        required
-                        // onChange={handleZipCode}
-                        value={inputZipCodeValue}
-                        {...register("sellingArea")}
-                    />
-                    <button onClick={() => setModalState(true)}>
-                        주소찾기
-                    </button>
-                    <label htmlFor="scales"></label>
-                    <S.Inp2
-                        type="name"
-                        id="scales"
-                        placeholder="상세주소를 입력해주세요"
-                        {...register("detailArea")}
-                    />
-                </div>
+                    <S.InpCont>
+                        <S.Inp2
+                            type="name"
+                            id="scales"
+                            required
+                            value={inputAddressValue}
+                            {...register("sellingArea")}
+                        />
+                        <button onClick={showModal} type="button">
+                            주소찾기
+                            <img src={searchGreen} alt="" />
+                        </button>
+                    </S.InpCont>
 
-                <div
+                    <label htmlFor="scales"></label>
+                    <S.InpCont>
+                        <S.Inp2
+                            type="name"
+                            id="scales"
+                            placeholder="상세주소를 입력해주세요"
+                            {...register("detailArea")}
+                        />
+                    </S.InpCont>
+                </div>
+                <MapContainer inputAddressValue={inputAddressValue} />
+                {/* <div
                     className="second2"
-                    id="map"
+                    id="myMap"
                     style={{ width: "440px", height: "230px" }}
-                ></div>
+                ></div> */}
                 {/* {optional && <p>{optional}</p>} */}
             </S.Wrap2>
             <div>
                 <S.BtnSave onClick={handleClick}>등록하기</S.BtnSave>
             </div>
-            {/* <DaumPostcode
-        style={postCodeStyle}
-        onComplete={onCompletePost}
-      ></DaumPostcode> */}
+            {modalOpen && (
+                <ModalPortal>
+                    <MapModal
+                        type="product"
+                        modalOpen={modalOpen}
+                        setModalOpen={setModalOpen}
+                        handleModal={showModal}
+                        setInputAddressValue={setInputAddressValue}
+                        setInputZipCodeValue={setInputZipCodeValue}
+                        // handleModal={handleProductDetail}
+                    />
+                </ModalPortal>
+            )}
         </S.Wrap>
     );
 }
