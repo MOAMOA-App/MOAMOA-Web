@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "../../components/Card";
 import goods from "../../data/goods.json";
 import search from "../assets/images/search_orange.svg";

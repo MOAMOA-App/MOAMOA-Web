@@ -1,6 +1,4 @@
-"use client";
-
-import { PropsWithChildren, useState } from "react";
+import React,{ PropsWithChildren, useState } from "react";
 import axios from "axios";
 import {
   QueryCache,

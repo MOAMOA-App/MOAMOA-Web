@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode } from 'react';
 
 // 1. AuthContext의 형태를 정의합니다.
 interface AuthContextType {
@@ -15,7 +15,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // 초기값의 타입을 `string | null`로 지정합니다.
-  const [auth, setAuth] = useState<string | null>(JSON.parse(localStorage.getItem('name') || 'null'));
+  const [auth, setAuth] = useState<string | null>(JSON.parse(localStorage.getItem('accessToken') || 'null'));
 
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
