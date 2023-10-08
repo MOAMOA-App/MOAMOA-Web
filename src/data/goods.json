@@ -1,65 +1,229 @@
 {
     "goods": [
         {
-            "user": "",
-            "categoryId": 1,
-            "sellingArea": "천안",
-            "detailArea": "청당2길",
-            "title": "사과",
-            "status": "판매중",
-            "sellPrice": 3,
-            "description": "설명 왜 인티저",
-            "finishedAt": "2022-02-22",
+            "id": 1,
+            "user": {
+                "id": 41,
+                "nick": "땡초",
+                "profImg": null,
+                "email": "dangdang@naver.com",
+                "address": null,
+                "detailAddress": null
+            },
+            "categoryId": "식품",
+            "sellingArea": "사당역",
+            "detailArea": "0",
+            "title": "당근 1박스 ",
+            "status": "거래 진행",
+            "sellPrice": 0,
+            "viewCount": 0,
+            "description": "0",
+            "createdAt": "2023-05-10T13:20:00",
+            "finishedAt": "2023-05-10T13:20:00",
+            "updatedAt": "2023-05-10T13:20:00",
+            "sellCount": 2,
             "maxCount": 5,
-            "choiceSend": "비대면"
-        },        {
-            "user": "",
-            "categoryId": 1,
-            "sellingArea": "천안",
-            "detailArea": "청당2길",
-            "title": "사과",
-            "status": "판매중",
-            "sellPrice": 3,
-            "description": "설명 왜 인티저",
-            "finishedAt": "2022-02-22",
-            "maxCount": 5,
-            "choiceSend": "비대면"
-        },        {
-            "user": "",
-            "categoryId": 1,
-            "sellingArea": "천안",
-            "detailArea": "청당2길",
-            "title": "사과",
-            "status": "판매중",
-            "sellPrice": 3,
-            "description": "설명 왜 인티저",
-            "finishedAt": "2022-02-22",
-            "maxCount": 5,
-            "choiceSend": "비대면"
-        },        {
-            "user": "",
-            "categoryId": 1,
-            "sellingArea": "천안",
-            "detailArea": "청당2길",
-            "title": "사과",
-            "status": "판매중",
-            "sellPrice": 3,
-            "description": "설명 왜 인티저",
-            "finishedAt": "2022-02-22",
-            "maxCount": 5,
-            "choiceSend": "비대면"
-        },        {
-            "user": "",
-            "categoryId": 1,
-            "sellingArea": "천안",
-            "detailArea": "청당2길",
-            "title": "사과",
-            "status": "판매중",
-            "sellPrice": 3,
-            "description": "설명 왜 인티저",
-            "finishedAt": "2022-02-22",
-            "maxCount": 5,
-            "choiceSend": "비대면"
+            "choiceSend": "0",
+            "announces": [
+                {
+                    "id": 12,
+                    "lock": true,
+                    "contents": "5월 12일까지 입금받을게요 우우 123012-12312 ㄱㄱㄱ",
+                    "createdAt": "2023-06-07T16:31:11"
+                },
+                {
+                    "id": 13,
+                    "lock": true,
+                    "contents": "테스트 공지 테스트 공지",
+                    "createdAt": "2023-06-07T16:49:39"
+                },
+                {
+                    "id": 14,
+                    "lock": true,
+                    "contents": "적당히 바람이 불어 기분이 좋아요 ㅇㅎ~",
+                    "createdAt": "2023-06-22T11:36:35"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "user": {
+                "id": 41,
+                "nick": "땡초",
+                "profImg": null,
+                "email": "dangdang@naver.com",
+                "address": null,
+                "detailAddress": null
+            },
+            "categoryId": "식품",
+            "sellingArea": "서울역",
+            "detailArea": "0",
+            "title": "고추참치 20개 ",
+            "status": "거래 진행",
+            "sellPrice": 0,
+            "viewCount": 0,
+            "description": "0",
+            "createdAt": "2023-05-10T13:20:00",
+            "finishedAt": "2023-05-10T13:20:00",
+            "updatedAt": "2023-05-10T13:20:00",
+            "sellCount": 3,
+            "maxCount": 7,
+            "choiceSend": "0",
+            "announces": [
+                {
+                    "id": 12,
+                    "lock": true,
+                    "contents": "5월 12일까지 입금받을게요 우우 123012-12312 ㄱㄱㄱ",
+                    "createdAt": "2023-06-07T16:31:11"
+                },
+                {
+                    "id": 13,
+                    "lock": true,
+                    "contents": "테스트 공지 테스트 공지",
+                    "createdAt": "2023-06-07T16:49:39"
+                },
+                {
+                    "id": 14,
+                    "lock": true,
+                    "contents": "적당히 바람이 불어 기분이 좋아요 ㅇㅎ~",
+                    "createdAt": "2023-06-22T11:36:35"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "user": {
+                "id": 41,
+                "nick": "땡초",
+                "profImg": null,
+                "email": "dangdang@naver.com",
+                "address": null,
+                "detailAddress": null
+            },
+            "categoryId": "동물",
+            "sellingArea": "11",
+            "detailArea": "0",
+            "title": "츄르 10개",
+            "status": "거래 진행",
+            "sellPrice": 0,
+            "viewCount": 0,
+            "description": "0",
+            "createdAt": "2023-05-10T13:20:00",
+            "finishedAt": "2023-05-10T13:20:00",
+            "updatedAt": "2023-05-10T13:20:00",
+            "sellCount": 1,
+            "maxCount": 10,
+            "choiceSend": "0",
+            "announces": [
+                {
+                    "id": 12,
+                    "lock": true,
+                    "contents": "5월 12일까지 입금받을게요 우우 123012-12312 ㄱㄱㄱ",
+                    "createdAt": "2023-06-07T16:31:11"
+                },
+                {
+                    "id": 13,
+                    "lock": true,
+                    "contents": "테스트 공지 테스트 공지",
+                    "createdAt": "2023-06-07T16:49:39"
+                },
+                {
+                    "id": 14,
+                    "lock": true,
+                    "contents": "적당히 바람이 불어 기분이 좋아요 ㅇㅎ~",
+                    "createdAt": "2023-06-22T11:36:35"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "user": {
+                "id": 41,
+                "nick": "땡초",
+                "profImg": null,
+                "email": "dangdang@naver.com",
+                "address": null,
+                "detailAddress": null
+            },
+            "categoryId": "의류",
+            "sellingArea": "천안역",
+            "detailArea": "0",
+            "title": "무신사 공동구매",
+            "status": "거래 진행",
+            "sellPrice": 0,
+            "viewCount": 0,
+            "description": "0",
+            "createdAt": "2023-05-10T13:20:00",
+            "finishedAt": "2023-05-10T13:20:00",
+            "updatedAt": "2023-05-10T13:20:00",
+            "sellCount": 0,
+            "maxCount": 2,
+            "choiceSend": "0",
+            "announces": [
+                {
+                    "id": 12,
+                    "lock": true,
+                    "contents": "5월 12일까지 입금받을게요 우우 123012-12312 ㄱㄱㄱ",
+                    "createdAt": "2023-06-07T16:31:11"
+                },
+                {
+                    "id": 13,
+                    "lock": true,
+                    "contents": "테스트 공지 테스트 공지",
+                    "createdAt": "2023-06-07T16:49:39"
+                },
+                {
+                    "id": 14,
+                    "lock": true,
+                    "contents": "적당히 바람이 불어 기분이 좋아요 ㅇㅎ~",
+                    "createdAt": "2023-06-22T11:36:35"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "user": {
+                "id": 41,
+                "nick": "땡초",
+                "profImg": null,
+                "email": "dangdang@naver.com",
+                "address": null,
+                "detailAddress": null
+            },
+            "categoryId": "취미",
+            "sellingArea": "고속터미널역",
+            "detailArea": "0",
+            "title": "닌텐도 칩 공동구매",
+            "status": "거래 진행",
+            "sellPrice": 0,
+            "viewCount": 0,
+            "description": "0",
+            "createdAt": "2023-05-10T13:20:00",
+            "finishedAt": "2023-05-10T13:20:00",
+            "updatedAt": "2023-05-10T13:20:00",
+            "sellCount": 1,
+            "maxCount": 3,
+            "choiceSend": "0",
+            "announces": [
+                {
+                    "id": 12,
+                    "lock": true,
+                    "contents": "5월 12일까지 입금받을게요 우우 123012-12312 ㄱㄱㄱ",
+                    "createdAt": "2023-06-07T16:31:11"
+                },
+                {
+                    "id": 13,
+                    "lock": true,
+                    "contents": "테스트 공지 테스트 공지",
+                    "createdAt": "2023-06-07T16:49:39"
+                },
+                {
+                    "id": 14,
+                    "lock": true,
+                    "contents": "적당히 바람이 불어 기분이 좋아요 ㅇㅎ~",
+                    "createdAt": "2023-06-22T11:36:35"
+                }
+            ]
         }
     ]
 }

@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 export const SearchBar = styled.div`
     display: flex;
+    flex-grow: 1;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 661px;
-    margin: 0 auto;
+    width: 80%;
+    margin-left: 10%;
     height: 40px;
     border: 1px solid #FF952C;
     border-radius: 30px;
@@ -19,7 +20,6 @@ z-index:999;
     ${"input"}{
         margin: 10px;
 padding: 5px;
-width: 100%;
 background-color: white;
 
     opacity:1;

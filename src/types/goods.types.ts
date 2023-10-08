@@ -1,6 +1,22 @@
+interface userType {
+    id: number;
+    nick: string;
+    profImg: null;
+    email: string;
+    address: null;
+    detailAddress: null;
+}
+interface announceType {
+    id: number;
+    lock: boolean;
+    contents: string;
+    createdAt: string;
+}
+
 export interface Goods {
-    user: string;
-    categoryId: number;
+    id: number;
+    user: userType;
+    categoryId: string;
     sellingArea: string;
     detailArea: string;
     title: string;
@@ -10,4 +26,9 @@ export interface Goods {
     finishedAt: string;
     maxCount: number;
     choiceSend: string;
+    viewCount: number;
+    createdAt: string;
+    updatedAt: string;
+    sellCount: number;
+    announces: announceType[];
 }

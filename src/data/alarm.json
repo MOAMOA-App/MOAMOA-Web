@@ -1,0 +1,48 @@
+{
+    "list": [
+        {
+            "reminder_id": 1,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "제로 아이스크림 공구해요",
+            "message": "게시물에 공지사항이 추가되었습니다.",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        },
+        {
+            "reminder_id": 2,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "밀양얼음골사과",
+            "message": "님으로부터 새로운 메세지가 도착했습니다.",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        },
+        {
+            "reminder_id": 3,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "제로 아이스크림 공구해요",
+            "message": "게시물에 공지사항이 추가되었습니다.",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        },
+        {
+            "reminder_id": 4,
+            "user_id": "",
+            "product_id": 2,
+            "sender_id": 3,
+            "type": "",
+            "subject": "제로 아이스크림 공구해요",
+            "message": "게시물에 공지사항이 추가되었습니다.",
+            "send_date": "2022.12.12",
+            "read_or_not": false
+        }
+    ]
+}

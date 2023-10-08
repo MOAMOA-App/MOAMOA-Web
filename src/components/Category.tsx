@@ -1,27 +1,31 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+interface ImageProps {
+    name: string;
+    src: string;
+}
 export default function Category() {
-    const arr = [
-        "/전체.png",
-        "/관심.png",
-        "/생활.png",
-        "/의류.png",
-        "/식품.png",
-        "/가전.png",
-        "/취미.png",
-        "/운동.png",
-        "/굿즈.png",
-        "/동물.png",
-        "/해외.png",
-        "/기타.png",
+    const imgArr: ImageProps[] = [
+        { name: "전체", src: "/all.png" },
+        { name: "관심", src: "/favorites.png" },
+        { name: "생활", src: "/lifestyle.png" },
+        { name: "의류", src: "/clothing.png" },
+        { name: "식품", src: "/food.png" },
+        { name: "가전", src: "/electronics.png" },
+        { name: "취미", src: "/hobbies.png" },
+        { name: "운동", src: "/sports.png" },
+        { name: "굿즈", src: "/goods.png" },
+        { name: "동물", src: "/animals.png" },
+        { name: "해외", src: "/overseas.png" },
+        { name: "기타", src: "/others.png" },
     ];
     return (
         <Wrap>
-            {arr.map((arr) => (
+            {imgArr.map(({ name, src }) => (
                 <Div>
-                    <img src={arr} alt="" />
-                    {arr.slice(1, 3)}
+                    <img src={src} alt="" />
+                    {name}
                 </Div>
             ))}
         </Wrap>
@@ -57,7 +61,6 @@ export const Wrap = styled.div`
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    width: 100vw;
     @media (max-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     }

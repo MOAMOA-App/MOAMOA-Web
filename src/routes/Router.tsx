@@ -1,12 +1,13 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../layout/Layout";
-import Home from "../home/Home";
-import Chat from "../chat/Chat";
-import Profile from "../profile/Profile";
-import Write from "../write/Write";
+import Home from "../pages/home/Home";
+import Chat from "../pages/chat/Chat";
+import Profile from "../pages/profile/Profile";
+import Write from "../pages/write/Write";
 import RequireAuth from "../components/RequireAuth";
-import Login from "../login/Login";
-import SignUp from "../signUp/SignUp";
+import Login from "../pages/login/Login";
+import SignUp from "../pages/signUp/SignUp";
 
 export default function Router() {
     return (
