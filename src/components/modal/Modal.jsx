@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import menu from "../../assets/images/menu_btn.svg";
 
@@ -22,6 +23,7 @@ export default function Modal({ type, modalOpen, setModalOpen, handleModal }) {
                 setModalOpen(false);
             }
         };
+
 
         // 이벤트 핸들러 등록
         document.addEventListener("mousedown", handler);
