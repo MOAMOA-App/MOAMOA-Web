@@ -75,4 +75,11 @@ export const Profile = styled.button`
 export const Main = styled.main`
     padding-top: 110px;
     margin: 0 8%;
+    @media (max-width: 768px) {
+
+    margin: 0;
+
+        /* flex-direction: column; */
+        /* font-size: 12px; */
+    }
 `;

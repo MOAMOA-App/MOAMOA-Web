@@ -50,7 +50,7 @@ const MapContainer = ({ inputAddressValue }: Props) => {
         );
     }, [inputAddressValue]);
 
-    return <div id="map" style={{ width: "50vw", height: "50vh" }} />;
+    return <div id="map" style={{ width: "100%", height: "100%" }} />;
 };
 
 export default MapContainer;

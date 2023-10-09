@@ -3,11 +3,16 @@ import styled from "styled-components";
 import Card from "../Card";
 import goods from "../../data/goods.json";
 
-export default function CreateGoods() {
+
+interface Props {
+    type: string;
+  }
+  
+export default function CreateGoods({type}:Props) {
     const arr = [1, 2, 3, 4, 5, 6];
     return (
         <Wrap>
-            <h2>생성한 공동구매</h2>
+            <h2>{type}</h2>
             <label htmlFor="search">
                 조회
                 <Search id="search" type="text" />

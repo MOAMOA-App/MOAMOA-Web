@@ -8,6 +8,8 @@ import Write from "../pages/write/Write";
 import RequireAuth from "../components/RequireAuth";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
+import Goods from "../pages/goods/Goods";
+import Search from "../pages/search/Search";
 
 export default function Router() {
     return (
@@ -22,6 +24,9 @@ export default function Router() {
                         <Route path="/chat" element={<Chat />} />
                         <Route path="/write" element={<Write />} />
                         <Route path="/profile" element={<Profile />} />
+                        <Route path="/search" element={<Search />} />
+
+                        <Route path="/goods" element={<Goods />} />
                     </Route>
                 </Route>
 

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthProvider";
 
 type ProfileMenuProps = {
     type: string;
@@ -7,11 +9,28 @@ type ProfileMenuProps = {
 };
 
 type ListBtnProps = {
-    type?: string;  // type prop을 선택적으로 받습니다.
+    type?: string; // type prop을 선택적으로 받습니다.
 };
 
-
 export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
+    const authContext = useContext(AuthContext);
+
+    if (!authContext) {
+        throw new Error("컴포넌트는 AuthProvider 내부에서 사용되어야 합니다.");
+    }
+
+    const { setAuth } = authContext;
+
+    //로그아웃
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        setAuth("");
+    };
+
+    const menuArr = ["생성한 공동구매", "참여한 공동구매", "관심 공동구매"];
+
     return (
         <Wrap>
             <WrapProfile>
@@ -23,36 +42,19 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
 
                 <ListProfile>
                     <dt>내 활동</dt>
-                    <dd>
-                        <ListBtn
-                            type={type}
-                            onClick={() => {
-                                setType("create");
-                            }}
-                        >
-                            생성한 공동구매
-                        </ListBtn>
-                    </dd>
-                    <dd>
-                        <ListBtn
-                            type={type}
-                            onClick={() => {
-                                setType("create");
-                            }}
-                        >
-                            참여한 공동구매
-                        </ListBtn>
-                    </dd>
-                    <dd>
-                        <ListBtn
-                            type={type}
-                            onClick={() => {
-                                setType("create");
-                            }}
-                        >
-                            관심 공동구매
-                        </ListBtn>
-                    </dd>
+
+                    {menuArr.map((item) => (
+                        <dd>
+                            <ListBtn
+                                type={item}
+                                onClick={() => {
+                                    setType(item);
+                                }}
+                            >
+                                {item}
+                            </ListBtn>
+                        </dd>
+                    ))}
                 </ListProfile>
                 <ListProfile>
                     <dt>내 정보</dt>
@@ -70,7 +72,7 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
                         <ListBtn
                             type={type}
                             onClick={() => {
-                                setType("create");
+                                setType("detail");
                             }}
                         >
                             알림설정
@@ -86,7 +88,7 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
                             환경설정
                         </ListBtn>
                     </dd>
-                    <ListBtn>로그아웃</ListBtn>
+                    <ListBtn onClick={handleClick}>로그아웃</ListBtn>
                 </ListProfile>
             </WrapProfile>
         </Wrap>

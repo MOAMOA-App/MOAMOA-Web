@@ -1,5 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useCategoryWrite } from "../atom/category.atom";
 
 interface ImageProps {
     name: string;
@@ -8,7 +10,6 @@ interface ImageProps {
 export default function Category() {
     const imgArr: ImageProps[] = [
         { name: "전체", src: "/all.png" },
-        { name: "관심", src: "/favorites.png" },
         { name: "생활", src: "/lifestyle.png" },
         { name: "의류", src: "/clothing.png" },
         { name: "식품", src: "/food.png" },
@@ -20,10 +21,19 @@ export default function Category() {
         { name: "해외", src: "/overseas.png" },
         { name: "기타", src: "/others.png" },
     ];
+
+    const navigate = useNavigate();
+    const setCategory = useCategoryWrite();
+
     return (
         <Wrap>
             {imgArr.map(({ name, src }) => (
-                <Div>
+                <Div
+                    onClick={() => {
+                        navigate("/search");
+                        setCategory(name)
+                    }}
+                >
                     <img src={src} alt="" />
                     {name}
                 </Div>

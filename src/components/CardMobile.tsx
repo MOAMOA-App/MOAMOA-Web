@@ -1,8 +1,8 @@
 import React from "react";
+import * as S from "../styles/CardMobile.styled";
 import { Goods } from "../types/goods.types";
 import fullheart from "../assets/images/fullheart.svg";
 import heart from "../assets/images/heart.svg";
-import * as S from "../style/CardMobile.styled";
 
 interface CardProps {
     good: Goods;

@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
+interface Props {
+    checked: string;
+}
 export default function ProfileDetail() {
+    const order = ["게시글 수정", "참여자 관리"];
+    const [selectedOrder, setSelectedOrder] = useState("게시글 수정");
+    const handleCategoryClick = (item: string) => {
+        setSelectedOrder(item);
+    };
     return (
         <div>
             <div>
-                <ToggleBtn>게시판 수정</ToggleBtn>
-                <ToggleBtn>참여자 관리</ToggleBtn>
+                {order.map((item) => (
+                    <ToggleBtn
+                        checked={selectedOrder}
+                        onClick={() => {
+                            handleCategoryClick(item);
+                        }}
+                    >
+                        {item}
+                    </ToggleBtn>
+                ))}
             </div>
             <Wrap>
                 <div>
@@ -43,21 +58,21 @@ export default function ProfileDetail() {
                             <tr>
                                 <td>홍길동</td>
                                 <td>완료</td>
-                                <td>3</td>
+                                <td>3개</td>
                                 <td>홍길동과 대화</td>
                                 <td>거래취소</td>
                             </tr>
                             <tr>
                                 <td>김영희</td>
                                 <td>완료</td>
-                                <td>1</td>
+                                <td>1개</td>
                                 <td>김영희와 대화</td>
                                 <td>거래취소</td>
                             </tr>
                             <tr>
                                 <td>이영희</td>
                                 <td>완료</td>
-                                <td>2</td>
+                                <td>2개</td>
                                 <td>이영희와 대화</td>
                                 <td>거래취소</td>
                             </tr>
@@ -69,7 +84,7 @@ export default function ProfileDetail() {
     );
 }
 
-export const ToggleBtn = styled.button`
+export const ToggleBtn = styled.button<Props>`
     width: 118px;
     height: 34px;
     border-radius: 10px 10px 0px 0px;
@@ -77,6 +92,8 @@ export const ToggleBtn = styled.button`
 
     color: white;
     margin-top: 11px;
+
+    background: ${(props) => (props.checked === props.children ? "#2c9b36" : "#d9d9d9")};
 `;
 
 export const InfoBtn = styled.button`

@@ -8,7 +8,7 @@ import CardMobile from "../CardMobile";
 import goods from "../../data/goods.json";
 
 import styled from "styled-components";
-import * as S from "../../styles/profile.styed";
+import * as S from "../../styles/Profile.styled"
 interface ImageProps {
     name: string;
     src: string;

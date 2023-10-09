@@ -4,9 +4,9 @@ import udi from "../../assets/images/udi.png";
 import money from "../../assets/images/money.png";
 import heart from "../../assets/images/heart-orange.svg";
 import chat from "../../assets/images/chat-orange.svg";
-import Card from "../components/Card";
-import goods from "../data/goods.json";
-import MapContainer from "../hooks/KakaoMapScript";
+import Card from "../../components/Card";
+import goods from "../../data/goods.json";
+import MapContainer from "../../hooks/KakaoMapScript";
 
 function Goods() {
     const arr = [1, 2, 3, 4];

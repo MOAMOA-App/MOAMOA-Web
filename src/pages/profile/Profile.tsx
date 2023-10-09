@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ProfileMenu from "../../components/profile/ProfileMenu";
+import ProfileMobile from "../../components/profile/ProfileMobile";
 import ProfileDetail from "../../components/profile/ProfileDetail";
 import ProfileSetting from "../../components/profile/ProfileSetting";
 import CreateGoods from "../../components/profile/CreateGoods";
 import styled from "styled-components";
-import * as S from "../../styles/profile.styed";
+import * as S from "../../styles/Profile.styled";
 
 export default function Profile() {
     const [type, setType] = useState<string>("setting");
@@ -15,31 +16,35 @@ export default function Profile() {
                 <ProfileMenu type={type} setType={setType}></ProfileMenu>
 
                 {
-                    {
-                        setting: <ProfileSetting></ProfileSetting>,
-                        detail: (
-                            <>
-                                <ProfileDetail></ProfileDetail>
-                            </>
-                        ),
-                        create: (
-                            <>
-                                <CreateGoods></CreateGoods>
-                            </>
-                        ),
-                    }[type]
+                    // {
+                    //     setting: <ProfileSetting></ProfileSetting>,
+                    //     detail: (
+                    //         <>
+                    //             <ProfileDetail type = {type}></ProfileDetail>
+                    //         </>
+                    //     ),
+                    //     create: (
+                    //         <>
+                    //             <CreateGoods type = {type}></CreateGoods>
+                    //         </>
+                    //     ),
+                    //     party: (
+                    //         <>
+                    //             <CreateGoods type = {type}></CreateGoods>
+                    //         </>
+                    //     )
+                    // }[type]
+
+                    type === "setting" ? (
+                        <ProfileSetting />
+                    ) : type === "detail" ? (
+                        <ProfileDetail></ProfileDetail>
+                    ) : (
+                        <CreateGoods type={type}></CreateGoods>
+                    )
                 }
             </Wrap>
-
-            <S.Wrap>
-                <S.Profile />
-                <div>
-                    <h1>알라뷰</h1>
-                    <p>example@gmail.com</p>
-                    <p>서울 마포구 연남동</p>
-                </div>
-                <S.SettingBtn>프로필수정</S.SettingBtn>
-            </S.Wrap>
+            <ProfileMobile></ProfileMobile>
         </>
     );
 }

@@ -5,6 +5,7 @@ import search from "../assets/images/search_orange.svg";
 import Category from "../../components/Category";
 import HomeTitle from "../../components/HomeTitle";
 import * as S from "../../styles/Home.styled";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Home() {
     console.log(goods.goods);
@@ -13,6 +14,7 @@ export default function Home() {
         ["인기순", "사용자들이 선호하는 상품"],
         ["최신순", "What’s new?"],
     ];
+    const navigate = useNavigate();
 
     return (
         <S.Wrap>
@@ -32,7 +34,10 @@ export default function Home() {
                     <HomeTitle title={title} />
                     <S.ContCard>
                         {goods.goods.map((good) => (
-                            <Card good={good}></Card>
+                            <div onClick={()=>navigate("/goods")}>
+                                <Card good={good} ></Card>
+
+                            </div>
                         ))}
                     </S.ContCard>
                 </S.RowCont>

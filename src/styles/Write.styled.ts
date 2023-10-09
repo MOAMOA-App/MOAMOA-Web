@@ -159,6 +159,7 @@ export const InpDateCont = styled.div`
         height: 35px;
         margin: 5px 0;
         border: 1px solid #d9d9d9;
+        padding: 10px;
         border-radius: 1550px;
     }
     ${"calenderWrapper"} {
@@ -166,7 +167,7 @@ export const InpDateCont = styled.div`
     }
     ${"img"} {
         position: absolute;
-        top: 7px;
+        top: 11px;
         right: 22px;
     }
 `;
