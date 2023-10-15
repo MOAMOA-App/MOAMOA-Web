@@ -37,7 +37,7 @@ export const Div = styled.div`
     margin-top: 35px;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
     display: flex;
     flex-direction: column;
 `;
@@ -51,7 +51,7 @@ export const ErrorMessage = styled.p`
 `;
 
 
-export const WrapInp = styled.div`
+export const WrapInp = styled.form`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
