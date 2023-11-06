@@ -12,23 +12,60 @@ interface announceType {
     contents: string;
     createdAt: string;
 }
+interface ImageType {
+    fileName: string;
+    fileSize: number;
+    contentType: string;
+    uploadTimeStamp: string;
+    fileRoot: null;
+}
 
 export interface Goods {
     id: number;
     user: userType;
-    categoryId: string;
+    mainImage?: string;
+    category: string;
     sellingArea: string;
     detailArea: string;
     title: string;
     status: string;
     sellPrice: number;
+    viewCount: number;
     description: string;
-    finishedAt: string;
+    sellCount: number;
     maxCount: number;
     choiceSend: string;
-    viewCount: number;
     createdAt: string;
-    updatedAt: string;
-    sellCount: number;
-    announces: announceType[];
+    finishedAt: string;
+    // updatedAt: string;
+    productImages?: ImageType[];
+    announces?: announceType[];
 }
+
+export interface Goods2 {
+    address: string;
+    buyer: userType;
+    product: Goods;
+    count: number;
+    createdAt: string;
+    id: number;
+}
+
+// export interface Goods {
+//     id: number;
+//     user: userType;
+//     category: string;
+//     sellingArea: string;
+//     detailArea: string;
+//     title: string;
+//     status: string;
+//     sellPrice: number;
+//     viewCount: number;
+//     description: string;
+//     sellCount: number;
+//     maxCount: number;
+//     choiceSend: string;
+//     createdAt: string;
+//     finishedAt: string;
+//     productImages: string[];
+// }

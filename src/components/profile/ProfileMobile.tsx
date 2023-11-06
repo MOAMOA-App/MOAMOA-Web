@@ -6,9 +6,10 @@ import user from "../../assets/images/user_mobile.svg";
 import setting from "../../assets/images/setting_mobile.svg";
 import CardMobile from "../CardMobile";
 import goods from "../../data/goods.json";
+import { Profile } from "../../queries/getProfile";
 
 import styled from "styled-components";
-import * as S from "../../styles/Profile.styled"
+import * as S from "../../styles/Profile.styled";
 interface ImageProps {
     name: string;
     src: string;
@@ -16,8 +17,11 @@ interface ImageProps {
 type ListBtnProps = {
     type: string; // type prop을 선택적으로 받습니다.
 };
+interface ProfileSettingProps {
+    info: Profile;
+}
 
-export default function ProfileMobile() {
+export default function ProfileMobile({ info }: ProfileSettingProps) {
     const imgArr: ImageProps[] = [
         { name: "대화 목록", src: chat },
         { name: "지역 설정", src: area },
@@ -35,16 +39,16 @@ export default function ProfileMobile() {
                         <S.ProfileCont>
                             <S.Profile />
                             <div>
-                                <h1>알라뷰</h1>
-                                <p>example@gmail.com</p>
-                                <p>서울 마포구 연남동</p>
+                                <h1>{info.nick}</h1>
+                                <p>{info.email}</p>
+                                <p>{info.address}</p>
                             </div>
                             <S.SettingBtn>프로필수정</S.SettingBtn>
                         </S.ProfileCont>
                     </>
                 ) : (
                     <>
-                        <span style={{"color": "#8f8f8f"}}>내 활동</span>
+                        <span style={{ color: "#8f8f8f" }}>내 활동</span>
                     </>
                 )}
             </S.MenuCont>
@@ -60,13 +64,13 @@ export default function ProfileMobile() {
                     </Btn>
                 ))}
             </BtnCont>
-            {type !== "default" && (
+            {/* {type !== "default" && (
                 <div>
                     {goods.goods.map((good) => (
                         <CardMobile good={good}></CardMobile>
                     ))}
                 </div>
-            )}
+            )} */}
 
             {type === "default" && (
                 <ListCont>

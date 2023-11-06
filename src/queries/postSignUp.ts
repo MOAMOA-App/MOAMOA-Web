@@ -2,26 +2,23 @@ import { apiClient } from "../libary/reactQueryProvider";
 import { ApiError, ApiResponse, MutationConfigOptions } from "../types";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError, AxiosResponse } from "axios";
-import { setAccessToken, setRefreshToken, setUserInfo } from "../utils/localStorage";
 
 interface Request {
     email: string;
+    name: string;
     password: string;
 }
 
-interface LoginResponse {
-    accessToken: string;
-    accessTokenExpiresIn: number;
-    grantType: string;
-    refereshToken: string;
+interface VerifyEmailResponse {
+    message: string;
 }
 
-type Response = ApiResponse<LoginResponse>;
+type Response = ApiResponse<VerifyEmailResponse>;
 
-const URL_PATH = `api/user/login`;
+const URL_PATH = `api/user/signup`;
 const MUTATION_KEY = [URL_PATH];
 
-export const postLogin = async (data: Request) => {
+export const postSignUp = async (data: Request) => {
     const res = await apiClient.post<Request, AxiosResponse<Response>>(
         URL_PATH,
         data
@@ -30,20 +27,12 @@ export const postLogin = async (data: Request) => {
     return res.data;
 };
 
-export const usePostLogin = (configOptions?: MutationConfigOptions) => {
+export const usePostSignUp = (configOptions?: MutationConfigOptions) => {
     const info = useMutation<Response, AxiosError<ApiError>, Request, void>({
         mutationKey: MUTATION_KEY,
-        mutationFn: (req) => postLogin(req),
+        mutationFn: (req) => postSignUp(req),
         ...configOptions?.options,
-        onSuccess: (res) => {
-            console.log(res);
-
-            if (res) {
-                setAccessToken(res.accessToken);
-                setRefreshToken(res.refreshToken);
-                setUserInfo(res.user)
-            }
-        },
+        onSuccess: (res) => {},
         onSettled: () => {
             //   console.log("항상 실행");
         },

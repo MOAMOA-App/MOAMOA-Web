@@ -10,7 +10,7 @@
                 "address": null,
                 "detailAddress": null
             },
-            "categoryId": "식품",
+            "category": "식품",
             "sellingArea": "사당역",
             "detailArea": "0",
             "title": "당근 1박스 ",
@@ -55,7 +55,7 @@
                 "address": null,
                 "detailAddress": null
             },
-            "categoryId": "식품",
+            "category": "식품",
             "sellingArea": "서울역",
             "detailArea": "0",
             "title": "고추참치 20개 ",
@@ -100,7 +100,7 @@
                 "address": null,
                 "detailAddress": null
             },
-            "categoryId": "동물",
+            "category": "동물",
             "sellingArea": "11",
             "detailArea": "0",
             "title": "츄르 10개",
@@ -145,7 +145,7 @@
                 "address": null,
                 "detailAddress": null
             },
-            "categoryId": "의류",
+            "category": "의류",
             "sellingArea": "천안역",
             "detailArea": "0",
             "title": "무신사 공동구매",
@@ -190,7 +190,7 @@
                 "address": null,
                 "detailAddress": null
             },
-            "categoryId": "취미",
+            "category": "취미",
             "sellingArea": "고속터미널역",
             "detailArea": "0",
             "title": "닌텐도 칩 공동구매",

@@ -7,72 +7,120 @@ import chat from "../../assets/images/chat-orange.svg";
 import Card from "../../components/Card";
 import goods from "../../data/goods.json";
 import MapContainer from "../../hooks/KakaoMapScript";
+import { useGetProduct } from "../../queries/getProduct ";
+import { useParams } from "react-router-dom";
+import { getUserInfo } from "../../utils/localStorage";
+import ModalPortal from "../../components/modal/ModalPortal";
+import PartyModal from "../../components/modal/PartyModal";
+import useCustomModal from "../../hooks/useCustomModal";
 
 function Goods() {
     const arr = [1, 2, 3, 4];
-    console.log(goods.goods[0]);
-    const good = goods.goods[0];
-
+    // console.log(goods.goods[0]);
+    const { goodsid } = useParams();
+    const userInfo = getUserInfo();
+    const { modalOpen, setModalOpen } = useCustomModal();
+    const { data: good, isLoading } = useGetProduct(goodsid as string);
+    // console.log(good);
+    const handleReceiveCoordinates = (x: string, y: string) => {
+        console.log(`Coordinates: ${x}, ${y}`);
+        // 필요한 로직을 여기에 추가합니다. 예를 들면 상태 설정 등
+    };
+    const showModal = (e: any) => {
+        setModalOpen(true);
+    };
     return (
-        <Div>
-            <Flex>
-                <Img src={udi} alt="" />
-                <ContentCont>
-                    <TitleCont>
-                        <span>{good.categoryId}</span>
-                        <p>{good.sellingArea}</p>
-                    </TitleCont>
-                    <h1>{good.title}</h1>
-                    <img src={money} alt="" />
-                    <span className="money"> {good.sellPrice}원</span>
+        <>
+            {!isLoading && (
+                <Div>
+                    {good.user.email !== userInfo.email && (
+                        <p>내가 쓴 글 아님</p>
+                    )}
+                    <Flex>
+                        {good.productImages[0] && (
+                            <img
+                                src={`http://3.36.250.168:80${good.productImages[0].fileName}`}
+                                alt=""
+                            />
+                        )}
+                        <ContentCont>
+                            <TitleCont>
+                                <span>{good.category}</span>
+                                <p>{good.sellingArea}</p>
+                            </TitleCont>
+                            <h1>{good.title}</h1>
+                            <img src={money} alt="" />
+                            <span className="money"> {good.sellPrice}원</span>
 
-                    <Wrap>
-                        <h3>모집여부</h3>
-                        <span>모집중</span>
-                        <h3>모집개수</h3>
-                        <span>
-                            {good.maxCount}개 (현재 {good.sellCount}개 모집)
-                        </span>
-                        <h3>주최자</h3>
-                        <span>{good.user.nick}</span>
-                        <h3>참여기간</h3>
-                        <span>23년 9월 30일-23년 10월 12일</span>
-                        <h3>위치</h3>
-                        <span>{good.sellingArea}</span>
-                    </Wrap>
-                    <Map>
-                        <MapContainer inputAddressValue={""} />
-                    </Map>
-                    <BtnWrap>
-                        <button className="heart">
-                            <img src={heart} alt="" />
-                        </button>
-                        <button className="chat">
-                            <img src={chat} alt="" />
-                        </button>
-                        <button className="party">참여하기</button>
-                    </BtnWrap>
-                </ContentCont>
-            </Flex>
-            <Wrap2>
-                <span>상세정보 및 내용</span>
-                <p>{good.description}</p>
-                <span>공지 및 업데이트</span>
-                <div>
-                    {good.announces.map((announce) => (
-                        <>
-                            <p>23.10.01 {announce.contents}</p>
-                        </>
-                    ))}
-                </div>
-            </Wrap2>
-            <Span>공동구매 더보기</Span>
-            <CardWrap>
-                {goods.goods.slice(0, 4).map((good) => (
-                    <Card good={good} />
-                ))}
-            </CardWrap>
-        </Div>
+                            <Wrap>
+                                <h3>모집여부</h3>
+                                <span>모집중</span>
+                                <h3>모집개수</h3>
+                                <span>
+                                    {good.maxCount}개 (현재 {good.sellCount}개
+                                    모집)
+                                </span>
+                                <h3>주최자</h3>
+                                <span>{good.user.nick}</span>
+                                <h3>참여기간</h3>
+                                <span>23년 9월 30일-23년 10월 12일</span>
+                                <h3>위치</h3>
+                                <span>{good.sellingArea}</span>
+                            </Wrap>
+                            <Map>
+                                <MapContainer
+                                    onReceiveCoordinates={
+                                        handleReceiveCoordinates
+                                    }
+                                    inputAddressValue={good.sellingArea}
+                                />
+                            </Map>
+                            <BtnWrap>
+                                <button className="heart">
+                                    <img src={heart} alt="" />
+                                </button>
+                                <button className="chat">
+                                    <img src={chat} alt="" />
+                                </button>
+                                <button className="party" onClick={showModal}>
+                                    참여하기
+                                </button>
+                            </BtnWrap>
+                        </ContentCont>
+                    </Flex>
+                    <Wrap2>
+                        <span>상세정보 및 내용</span>
+                        <p>{good.description}</p>
+                        <span>공지 및 업데이트</span>
+                        <div>
+                            {good.announces &&
+                                good.announces.map((announce: any) => (
+                                    <>
+                                        <p>23.10.01 {announce.contents}</p>
+                                    </>
+                                ))}
+                        </div>
+                    </Wrap2>
+                    <Span>공동구매 더보기</Span>
+                    <CardWrap>
+                        {goods.goods.slice(0, 4).map((good) => (
+                            <Card good={good} />
+                        ))}
+                    </CardWrap>
+                    {modalOpen && (
+                        <ModalPortal>
+                            <PartyModal
+                                data={good}
+                                modalOpen={modalOpen}
+                                setModalOpen={setModalOpen}
+                                handleModal={showModal}
+                                // handleModal={handleProductDetail}
+                            />
+                        </ModalPortal>
+                    )}
+                </Div>
+            )}
+        </>
     );
 }
 

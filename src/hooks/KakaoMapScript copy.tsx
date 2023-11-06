@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 declare global {
     interface Window {
@@ -8,11 +8,11 @@ declare global {
 
 interface Props {
     inputAddressValue: string;
-    onReceiveCoordinates: (x: string, y: string) => void; // 새로운 prop
 }
 
+const MapContainer = ({ inputAddressValue }: Props) => {
+    const [coordinates, setCoordinates] = useState({ x: "", y: "" });
 
-const MapContainer = ({ inputAddressValue, onReceiveCoordinates }: Props) => {
     useEffect(() => {
         let container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
         let options = {
@@ -38,7 +38,7 @@ const MapContainer = ({ inputAddressValue, onReceiveCoordinates }: Props) => {
                         result[0].y,
                         result[0].x
                     );
-                    onReceiveCoordinates(result[0].x, result[0].y);
+                    setCoordinates({ x: result[0].x, y: result[0].y });
                     // 결과값으로 받은 위치를 마커로 표시합니다
                     var marker = new window.kakao.maps.Marker({
                         map: map,
@@ -51,8 +51,8 @@ const MapContainer = ({ inputAddressValue, onReceiveCoordinates }: Props) => {
             }
         );
     }, [inputAddressValue]);
-
-    return <div id="map" style={{ width: "20vw", height: "20vh" }} />;
+    return coordinates;
+    // return <div id="map" style={{ width: "50vw", height: "30vh" }} />;
 };
 
 export default MapContainer;

@@ -26,7 +26,7 @@ export default function Router() {
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/search" element={<Search />} />
 
-                        <Route path="/goods" element={<Goods />} />
+                        <Route path="/goods/:goodsid" element={<Goods />} />
                     </Route>
                 </Route>
 

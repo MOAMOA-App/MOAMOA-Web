@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+interface ContBtnProps {
+    toggle?: boolean;
+    // children: string;
+}
+
 export const Label = styled.label`
     font-size: 14px;
     line-height: 22px;
@@ -50,7 +55,6 @@ export const ErrorMessage = styled.p`
     font-weight: 700;
 `;
 
-
 export const WrapInp = styled.form`
     display: flex;
     flex-direction: column;
@@ -74,14 +78,6 @@ export const WrapInp = styled.form`
         font-weight: 500;
         font-size: 14px;
         line-height: 22px;
-    }
-    ${"button"} {
-        color: white;
-        width: 91px;
-        height: 28px;
-        background: #f79331;
-        border: 1px solid #f79331;
-        border-radius: 15px;
     }
 `;
 
@@ -120,4 +116,14 @@ export const Btn = styled.button`
     border-radius: 50px;
     margin: 10px 0;
     color: white;
+`;
+export const ContBtn = styled.button<ContBtnProps>`
+    color: white;
+    width: 91px;
+    height: 28px;
+    /* background: #f79331; */
+    /* border: 1px solid #f79331; */
+    border-radius: 15px;
+    background-color: ${({ toggle }) => (toggle ? "#d9d9d9" : "#F79331")};
+    color: ${({ toggle }) => (toggle ? "black" : "white")};
 `;

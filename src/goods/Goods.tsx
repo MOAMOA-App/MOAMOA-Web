@@ -19,7 +19,7 @@ function Goods() {
                 <Img src={udi} alt="" />
                 <ContentCont>
                     <TitleCont>
-                        <span>{good.categoryId}</span>
+                        <span>{good.category}</span>
                         <p>{good.sellingArea}</p>
                     </TitleCont>
                     <h1>{good.title}</h1>
@@ -40,9 +40,9 @@ function Goods() {
                         <h3>위치</h3>
                         <span>{good.sellingArea}</span>
                     </Wrap>
-                    <Map>
+                    {/* <Map>
                         <MapContainer inputAddressValue={""} />
-                    </Map>
+                    </Map> */}
                     <BtnWrap>
                         <button className="heart">
                             <img src={heart} alt="" />

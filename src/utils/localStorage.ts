@@ -1,62 +1,73 @@
 const ACCESS_TOKEN = "accessToken";
 const REFRESH_TOKEN = "refreshToken";
+const USER_INFO = "userInfo";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface User {
+    id: number;
+    detailAddress: null | string;
+    email: string;
+    nick: string;
+    profImg: null | string;
+}
+
 export const setLocalStorage = (key: string, value: any) => {
-  if (typeof window !== "undefined") {
-    const storage = window.localStorage;
-    if (!storage) {
-      return;
-    }
-    switch (typeof value) {
-      case `string`: {
-        try {
-          const stringifiedValue = JSON.stringify(value);
-          storage.setItem(key, stringifiedValue);
-        } catch (e) {
-          // eslint-disable-next-line no-console
-          console.error(`failed to stringify`);
+    if (typeof window !== "undefined") {
+        const storage = window.localStorage;
+        if (!storage) {
+            return;
         }
-        break;
-      }
-      default:
-        storage.setItem(key, value);
-    }
-  }
-};
 
-// eslint-disable-next-line consistent-return
-export const getLocalStorage = (key: string, defaultValue = null) => {
-  if (typeof window !== "undefined") {
-    const storage = window.localStorage;
-    if (!storage) {
-      return null;
+        try {
+            const stringifiedValue = JSON.stringify(value);
+            storage.setItem(key, stringifiedValue);
+        } catch (e) {
+            console.error(`failed to stringify`, e);
+        }
     }
-    return storage.getItem(key) ?? defaultValue;
-  }
+};
+export const getLocalStorage = (key: string, defaultValue = null) => {
+    if (typeof window !== "undefined") {
+        const storage = window.localStorage;
+        if (!storage) {
+            return defaultValue;
+        }
+
+        try {
+            const value = storage.getItem(key);
+            return value ? JSON.parse(value) : defaultValue;
+        } catch (e) {
+            console.error(`failed to parse`, e);
+            return defaultValue;
+        }
+    }
 };
 
 export const removeLocalStorageItem = (key: string) => {
-  if (typeof window !== "undefined") {
-    const storage = window.localStorage;
-    if (!storage) {
-      return;
+    if (typeof window !== "undefined") {
+        const storage = window.localStorage;
+        if (!storage) {
+            return;
+        }
+        storage.removeItem(key);
     }
-    storage.removeItem(key);
-  }
 };
 
 export const setAccessToken = (acessToken: string) => {
-  setLocalStorage(ACCESS_TOKEN, acessToken);
+    setLocalStorage(ACCESS_TOKEN, acessToken);
 };
 
 export const setRefreshToken = (refreshToken: string) => {
-  setLocalStorage(REFRESH_TOKEN, refreshToken);
+    setLocalStorage(REFRESH_TOKEN, refreshToken);
+};
+
+export const setUserInfo = (userInfo: User) => {
+    setLocalStorage(USER_INFO, userInfo);
 };
 
 export const getAccessToken = () => getLocalStorage(ACCESS_TOKEN);
 export const getRefreshToken = () => getLocalStorage(REFRESH_TOKEN);
+export const getUserInfo = () => getLocalStorage(USER_INFO);
 
 export const removeAccessToken = () => {
-  removeLocalStorageItem(ACCESS_TOKEN);
+    removeLocalStorageItem(ACCESS_TOKEN);
 };

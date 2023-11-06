@@ -20,24 +20,50 @@ export const Wrap = styled.form`
     margin-top: 40px;
 `;
 
-export const ImgCont = styled.div`
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    ${"img"} {
+export const ImgEmptyCont = styled.div`
+    text-align: center;
+    margin-bottom: 15px;
+    ${"label"} {
         cursor: pointer;
+    }
+`;
+export const ImgCont = styled.div`
+    max-width: 320px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5개의 동일한 크기의 열을 생성 */
+    grid-template-rows: auto auto; /* 2개의 행, 각각의 크기는 자동 */
+    gap: 14px 7px;
+    margin: 0 auto;
+    ${".full"} {
+        position: relative;
+        width: 313px;
+        height: 313px;
+        ${".mainImg"} {
+            width: 313px;
+            height: 313px;
+            cursor: pointer;
+            object-fit: cover;
+        }
         /* width: 125px;
         height: 125px; */
-    }
+        grid-column: 1 / -1;
 
+        ${".delete"} {
+            position: absolute;
+            top: 0;
+            right: 0;
+            object-fit: none;
+        }
+    }
     ${"div"} {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 15px;
-        font-weight: 700;
+        text-align: center; /* 텍스트 중앙 정렬 */
+        ${"img"} {
+            width: 65px;
+            height: 64px;
+            border-radius: 5px;
+            cursor: pointer;
+            object-fit: cover;
+        }
     }
 `;
 
@@ -150,6 +176,10 @@ export const DateCont = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+
+    ${"span"} {
+        margin: 10px;
+    }
 `;
 
 export const InpDateCont = styled.div`

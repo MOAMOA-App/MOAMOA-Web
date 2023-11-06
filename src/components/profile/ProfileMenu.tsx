@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
+import { Profile } from "../../queries/getProfile";
 
 type ProfileMenuProps = {
+    info: Profile;
     type: string;
     setType: (value: string) => void;
 };
@@ -12,7 +14,7 @@ type ListBtnProps = {
     type?: string; // type prop을 선택적으로 받습니다.
 };
 
-export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
+export default function ProfileMenu({ info, type, setType }: ProfileMenuProps) {
     const authContext = useContext(AuthContext);
 
     if (!authContext) {
@@ -36,12 +38,12 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
             <WrapProfile>
                 <ContProfile>
                     <img src="" alt="" />
-                    <Name>초록개구리</Name>
-                    <span>lgirn@naver.com</span>
+                    <Name>{info.nick}</Name>
+                    <span>{info.email}</span>
                 </ContProfile>
 
                 <ListProfile>
-                    <dt>내 활동</dt>
+                    <dt>나의 활동</dt>
 
                     {menuArr.map((item) => (
                         <dd>
@@ -57,7 +59,7 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
                     ))}
                 </ListProfile>
                 <ListProfile>
-                    <dt>내 정보</dt>
+                    <dt>계정 설정</dt>
                     <dd>
                         <ListBtn
                             type={type}
@@ -65,10 +67,10 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
                                 setType("setting");
                             }}
                         >
-                            내 프로필
+                            나의 프로필
                         </ListBtn>
                     </dd>
-                    <dd>
+                    {/* <dd>
                         <ListBtn
                             type={type}
                             onClick={() => {
@@ -86,8 +88,8 @@ export default function ProfileMenu({ type, setType }: ProfileMenuProps) {
                             }}
                         >
                             환경설정
-                        </ListBtn>
-                    </dd>
+                        </ListBtn> */}
+                    {/* </dd> */}
                     <ListBtn onClick={handleClick}>로그아웃</ListBtn>
                 </ListProfile>
             </WrapProfile>

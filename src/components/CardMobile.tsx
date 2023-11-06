@@ -17,7 +17,7 @@ export default function CardMobile({ good }: CardProps) {
                     <span className="setting">참여자 관리</span>
                 </S.TitleCont>
                 <p className="place">{good.sellingArea}</p>
-                <p className="day">D-{good.finishedAt}</p>
+                {/* <p className="day">D-{good.finishedAt}</p> */}
                 <S.CountCont>
                     <p>
                         <span className="count">[{good.status}] </span>

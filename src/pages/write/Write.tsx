@@ -4,7 +4,7 @@ import hright from "../../assets/images/hright.svg";
 import hleft from "../../assets/images/hleft.svg";
 import searchGreen from "../../assets/images/search_green.svg";
 import calendar from "../../assets/images/calendar.svg";
-
+import deleteBtn from "../../assets/images/deleteBtn.svg";
 import checked from "../assets/images/checked.svg";
 import defaultChecked from "../assets/images/defaultChecked.svg";
 import ModalPortal from "../../components/modal/ModalPortal";
@@ -17,18 +17,34 @@ import * as S from "../../styles/Write.styled";
 import { SubmitHandler, useForm } from "react-hook-form";
 import KakaoMapScript from "../../hooks/KakaoMapScript";
 import MapContainer from "../../hooks/KakaoMapScript";
+import { usePostProduct } from "../../queries/postProduct";
 
 interface FormValue {
     title: string;
     description: string;
     sellPrice: number;
     userId: string;
-    categoryId: string;
+    category: string;
     sellingArea: string;
     detailArea: string;
     status: string;
     finishedAt: string; //수정
     maxCount: number;
+}
+
+export interface Request {
+    category: string;
+    sellingArea: string; //판매위치
+    detailArea: string; //판매위치 상세
+    title: string;
+    sellPrice: number;
+    description: string;
+    finishedAt: any;
+    maxCount: number;
+    choiceSend: string; //전달 방법
+    status: string;
+    longtitue: string;
+    lattitue: string;
 }
 
 type WriteProps = {
@@ -45,6 +61,8 @@ function Write() {
     const [inputAddressValue, setInputAddressValue] = useState<string>("");
     const [inputZipCodeValue, setInputZipCodeValue] = useState<string>("");
     const [imgFile, setImgFile] = useState<any>(null);
+    const [imgFiles, setImgFiles] = useState<string[]>([]);
+
     const arr = [
         "생활",
         "의류",
@@ -59,10 +77,18 @@ function Write() {
     ];
     const [selectedCategory, setSelectedCategory] = useState<string>("");
     const { modalOpen, setModalOpen } = useCustomModal();
+    const [coordinates, setCoordinates] = useState({ x: "", y: "" });
+    const [selectedImage, setSelectedImage] = useState<string>("");
 
     const handleCategoryClick = (category: string) => {
         setSelectedCategory(category);
     };
+    const {
+        mutateAsync: postProduct,
+        isLoading = false,
+        isError = false,
+        error,
+    } = usePostProduct();
     // 모달창 노출
     const showModal = (e: any) => {
         setModalOpen(true);
@@ -89,6 +115,11 @@ function Write() {
         // });
         // marker.setMap(map);
     }, []);
+    const handleReceiveCoordinates = (x: string, y: string) => {
+        console.log(`Coordinates: ${x}, ${y}`);
+        setCoordinates({ x, y });
+        // 필요한 로직을 여기에 추가합니다. 예를 들면 상태 설정 등
+    };
 
     useEffect(() => {
         setModalOpen(false);
@@ -99,7 +130,7 @@ function Write() {
     };
 
     const { register, handleSubmit, watch, reset, setValue } =
-        useForm<FormValue>();
+        useForm<Request>();
 
     const upload = useRef<HTMLInputElement>(null);
 
@@ -119,20 +150,99 @@ function Write() {
             console.log(reader.result);
         };
     };
+    const saveImgFiles = () => {
+        const files = upload.current?.files;
 
-    const onSubmit: SubmitHandler<FormValue> = (data) => {
-        console.log("Submitting", data);
+        if (!files || files.length === 0) {
+            // 파일이 없으면 함수를 종료
+            return;
+        }
+
+        const imageFiles = Array.from(files); // 파일 객체들을 배열로 변환
+
+        imageFiles.forEach((file) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = () => {
+                // 이미지 파일의 데이터 URL을 상태 배열에 추가
+                setImgFiles((prev) => [...prev, reader.result as string]);
+            };
+        });
+    };
+    const handleImageClick = (imgUrl: string) => {
+        setSelectedImage(imgUrl); // 선택된 이미지의 URL을 상태로 저장
+    };
+    const handleImageDelete = () => {
+        console.log(imgFiles);
+
+        // 선택된 이미지를 제거
+        setImgFiles(imgFiles.filter((img) => img !== selectedImage));
+        setSelectedImage(imgFiles[0]); // 선택된 이미지의 URL을 상태로 저장
+
+        // 현재 선택된 이미지가 삭제되면, 선택된 이미지를 초기화
+        if (imgFiles.length === 1) {
+            setImgFiles([]);
+        }
+    };
+    const onSubmit: SubmitHandler<Request> = (data) => {
+        console.log(inputAddressValue);
+        console.log(inputZipCodeValue);
+
+        let resData: Request = {
+            detailArea: "",
+            title: "청송 사과 나눠사실 분",
+            status: "READY",
+            sellPrice: Number(data.sellPrice),
+            description: "내요오오오옹",
+            finishedAt: "23-08-10 12:00",
+            maxCount: Number(data.maxCount),
+            choiceSend: "택배",
+            category: selectedCategory,
+            sellingArea: inputAddressValue,
+            longtitue: coordinates.x,
+            lattitue: coordinates.y,
+        };
+
+        let res = postProduct(resData);
+        console.log(postProduct(resData));
+        console.log(resData);
     };
 
     return (
         <S.Wrap onSubmit={handleSubmit(onSubmit)}>
-            <S.ImgCont>
-                <img src={hleft} alt="" />
-                {imgFile ? (
-                    // <div></div>
-                    <img src={imgFile} alt="이미지" />
+            <div>
+                {imgFiles[0] ? (
+                    <S.ImgCont>
+                        {/* 
+                        
+                        */}
+
+                        <div className="full">
+                            <img
+                                className="mainImg"
+                                src={selectedImage || imgFiles[0]}
+                                alt="이미지"
+                            />
+                            <img
+                                className="delete"
+                                src={deleteBtn}
+                                alt=""
+                                onClick={() => handleImageDelete()}
+                            />
+                        </div>
+                        {imgFiles.map((img, index) => (
+                            <div>
+                                <img
+                                    key={index}
+                                    src={img}
+                                    alt={`uploaded-img-${index}`}
+                                    onClick={() => handleImageClick(img)}
+                                />
+                            </div>
+                        ))}
+                    </S.ImgCont>
                 ) : (
-                    <div>
+                    <S.ImgEmptyCont>
                         <label htmlFor="file-uploader">
                             <img src={imgBtn} alt="" />
                             <p>이미지 등록하기</p>
@@ -143,13 +253,12 @@ function Write() {
                             accept="image/*"
                             multiple
                             ref={upload}
-                            onChange={saveImgFile}
+                            onChange={saveImgFiles}
                             style={{ display: "none" }}
                         />
-                    </div>
+                    </S.ImgEmptyCont>
                 )}
-                <img src={hright} alt="" />
-            </S.ImgCont>
+            </div>
             <S.ContentCont>
                 <label htmlFor="scales">제목</label>
                 <S.Title
@@ -278,7 +387,10 @@ function Write() {
                         />
                     </S.InpCont>
                 </div>
-                <MapContainer inputAddressValue={inputAddressValue} />
+                <MapContainer
+                    inputAddressValue={inputAddressValue}
+                    onReceiveCoordinates={handleReceiveCoordinates}
+                />
                 {/* <div
                     className="second2"
                     id="myMap"

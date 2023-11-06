@@ -55,12 +55,15 @@ export const Warp = styled.div`
     cursor: pointer;
 `;
 
-export const Img = styled.image`
+export const Img = styled.div`
     height: 205px;
     width: 205px;
-    background: #f79331;
     margin: 0 auto;
     display: block;
+    ${"img"} {
+        width: 100%; /* 혹은 'height: 100%;' */
+        object-fit: cover; /* 'cover'는 이미지를 채우면서 비율을 유지합니다. 'contain'은 전체 이미지를 보여줍니다. */
+    }
     @media (max-width: 768px) {
         width: 160px;
         height: 160px;

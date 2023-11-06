@@ -5,16 +5,22 @@ import ProfileDetail from "../../components/profile/ProfileDetail";
 import ProfileSetting from "../../components/profile/ProfileSetting";
 import CreateGoods from "../../components/profile/CreateGoods";
 import styled from "styled-components";
+import { getUserInfo } from "../../utils/localStorage";
 import * as S from "../../styles/Profile.styled";
 
 export default function Profile() {
     const [type, setType] = useState<string>("setting");
-
+    const userInfo = getUserInfo();
     return (
         <>
             <Wrap>
-                <ProfileMenu type={type} setType={setType}></ProfileMenu>
-
+                {userInfo && (
+                    <ProfileMenu
+                        info={userInfo}
+                        type={type}
+                        setType={setType}
+                    ></ProfileMenu>
+                )}
                 {
                     // {
                     //     setting: <ProfileSetting></ProfileSetting>,
@@ -35,8 +41,8 @@ export default function Profile() {
                     //     )
                     // }[type]
 
-                    type === "setting" ? (
-                        <ProfileSetting />
+                    userInfo && type === "setting" ? (
+                        <ProfileSetting info={userInfo} />
                     ) : type === "detail" ? (
                         <ProfileDetail></ProfileDetail>
                     ) : (
@@ -44,7 +50,7 @@ export default function Profile() {
                     )
                 }
             </Wrap>
-            <ProfileMobile></ProfileMobile>
+            <ProfileMobile info={userInfo}></ProfileMobile>
         </>
     );
 }

@@ -31,8 +31,9 @@ export default function Category() {
                 <Div
                     onClick={() => {
                         navigate("/search");
-                        setCategory(name)
+                        setCategory(name);
                     }}
+                    key={name}
                 >
                     <img src={src} alt="" />
                     {name}

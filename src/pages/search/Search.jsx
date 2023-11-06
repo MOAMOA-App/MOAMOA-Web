@@ -54,10 +54,27 @@ export default function Search() {
         });
     };
     const handleCheckboxChange = (category) => {
-        setCheckedCategories((prev) => ({
-            ...prev,
-            [category]: !prev[category],
-        }));
+        if (category === "전체") {
+            setCheckedCategories({
+                전체: true,
+                생활: false,
+                의류: false,
+                식품: false,
+                가전: false,
+                취미: false,
+                운동: false,
+                굿즈: false,
+                동물: false,
+                해외: false,
+                기타: false,
+            });
+        } else {
+            setCheckedCategories((prev) => ({
+                ...prev,
+                전체: false, // 다른 카테고리가 선택되면 "전체"를 false로 설정합니다.
+                [category]: !prev[category],
+            }));
+        }
     };
     const handleCategoryClick = (order) => {
         setSelectedOrder(order);
