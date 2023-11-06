@@ -12,7 +12,7 @@ const accessToken = getAccessToken();
 
 export const apiClient = axios.create({
     withCredentials: true,
-    baseURL: "http://localhost:3000/",
+    baseURL: "https://moamoa-web-fadq.vercel.app/",
     headers: {
         ...(accessToken && {
             Authorization: `Bearer ${accessToken.replace(/^"(.*)"$/, "$1")}`,
