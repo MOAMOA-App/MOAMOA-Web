@@ -52,8 +52,10 @@ export const getHeartProductList = async (config?: AxiosRequestConfig) => {
 };
 
 export const useGetHeartProductList = (configOptions?: QueryConfigOptions) => {
+    const heartProductListQueryKey = "heartProductList"; // 고유한 쿼리 키
+
     const info = useQuery<Response, AxiosError, Goods[]>({
-        queryKey: QUERY_KEY,
+        queryKey: [heartProductListQueryKey],
         queryFn: () => getHeartProductList(configOptions?.config),
         ...configOptions?.options,
         // select: (res) => res.data,

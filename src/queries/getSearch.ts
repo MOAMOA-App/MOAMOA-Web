@@ -3,46 +3,26 @@ import { apiClient } from "../libary/reactQueryProvider";
 import { ApiResponse, QueryConfigOptions } from "../types";
 import { useQuery } from "@tanstack/react-query";
 import { getAccessToken, removeAccessToken } from "../utils/localStorage";
-import { Goods, Goods2 } from "../types/goods.types";
 
-
-
-
-type Product = {
+// Assuming 'Profile' should be an object, not array
+export type Profile = {
     id: number;
-    user: {
-        id: number;
-        nick: string;
-        profImg: string | null;
-        email: string;
-        address: string | null;
-        detailAddress: string | null;
-    };
-    category: string;
-    sellingArea: string;
-    detailArea: string;
-    title: string;
-    status: string;
-    sellPrice: number;
-    viewCount: number;
-    description: string;
-    sellCount: number;
-    maxCount: number;
-    choiceSend: string;
-    createdAt: string;
-    finishedAt: Date;
-    productImages: string[];
+    nick: string;
+    profImg: string;
+    email: string;
+    address: string;
+    detailAddress: string; // Assuming this should be a string, please change if another type is intended
 };
-type Response = any;
-//수정하기!
 
-const URL_PATH = `api/myinfo/party`;
+type Response = ApiResponse<Profile>;
+
+const URL_PATH = `api/product?search=asdfasdf&order=Sdfadf&pageNo=10&pageSize=20&category=1&status=READY`;
 
 export const QUERY_KEY = [URL_PATH];
 const accessToken = getAccessToken();
 
-export const getPartyProductList = async (config?: AxiosRequestConfig) => {
-    const res = await apiClient.get<Goods[], AxiosResponse<Response>>(
+export const getSearch = async (config?: AxiosRequestConfig) => {
+    const res = await apiClient.get<Request, AxiosResponse<Response>>(
         URL_PATH,
         {
             ...config,
@@ -51,13 +31,13 @@ export const getPartyProductList = async (config?: AxiosRequestConfig) => {
             },
         }
     );
-    return res.data.content;
+    return res.data;
 };
 
-export const useGetPartyProductList = (configOptions?: QueryConfigOptions) => {
-    const info = useQuery<Response, AxiosError, Goods[]>({
+export const useGetSearch = (configOptions?: QueryConfigOptions) => {
+    const info = useQuery<Response, AxiosError, Profile>({
         queryKey: QUERY_KEY,
-        queryFn: () => getPartyProductList(configOptions?.config),
+        queryFn: () => getSearch(configOptions?.config),
         ...configOptions?.options,
         // select: (res) => res.data,
         enabled: !!accessToken, // uncomment this if you want the query to run only when accessToken is available
