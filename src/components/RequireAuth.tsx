@@ -15,14 +15,14 @@ function RequireAuth() {
 
     return (
         <>
-            {/* {auth ? ( */}
-            <>
-                <Navbar />
-                <Outlet />
-            </>
-            {/* ) : (
+            {auth ? (
+                <>
+                    <Navbar />
+                    <Outlet />
+                </>
+            ) : (
                 <Navigate to="login" state={{ from: location }} replace />
-            )} */}
+            )}
         </>
     );
 }
