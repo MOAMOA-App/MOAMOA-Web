@@ -74,6 +74,7 @@ export default function Search() {
     const handleChange = (event) => {
         setSelected(event.target.value);
     };
+    
 
     return (
         <>
@@ -89,7 +90,7 @@ export default function Search() {
                                     id=""
                                     placeholder="검색어를 입력해주세요."
                                 />
-                                <img src={search} alt="" />
+                                <img src={search} alt="ㅇㅇ" />
                             </SearchBar>
                         </WrapSearch>
                     </Cont>

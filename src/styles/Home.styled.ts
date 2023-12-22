@@ -5,7 +5,7 @@ export const Wrap = styled.div`
 `;
 
 export const RowCont = styled.div`
-margin-bottom: 63px;
+    margin-bottom: 63px;
 `;
 
 export const SearchBar = styled.div`
@@ -58,7 +58,22 @@ export const HomeSearchBar = styled(SearchBar)`
 export const ContCard = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
     gap: 26px;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 8px;
+        border-radius: 6px;
+        border: 1px solid #6e6b651c;
+        /* background: #fff8ec; */
+    }
+    &::-webkit-scrollbar-thumb {
+        /* background: #d6d6d6; */
+        border-radius: 6px;
+    }
+    //주황 투명도 30%
+
     @media (max-width: 768px) {
         overflow-x: scroll;
         padding: 26px 10%;

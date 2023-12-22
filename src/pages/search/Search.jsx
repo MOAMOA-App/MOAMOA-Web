@@ -7,6 +7,7 @@ import ham from "../../assets/images/햄버거.svg";
 import goods from "../../data/goods.json";
 import { useCategoryValue } from "../../atom/category.atom";
 import CardMobile from "../../components/CardMobile";
+import { useGetSearch } from "../../queries/getSearch";
 
 export default function Search() {
     const [menus, setMenu] = useState([
@@ -14,6 +15,8 @@ export default function Search() {
         { title: "내용", checked: true },
     ]);
     const category = useCategoryValue();
+    const [inputValue, setInputValue] = useState("");
+    const { data: good } = useGetSearch();
     const [checkedCategories, setCheckedCategories] = useState({
         전체: false,
         생활: false,
@@ -86,10 +89,41 @@ export default function Search() {
             [order]: !prev[order],
         }));
     };
+
     const [selected, setSelected] = useState("인기순");
 
     const handleChange = (event) => {
         setSelected(event.target.value);
+    };
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleSearchBtn = (event) => {
+        // Log the current state of checkedCategories, selectedState, and selectedOrder
+        const selectedCategoryIndices = Object.entries(checkedCategories)
+            .map(([category, isChecked], index) => (isChecked ? index : -1))
+            .filter((index) => index !== -1)
+            .join(",");
+        const selectedCategories = Object.entries(checkedCategories)
+            .filter(([category, isChecked]) => isChecked)
+            .map(([category]) => category)
+            .join(",");
+
+        const selectedStates = Object.entries(selectedState)
+            .filter(([state, isSelected]) => isSelected)
+            .map(([state]) => state)
+            .join(",");
+        console.log(
+            "search=" +
+                inputValue +
+                "&order=" +
+                selectedStates +
+                "&category=" +
+                selectedCategoryIndices +
+                "&status=" +
+                selectedOrder
+        );
     };
 
     return (
@@ -105,8 +139,11 @@ export default function Search() {
                                     name=""
                                     id=""
                                     placeholder="검색어를 입력해주세요."
+                                    onChange={handleInputChange}
                                 />
-                                <img src={search} alt="" />
+                                <button onClick={handleSearchBtn}>
+                                    <img src={search} alt="검색버튼" />
+                                </button>
                             </SearchBar>
                         </WrapSearch>
                     </Cont>
@@ -198,7 +235,9 @@ export default function Search() {
                         id=""
                         placeholder="검색어를 입력해주세요."
                     />
-                    <img src={search} alt="" />
+                    <button onClick={handleSearchBtn}>
+                        <img src={search} alt="검색버튼" />
+                    </button>
                 </SearchBar>
 
                 <div>

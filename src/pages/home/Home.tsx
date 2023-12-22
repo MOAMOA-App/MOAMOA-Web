@@ -18,6 +18,7 @@ export default function Home() {
     ];
     const navigate = useNavigate();
     const { data, isLoading } = useGetProductList();
+
     useEffect(() => {
         !isLoading && console.log(data);
     }, []);
@@ -40,15 +41,16 @@ export default function Home() {
                     <S.RowCont>
                         <HomeTitle title={title} />
                         <S.ContCard>
-                            {data.slice(0,5).map((good: Goods) => (
-                                <div
-                                    onClick={() =>
-                                        navigate(`/goods/${good.id}`)
-                                    }
-                                >
-                                    <Card good={good}></Card>
-                                </div>
-                            ))}
+                            {data
+                                // .filter(
+                                //     (good: Goods) => good.status === "READY"
+                                // )
+                                .slice(0, 5)
+                                .map((good: Goods) => (
+                                    <div>
+                                        <Card good={good}></Card>
+                                    </div>
+                                ))}
                         </S.ContCard>
                     </S.RowCont>
                 ))}

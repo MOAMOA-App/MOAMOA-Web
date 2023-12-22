@@ -26,7 +26,7 @@ export const Wrap = styled.div`
     flex-direction: column;
     padding: 0 7px;
     line-height: 22px;
-    margin: 19px 0px 19px 11px;
+    margin: 19px 0px 19px 0px;
     border-left: #2c9b36 solid 10px;
     ${".ment"} {
         font-weight: 500;

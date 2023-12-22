@@ -12,12 +12,14 @@ import MapModal from "../../components/modal/MapModal";
 import useCustomModal from "../../hooks/useCustomModal";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "../../styles/Write.styled";
 import { SubmitHandler, useForm } from "react-hook-form";
 import KakaoMapScript from "../../hooks/KakaoMapScript";
 import MapContainer from "../../hooks/KakaoMapScript";
 import { usePostProduct } from "../../queries/postProduct";
+import { usePostImage } from "../../queries/postImage";
 
 interface FormValue {
     title: string;
@@ -43,8 +45,8 @@ export interface Request {
     maxCount: number;
     choiceSend: string; //전달 방법
     status: string;
-    longtitue: string;
-    lattitue: string;
+    // longtitue: string;
+    // lattitue: string;
 }
 
 type WriteProps = {
@@ -56,6 +58,8 @@ type WriteProps = {
 };
 
 function Write() {
+    const navigate = useNavigate();
+
     const [startDate, setStartDate] = useState(new Date());
     const [modalState, setModalState] = useState(false);
     const [inputAddressValue, setInputAddressValue] = useState<string>("");
@@ -89,32 +93,20 @@ function Write() {
         isError = false,
         error,
     } = usePostProduct();
+
+    const {
+        mutateAsync: postImage,
+        // isLoading = false,
+        // isError = false,
+        // error,
+    } = usePostImage();
+
     // 모달창 노출
     const showModal = (e: any) => {
         setModalOpen(true);
     };
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
-    useEffect(() => {
-        // KakaoMapScript()
-        // var container = document.getElementById("map");
-        // var options = {
-        //     center: new kakao.maps.LatLng(
-        //         37.365264512305174,
-        //         127.10676860117488
-        //     ),
-        //     level: 3,
-        // };
-        // var map = new kakao.maps.Map(container, options);
-        // var markerPosition = new kakao.maps.LatLng(
-        //     37.365264512305174,
-        //     127.10676860117488
-        // );
-        // var marker = new kakao.maps.Marker({
-        //     position: markerPosition,
-        // });
-        // marker.setMap(map);
-    }, []);
     const handleReceiveCoordinates = (x: string, y: string) => {
         console.log(`Coordinates: ${x}, ${y}`);
         setCoordinates({ x, y });
@@ -124,10 +116,6 @@ function Write() {
     useEffect(() => {
         setModalOpen(false);
     }, [inputAddressValue, setModalOpen]);
-
-    const handleClick = () => {
-        console.log("버튼이 클릭되었습니다.");
-    };
 
     const { register, handleSubmit, watch, reset, setValue } =
         useForm<Request>();
@@ -184,28 +172,31 @@ function Write() {
             setImgFiles([]);
         }
     };
-    const onSubmit: SubmitHandler<Request> = (data) => {
+    const onSubmit: SubmitHandler<Request> = async (data) => {
         console.log(inputAddressValue);
         console.log(inputZipCodeValue);
 
         let resData: Request = {
-            detailArea: "",
-            title: "청송 사과 나눠사실 분",
+            detailArea: data.detailArea,
+            title: data.title,
             status: "READY",
             sellPrice: Number(data.sellPrice),
-            description: "내요오오오옹",
+            description: data.description,
             finishedAt: "23-08-10 12:00",
             maxCount: Number(data.maxCount),
             choiceSend: "택배",
             category: selectedCategory,
             sellingArea: inputAddressValue,
-            longtitue: coordinates.x,
-            lattitue: coordinates.y,
         };
 
-        let res = postProduct(resData);
-        console.log(postProduct(resData));
-        console.log(resData);
+        let res = await postProduct(resData);
+        navigate("/")
+        // postImage({
+        //     idx: res.id,
+        //     category: "product",
+        //     images: imgFiles,
+        // });
+        console.log(res.id);
     };
 
     return (
@@ -282,7 +273,7 @@ function Write() {
                 <label htmlFor="">모집기간</label>
                 <S.DateCont>
                     <S.InpDateCont>
-                        <DatePicker
+                        {/* <DatePicker
                             className="datePicker"
                             dateFormat="yyyy.MM.dd" // 날짜 형태
                             shouldCloseOnSelect // 날짜를 선택하면 datepicker가 자동으로 닫힘
@@ -290,12 +281,12 @@ function Write() {
                             maxDate={new Date()} // maxDate 이후 날짜 선택 불가
                             selected={selectedDate}
                             onChange={(date) => setSelectedDate(date)}
-                        />
+                        /> */}
                         <img src={calendar} alt="" />
                     </S.InpDateCont>
                     <span>~</span>
                     <S.InpDateCont>
-                        <DatePicker
+                        {/* <DatePicker
                             className="datePicker"
                             calendarClassName="calenderWrapper"
                             dateFormat="yyyy.MM.dd" // 날짜 형태
@@ -304,7 +295,7 @@ function Write() {
                             maxDate={new Date()} // maxDate 이후 날짜 선택 불가
                             selected={selectedDate}
                             onChange={(date) => setSelectedDate(date)}
-                        />
+                        /> */}
                         <img src={calendar} alt="" />
                     </S.InpDateCont>
                 </S.DateCont>
@@ -399,7 +390,7 @@ function Write() {
                 {/* {optional && <p>{optional}</p>} */}
             </S.Wrap2>
             <div>
-                <S.BtnSave onClick={handleClick}>등록하기</S.BtnSave>
+                <S.BtnSave>등록하기</S.BtnSave>
             </div>
             {modalOpen && (
                 <ModalPortal>

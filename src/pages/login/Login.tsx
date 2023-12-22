@@ -106,7 +106,6 @@ const Login: React.FC = () => {
                     <S.ErrorMessage>{errors.password.message}</S.ErrorMessage>
                 )}
                 <S.Label htmlFor="stay">
-                    {" "}
                     <S.Check type="checkbox" id="stay" />
                     로그인 상태 유지
                 </S.Label>

@@ -40,6 +40,8 @@ export interface Goods {
     // updatedAt: string;
     productImages?: ImageType[];
     announces?: announceType[];
+    heart?: boolean;
+
 }
 
 export interface Goods2 {

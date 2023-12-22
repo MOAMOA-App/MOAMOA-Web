@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
 import { Profile } from "../../queries/getProfile";
+import { useQueryClient } from "@tanstack/react-query";
 
 type ProfileMenuProps = {
     info: Profile;
@@ -22,13 +23,18 @@ export default function ProfileMenu({ info, type, setType }: ProfileMenuProps) {
     }
 
     const { setAuth } = authContext;
+    const queryClient = useQueryClient();
 
     //로그아웃
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         localStorage.removeItem("accessToken");
         localStorage.removeItem("refreshToken");
+        localStorage.removeItem("userInfo");
         setAuth("");
+
+        // React Query 캐시 초기화
+        queryClient.clear();
     };
 
     const menuArr = ["생성한 공동구매", "참여한 공동구매", "관심 공동구매"];

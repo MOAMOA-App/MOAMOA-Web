@@ -4,13 +4,35 @@ import { Goods } from "../types/goods.types";
 import fullheart from "../assets/images/fullheart.svg";
 import heart from "../assets/images/heart.svg";
 import { useNavigate, useParams } from "react-router-dom";
+import { usePostHeart } from "../queries/postHeart";
+import { getTime } from "../utils/getTime";
 
 interface CardProps {
     good: Goods;
 }
 export default function Card({ good }: CardProps) {
+    const navigate = useNavigate();
+
+    const {
+        mutateAsync: postHeart,
+        isLoading = false,
+        isError = false,
+        error,
+    } = usePostHeart();
+
+    const handleHeart = (e: any) => {
+        e.stopPropagation();
+
+        const newHeartStatus = !good.heart;
+
+        postHeart({
+            productId: good.id,
+            status: newHeartStatus,
+        });
+    };
+
     return (
-        <S.Warp>
+        <S.Warp onClick={() => navigate(`/goods/${good.id}`)}>
             <S.Category>
                 <div>
                     <p className="category">{`${good.category}`}</p>
@@ -32,9 +54,9 @@ export default function Card({ good }: CardProps) {
             </S.Img>
             <S.Title>{good.title}</S.Title>
             <S.Bottom>
-                <p>{`D-${good.finishedAt}`}</p>
-                <S.Button>
-                    <img src={heart} alt="" />
+                <p>{`D-${getTime(good.finishedAt)}`}</p>
+                <S.Button onClick={handleHeart}>
+                    <img src={good.heart ? fullheart : heart} alt="" />
                 </S.Button>
             </S.Bottom>
         </S.Warp>

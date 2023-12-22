@@ -24,4 +24,7 @@ background-color: white;
 
     opacity:1;
     }
+    ${"img"}{
+        cursor: pointer;
+    }
 `

@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from "react";
-import menu from "../../assets/images/menu_btn.svg";
+import arrowLeft from "../../assets/images/arrow_left_mini.svg";
+import arrowRight from "../../assets/images/arrow_right_mini.svg";
+import money from "../../assets/images/money.png";
 
 import * as S from "../../styles/PartyModal.styled";
 import list from "../../data/alarm.json";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { usePostParty } from "../../queries/postParty";
+import { getUserInfo } from "../../utils/localStorage";
 
 export default function PartyModal({
     data,
@@ -26,15 +29,35 @@ export default function PartyModal({
         isError = false,
         error,
     } = usePostParty();
-    const { register, handleSubmit, watch, reset, setValue } = useForm();
+
+    const { id } = getUserInfo();
+
+    const { register, handleSubmit, watch, reset, setValue } = useForm({
+        defaultValues: {
+            count: 1, // Set the initial count value
+        },
+    });
+
+    const count = watch("count"); // This will watch the input value and re-render the component whenever it changes
+
+    // Increase count value
+    const increaseCount = () => {
+        setValue("count", parseInt(count, 10) + 1);
+    };
+
+    // Decrease count value
+    const decreaseCount = () => {
+        setValue("count", Math.max(parseInt(count, 10) - 1, 1)); // Prevent count from being less than 1
+    };
+
     const onSubmit = (content) => {
         let resData = {
             product: data.id,
             count: Number(content.count),
-            buyer: 2,
+            buyer: Number(id),
             address: "주소",
         };
-        
+
         let res = postParty(resData);
         setModalOpen(false);
     };
@@ -62,13 +85,27 @@ export default function PartyModal({
     return (
         <S.Back>
             <S.Wrap ref={modalRef} onSubmit={handleSubmit(onSubmit)}>
-                <h1>제목: {data.title}</h1>
-                <p>현재 잔여개수 {`${data.sellCount}/${data.maxCount}`} 중</p>
-                <input type="number" {...register("count")} />
-                <label htmlFor="">개 구매할게요</label>
-                <span>{data.sellPrice}원</span>
+                <S.Title>제목: {data.title}</S.Title>
+                <S.Count>
+                    현재 잔여개수 <span>{`${data.sellCount}`}</span>/
+                    {`${data.maxCount}`} 중 <br />
+                    <button type="button" onClick={decreaseCount}>
+                        <img src={arrowLeft} alt="Decrease" />
+                    </button>
+                    <input type="number" {...register("count")} />
+                    <button type="button" onClick={increaseCount}>
+                        <img src={arrowRight} alt="Increase" />
+                    </button>
+                    <label htmlFor="">개 구매할게요</label>
+                </S.Count>
+                <S.PriceCont>
+                    <img src={money} alt="" />
+                    {data.sellPrice * parseInt(count || 0)}원{" "}
+                </S.PriceCont>
                 <S.BtnCont>
-                    <button>취소</button>
+                    <button type="button" onClick={closeModal}>
+                        취소
+                    </button>
                     <button>참여하기</button>
                 </S.BtnCont>
             </S.Wrap>

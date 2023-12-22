@@ -1,14 +1,54 @@
+import { useGetJoinList } from "../../queries/getJoinList";
+import deleteBtn from "../../assets/images/delete.svg";
+import chat from "../../assets/images/chat_mobile.svg";
+
 import React, { useState } from "react";
+
 import styled from "styled-components";
+import { useDeleteProduct } from "../../queries/deleteProduct";
+import { usePostState } from "../../queries/postState";
+import { useGetProduct } from "../../queries/getProduct";
 interface Props {
     checked: string;
 }
-export default function ProfileDetail() {
-    const order = ["게시글 수정", "참여자 관리"];
-    const [selectedOrder, setSelectedOrder] = useState("게시글 수정");
+export default function ProfileDetail({ pid }: any) {
+    const order = ["참여자 관리", "게시글 수정"];
+    const [selectedOrder, setSelectedOrder] = useState("참여자 관리");
     const handleCategoryClick = (item: string) => {
         setSelectedOrder(item);
     };
+
+    const { data: good1, isLoading } = useGetProduct(pid);
+
+    const { data: good } = useGetJoinList(pid);
+    const { mutateAsync: postState } = usePostState();
+    const { mutateAsync: deleteProduct } = useDeleteProduct();
+    const getStateText = (stateCode: any) => {
+        switch (stateCode) {
+            case 0:
+                return "거래 준비";
+            case 1:
+                return "거래 진행";
+            case 2:
+                return "거래 완료";
+            default:
+                return "알 수 없음"; // 이 부분은 상태 코드가 알려지지 않았을 때의 기본값입니다.
+        }
+    };
+
+    const handleDeleteProduct = () => {
+        deleteProduct(pid);
+    };
+
+    const handleState = () => {
+        postState({
+            productId: Number(pid),
+            status: "IN_PROGRESS",
+        });
+    };
+
+    console.log(good1);
+
     return (
         <div>
             <div>
@@ -27,14 +67,20 @@ export default function ProfileDetail() {
                 <div>
                     <div>
                         <TitleCont>
-                            <h4>이천쌀 구매해요</h4>
-                            <button>삭제</button>
+                            <h4>{good1?.title}</h4>
+                            <button onClick={handleDeleteProduct}>
+                                <img src={deleteBtn} alt="" />
+                            </button>
                         </TitleCont>
                         <StateCont>
                             <div>
                                 <State>거래 상태</State>
-                                <State>모집중</State>
-                                <Btn>수정</Btn>
+                                <State>
+                                    {good1
+                                        ? getStateText(good1.state)
+                                        : "로딩 중..."}
+                                </State>
+                                <Btn onClick={handleState}>수정</Btn>
                                 <State>모집현황</State>
                                 <State>3/10</State>
                                 <Btn>수정</Btn>
@@ -55,27 +101,21 @@ export default function ProfileDetail() {
                             </tr>
                         </THead>
                         <TBody>
-                            <tr>
-                                <td>홍길동</td>
-                                <td>완료</td>
-                                <td>3개</td>
-                                <td>홍길동과 대화</td>
-                                <td>거래취소</td>
-                            </tr>
-                            <tr>
-                                <td>김영희</td>
-                                <td>완료</td>
-                                <td>1개</td>
-                                <td>김영희와 대화</td>
-                                <td>거래취소</td>
-                            </tr>
-                            <tr>
-                                <td>이영희</td>
-                                <td>완료</td>
-                                <td>2개</td>
-                                <td>이영희와 대화</td>
-                                <td>거래취소</td>
-                            </tr>
+                            {/* {good?.map((goods) => (
+                                <tr>
+                                    <td>{goods.buyer.nick}</td>
+                                    <td>
+                                        <Check type="checkbox" id="stay" />
+                                    </td>
+                                    <td>{goods.count}개</td>
+                                    <td>
+                                        <button>
+                                            <img src={chat} alt="" />
+                                        </button>
+                                    </td>
+                                    <td>거래취소</td>
+                                </tr>
+                            ))} */}
                         </TBody>
                     </Table>
                 </div>
@@ -93,7 +133,8 @@ export const ToggleBtn = styled.button<Props>`
     color: white;
     margin-top: 11px;
 
-    background: ${(props) => (props.checked === props.children ? "#2c9b36" : "#d9d9d9")};
+    background: ${(props) =>
+        props.checked === props.children ? "#2c9b36" : "#d9d9d9"};
 `;
 
 export const InfoBtn = styled.button`
@@ -165,6 +206,9 @@ export const THead = styled.thead`
     ${"th"} {
         padding: 10px;
         text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
     }
     color: white;
     /* } */
@@ -176,15 +220,46 @@ export const Table = styled.table`
 
 export const TBody = styled.tbody`
     width: 900px;
+
     ${"td"} {
         height: 64px;
         color: #5c5c5c;
         text-align: center;
         font-size: 14px;
-        font-family: KoPubWorldDotum_Pro;
         font-weight: 500;
         border-bottom: 1px solid #d9d9d9;
+    }
 
-        padding: 21px 0;
+    ${"img"} {
+    }
+`;
+
+export const Label = styled.label`
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #8f8f8f;
+`;
+
+export const Check = styled.input`
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2c9b36;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 5px;
+    vertical-align: middle;
+
+    cursor: pointer;
+    &:checked {
+        border-color: transparent;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+        background-size: 100% 100%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-color: #2c9b36;
     }
 `;

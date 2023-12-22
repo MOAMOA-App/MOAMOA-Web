@@ -3,17 +3,27 @@ import styled from "styled-components";
 import udi from "../../assets/images/udi.png";
 import money from "../../assets/images/money.png";
 import heart from "../../assets/images/heart-orange.svg";
+import fullheart from "../../assets/images/fullheart.svg";
 import chat from "../../assets/images/chat-orange.svg";
 import Card from "../../components/Card";
 import goods from "../../data/goods.json";
 import MapContainer from "../../hooks/KakaoMapScript";
-import { useGetProduct } from "../../queries/getProduct ";
+import { useGetProduct } from "../../queries/getProduct";
 import { useParams } from "react-router-dom";
 import { getUserInfo } from "../../utils/localStorage";
 import ModalPortal from "../../components/modal/ModalPortal";
 import PartyModal from "../../components/modal/PartyModal";
 import useCustomModal from "../../hooks/useCustomModal";
+import { usePostAnnounce } from "../../queries/postAnnounce";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useGetAnnounceList } from "../../queries/getAnnounceList";
+import { usePostHeart } from "../../queries/postHeart";
+import { getDate } from "../../utils/getTime";
 
+interface FormValue {
+    contents: string;
+    pid: number;
+}
 function Goods() {
     const arr = [1, 2, 3, 4];
     // console.log(goods.goods[0]);
@@ -21,7 +31,42 @@ function Goods() {
     const userInfo = getUserInfo();
     const { modalOpen, setModalOpen } = useCustomModal();
     const { data: good, isLoading } = useGetProduct(goodsid as string);
-    // console.log(good);
+    const { data: announce, isLoading: announceIsLoading } = useGetAnnounceList(
+        goodsid as string
+    );
+    const {
+        register,
+        handleSubmit,
+        watch,
+        reset,
+        setValue,
+        formState: { isSubmitting, errors },
+    } = useForm<FormValue>();
+    const { mutateAsync: postAnnounce } = usePostAnnounce(goodsid as string);
+
+    const { mutateAsync: postHeart } = usePostHeart();
+
+    const handleHeart = (e: any) => {
+        e.stopPropagation();
+
+        const newHeartStatus = !good.heart;
+
+        postHeart({
+            productId: good.id,
+            status: newHeartStatus,
+        });
+    };
+
+    const onSubmit: SubmitHandler<FormValue> = async (data) => {
+        console.log(data);
+
+        postAnnounce({
+            pid: Number(goodsid),
+            lock: false,
+            contents: data.contents,
+        });
+        reset({ contents: "" });
+    };
     const handleReceiveCoordinates = (x: string, y: string) => {
         console.log(`Coordinates: ${x}, ${y}`);
         // 필요한 로직을 여기에 추가합니다. 예를 들면 상태 설정 등
@@ -33,12 +78,10 @@ function Goods() {
         <>
             {!isLoading && (
                 <Div>
-                    {good.user.email !== userInfo.email && (
-                        <p>내가 쓴 글 아님</p>
-                    )}
                     <Flex>
                         {good.productImages[0] && (
                             <img
+                                className="img"
                                 src={`http://3.36.250.168:80${good.productImages[0].fileName}`}
                                 alt=""
                             />
@@ -49,8 +92,12 @@ function Goods() {
                                 <p>{good.sellingArea}</p>
                             </TitleCont>
                             <h1>{good.title}</h1>
-                            <img src={money} alt="" />
-                            <span className="money"> {good.sellPrice}원</span>
+                            <PriceCont>
+                                <img src={money} alt="" />
+                                <span className="money">
+                                    {good.sellPrice}원
+                                </span>
+                            </PriceCont>
 
                             <Wrap>
                                 <h3>모집여부</h3>
@@ -76,14 +123,20 @@ function Goods() {
                                 />
                             </Map>
                             <BtnWrap>
-                                <button className="heart">
-                                    <img src={heart} alt="" />
+                                <button className="heart" onClick={handleHeart}>
+                                    <img
+                                        src={good.heart ? fullheart : heart}
+                                        alt=""
+                                    />
                                 </button>
                                 <button className="chat">
                                     <img src={chat} alt="" />
                                 </button>
+
                                 <button className="party" onClick={showModal}>
-                                    참여하기
+                                    {good.user.email !== userInfo.email
+                                        ? "참여하기"
+                                        : "수정하기"}
                                 </button>
                             </BtnWrap>
                         </ContentCont>
@@ -93,12 +146,27 @@ function Goods() {
                         <p>{good.description}</p>
                         <span>공지 및 업데이트</span>
                         <div>
-                            {good.announces &&
-                                good.announces.map((announce: any) => (
+                            {!announceIsLoading &&
+                                announce &&
+                                announce.map((announce: any) => (
                                     <>
-                                        <p>23.10.01 {announce.contents}</p>
+                                        <p>
+                                            {getDate(announce.createdAt)}{" "}
+                                            {announce.contents}
+                                        </p>
                                     </>
                                 ))}
+                            <AnnounceWrap onSubmit={handleSubmit(onSubmit)}>
+                                <Announce
+                                    id=""
+                                    cols={30}
+                                    rows={10}
+                                    {...register("contents", {
+                                        required: true,
+                                    })}
+                                ></Announce>
+                                <SumitBtn type="submit">등록</SumitBtn>
+                            </AnnounceWrap>
                         </div>
                     </Wrap2>
                     <Span>공동구매 더보기</Span>
@@ -153,6 +221,11 @@ export const Flex = styled.div`
     flex-wrap: wrap;
     @media (max-width: 1112px) {
         flex-direction: column;
+    }
+
+    ${".img"} {
+        width: 438px;
+        height: 438px;
     }
     ${"h1"} {
         font-weight: 700;
@@ -336,5 +409,35 @@ export const TitleCont = styled.div`
         margin-right: 9px;
     }
 `;
-
+export const PriceCont = styled.div`
+    ${"img"} {
+        vertical-align: sub;
+        margin-right: 3px;
+    }
+`;
 export default Goods;
+export const AnnounceWrap = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+`;
+export const Announce = styled.textarea`
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+`;
+
+export const SumitBtn = styled.button`
+    width: 50px;
+    height: 24px;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 5px 0px 4px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f79331;
+    color: white;
+`;

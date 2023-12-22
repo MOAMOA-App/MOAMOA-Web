@@ -4,6 +4,7 @@ import Layout from "../layout/Layout";
 import Home from "../pages/home/Home";
 import Chat from "../pages/chat/Chat";
 import Profile from "../pages/profile/Profile";
+// import Join from "../pages/profile/Join";
 import Write from "../pages/write/Write";
 import RequireAuth from "../components/RequireAuth";
 import Login from "../pages/login/Login";
@@ -24,9 +25,14 @@ export default function Router() {
                         <Route path="/chat" element={<Chat />} />
                         <Route path="/write" element={<Write />} />
                         <Route path="/profile" element={<Profile />} />
+                        <Route path="/join" element={<Profile />} />
                         <Route path="/search" element={<Search />} />
 
                         <Route path="/goods/:goodsid" element={<Goods />} />
+                        <Route
+                            path="/product/:pid/joinlist"
+                            element={<Profile />}
+                        />
                     </Route>
                 </Route>
 
