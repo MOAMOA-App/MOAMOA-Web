@@ -16,7 +16,7 @@ export type Profile = {
 
 type Response = ApiResponse<Profile>;
 
-const URL_PATH = `api/product?search=asdfasdf&order=Sdfadf&pageNo=10&pageSize=20&category=1&status=READY`;
+const URL_PATH = `product?search=asdfasdf&order=Sdfadf&pageNo=10&pageSize=20&category=1&status=READY`;
 
 export const QUERY_KEY = [URL_PATH];
 const accessToken = getAccessToken();

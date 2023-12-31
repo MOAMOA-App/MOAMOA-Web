@@ -31,7 +31,7 @@ type Product = {
 type Response = any;
 //수정하기!
 
-const URL_PATH = `api/product`;
+const URL_PATH = `product`;
 
 export const QUERY_KEY = [URL_PATH];
 

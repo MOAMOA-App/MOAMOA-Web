@@ -36,7 +36,7 @@ type Product = {
 type Response = any;
 //수정하기!
 
-const URL_PATH = `api/myinfo/party`;
+const URL_PATH = `myinfo/party`;
 
 export const QUERY_KEY = [URL_PATH];
 const accessToken = getAccessToken();

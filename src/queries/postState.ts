@@ -16,7 +16,7 @@ interface RequestEmailResponse {
 
 type Response = ApiResponse<RequestEmailResponse>;
 
-const URL_PATH = `api/product/status`;
+const URL_PATH = `product/status`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postState = async (data: Request) => {

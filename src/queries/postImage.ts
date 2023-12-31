@@ -10,7 +10,7 @@ export interface Request {
 }
 
 type Response = any;
-const URL_PATH = `api/file`;
+const URL_PATH = `file`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postImage = async (req: Request) => {
