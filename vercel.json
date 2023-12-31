@@ -1,10 +1,12 @@
-
 {
     "rewrites": [
       {
         "source": "/api/:path*",
         "destination": "https://moamoa.info/:path*"
+      },
+      {
+        "source": "/api/:path*",
+        "destination": "https://moamoa.info/goods/:path*"
       }
     ]
   }
-
