@@ -32,7 +32,7 @@ export default function Card({ good }: CardProps) {
     };
 
     return (
-        <S.Warp onClick={() => navigate(`/goods/${good.id}`)}>
+        <S.Warp onClick={() => navigate(`/goods?product=${good.id}`)}>
             <S.Category>
                 <div>
                     <p className="category">{`${good.category}`}</p>

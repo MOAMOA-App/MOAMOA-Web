@@ -9,7 +9,7 @@ import Card from "../../components/Card";
 import goods from "../../data/goods.json";
 import MapContainer from "../../hooks/KakaoMapScript";
 import { useGetProduct } from "../../queries/getProduct";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { getUserInfo } from "../../utils/localStorage";
 import ModalPortal from "../../components/modal/ModalPortal";
 import PartyModal from "../../components/modal/PartyModal";
@@ -26,8 +26,13 @@ interface FormValue {
 }
 function Goods() {
     const arr = [1, 2, 3, 4];
+    const location = useLocation();
+
+    const queryParams = new URLSearchParams(location.search);
+    const goodsid = queryParams.get("product"); // '1'을 가져옵니다
+
     // console.log(goods.goods[0]);
-    const { goodsid } = useParams();
+    // const { goodsid } = useParams();
     const userInfo = getUserInfo();
     const { modalOpen, setModalOpen } = useCustomModal();
     const { data: good, isLoading } = useGetProduct(goodsid as string);
