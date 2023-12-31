@@ -1,8 +1,10 @@
+
 {
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "https://moamoa-web.vercel.app/api/$1"
-        }
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://moamoa.info/:path*"
+      }
     ]
-}
+  }
+

@@ -18,7 +18,7 @@ interface LoginResponse {
 
 type Response = ApiResponse<LoginResponse>;
 
-const URL_PATH = `user/login`;
+const URL_PATH = `api/user/login`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postLogin = async (data: Request) => {
