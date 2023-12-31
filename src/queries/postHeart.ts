@@ -17,7 +17,7 @@ interface LoginResponse {
 
 type Response = ApiResponse<LoginResponse>;
 
-const URL_PATH = `product/heart`;
+const URL_PATH = `api/product/heart`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postHeart = async (data: Request) => {

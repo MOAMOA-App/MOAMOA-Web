@@ -13,7 +13,7 @@ interface VerifyEmailResponse {
 
 type Response = ApiResponse<VerifyEmailResponse>;
 
-const URL_PATH = `user/email/verify`;
+const URL_PATH = `api/user/email/verify`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postVerifyEmail = async (data: Request) => {

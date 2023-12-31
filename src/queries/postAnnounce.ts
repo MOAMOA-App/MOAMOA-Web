@@ -16,7 +16,7 @@ interface LoginResponse {
 
 type Response = ApiResponse<LoginResponse>;
 
-const URL_PATH = `product`;
+const URL_PATH = `api/product`;
 
 const MUTATION_KEY = [URL_PATH];
 

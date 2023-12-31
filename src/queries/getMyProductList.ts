@@ -33,7 +33,7 @@ type Product = {
 type Response = any;
 //수정하기!
 
-const URL_PATH = `myinfo/post`;
+const URL_PATH = `api/myinfo/post`;
 
 export const QUERY_KEY = [URL_PATH];
 const accessToken = getAccessToken();

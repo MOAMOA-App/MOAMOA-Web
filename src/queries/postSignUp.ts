@@ -15,7 +15,7 @@ interface VerifyEmailResponse {
 
 type Response = ApiResponse<VerifyEmailResponse>;
 
-const URL_PATH = `user/signup`;
+const URL_PATH = `api/user/signup`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postSignUp = async (data: Request) => {

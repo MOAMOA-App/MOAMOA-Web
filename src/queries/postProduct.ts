@@ -19,7 +19,7 @@ export interface Request {
 
 
 type Response = Goods;
-const URL_PATH = `product`;
+const URL_PATH = `api/product`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postProduct = async (req: Request) => {

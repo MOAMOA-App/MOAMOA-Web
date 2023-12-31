@@ -8,7 +8,7 @@ export interface Request {
 }
 
 type Response = any;
-const URL_PATH = `product`;
+const URL_PATH = `api/product`;
 const MUTATION_KEY = [URL_PATH];
 
 export const deleteProduct = async (req: Request) => {

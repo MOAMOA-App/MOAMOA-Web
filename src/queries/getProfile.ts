@@ -16,7 +16,7 @@ export type Profile = {
 
 type Response = ApiResponse<Profile>;
 
-const URL_PATH = `myinfo/profile`;
+const URL_PATH = `api/myinfo/profile`;
 
 export const QUERY_KEY = [URL_PATH];
 const accessToken = getAccessToken();

@@ -14,7 +14,7 @@ interface RequestEmailResponse {
 
 type Response = ApiResponse<RequestEmailResponse>;
 
-const URL_PATH = `user/email/request`;
+const URL_PATH = `api/user/email/request`;
 const MUTATION_KEY = [URL_PATH];
 
 export const postRequestEmail = async (data: Request) => {
