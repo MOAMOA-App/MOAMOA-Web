@@ -28,7 +28,7 @@ export default function Router() {
                         <Route path="/join" element={<Profile />} />
                         <Route path="/search" element={<Search />} />
 
-                        <Route path="/goods/:goodsid" element={<Goods />} />
+                        <Route path="/goods" element={<Goods />} />
                         <Route
                             path="/product/:pid/joinlist"
                             element={<Profile />}

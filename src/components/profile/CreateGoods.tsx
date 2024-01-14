@@ -54,7 +54,7 @@ export default function CreateGoods({ type }: Props) {
                 {type === "참여한 공동구매" &&
                     partyData &&
                     partyData.map((good) => (
-                        <div onClick={()=>handleParty(good)}>
+                        <div onClick={() => handleParty(good)}>
                             <Card good={good}></Card>
                         </div>
                     ))}
@@ -76,6 +76,8 @@ export const Wrap = styled.div`
     border-radius: 5px;
     padding: 28px 32px;
     margin-top: 25px;
+    width: 70vw;
+    height: 665px;
     ${"h2"} {
         font-size: 18px;
         font-family: KoPubWorldDotum_Pro;

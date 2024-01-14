@@ -9,7 +9,7 @@ import Card from "../../components/Card";
 import goods from "../../data/goods.json";
 import MapContainer from "../../hooks/KakaoMapScript";
 import { useGetProduct } from "../../queries/getProduct";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getUserInfo } from "../../utils/localStorage";
 import ModalPortal from "../../components/modal/ModalPortal";
 import PartyModal from "../../components/modal/PartyModal";
@@ -19,6 +19,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useGetAnnounceList } from "../../queries/getAnnounceList";
 import { usePostHeart } from "../../queries/postHeart";
 import { getDate } from "../../utils/getTime";
+import { useNumberValue } from "../../atom/number.atom";
 
 interface FormValue {
     contents: string;
@@ -26,18 +27,17 @@ interface FormValue {
 }
 function Goods() {
     const arr = [1, 2, 3, 4];
-    const location = useLocation();
-
-    const queryParams = new URLSearchParams(location.search);
-    const goodsid = queryParams.get("product"); // '1'을 가져옵니다
+    const numberValue = useNumberValue();
 
     // console.log(goods.goods[0]);
-    // const { goodsid } = useParams();
+    const { goodsid } = useParams();
     const userInfo = getUserInfo();
     const { modalOpen, setModalOpen } = useCustomModal();
-    const { data: good, isLoading } = useGetProduct(goodsid as string);
+    const { data: good, isLoading } = useGetProduct(
+        numberValue as unknown as string
+    );
     const { data: announce, isLoading: announceIsLoading } = useGetAnnounceList(
-        goodsid as string
+        numberValue as unknown as string
     );
     const {
         register,
@@ -87,7 +87,7 @@ function Goods() {
                         {good.productImages[0] && (
                             <img
                                 className="img"
-                                src={`http://3.36.250.168:80${good.productImages[0].fileName}`}
+                                src={`https://moamoa.info${good.productImages[0].fileName}`}
                                 alt=""
                             />
                         )}

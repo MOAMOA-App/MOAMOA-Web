@@ -148,7 +148,7 @@ export const InfoBtn = styled.button`
 `;
 
 export const Wrap = styled.div`
-    width: 970px;
+    width: 70%;
     height: 665px;
     border-radius: 5px;
     background: #fff;

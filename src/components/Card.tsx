@@ -6,13 +6,14 @@ import heart from "../assets/images/heart.svg";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePostHeart } from "../queries/postHeart";
 import { getTime } from "../utils/getTime";
+import { useNumberWrite } from "../atom/number.atom";
 
 interface CardProps {
     good: Goods;
 }
 export default function Card({ good }: CardProps) {
     const navigate = useNavigate();
-
+    const numberWrite = useNumberWrite();
     const {
         mutateAsync: postHeart,
         isLoading = false,
@@ -32,7 +33,9 @@ export default function Card({ good }: CardProps) {
     };
 
     return (
-        <S.Warp onClick={() => navigate(`/goods?product=${good.id}`)}>
+        <S.Warp onClick={() => {
+            numberWrite(good.id)
+            navigate(`/goods`)} }>
             <S.Category>
                 <div>
                     <p className="category">{`${good.category}`}</p>
@@ -47,7 +50,7 @@ export default function Card({ good }: CardProps) {
             <S.Img>
                 {good.mainImage && (
                     <img
-                        src={`http://3.36.250.168:80${good.mainImage}`}
+                        src={`https://moamoa.info${good.mainImage}`}
                         alt=""
                     />
                 )}

@@ -11,9 +11,11 @@ import { useGetSearch } from "../../queries/getSearch";
 
 export default function Search() {
     const [menus, setMenu] = useState([
-        { title: "제목", checked: true },
-        { title: "내용", checked: true },
+        { title: "제목", key: "sub", checked: false },
+        { title: "내용", key: "descript", checked: false },
+        { title: "제목+내용", key: "subdesc", checked: true },
     ]);
+
     const category = useCategoryValue();
     const [inputValue, setInputValue] = useState("");
     const { data: good } = useGetSearch();
@@ -109,22 +111,32 @@ export default function Search() {
             .filter(([category, isChecked]) => isChecked)
             .map(([category]) => category)
             .join(",");
+            const selectedSearchCriteria = menus.find(menu => menu.checked)?.key;
 
         const selectedStates = Object.entries(selectedState)
             .filter(([state, isSelected]) => isSelected)
             .map(([state]) => state)
             .join(",");
         console.log(
-            "search=" +
-                inputValue +
-                "&order=" +
+                // inputValue +
+                "state=" +
                 selectedStates +
                 "&category=" +
                 selectedCategoryIndices +
-                "&status=" +
-                selectedOrder
+                "&order=" +
+                selectedOrder+
+                "&search=" +selectedSearchCriteria
+                
+
+//                 검색 기준(search) : sub |  descript | subdesc
+
+// 정렬 기준(order) : 
+
+// 진행 상태
         );
     };
+
+    
 
     return (
         <>
